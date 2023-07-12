@@ -32,6 +32,10 @@
 		D85D16BB2A5E2EFA00D799DD /* TempUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D16BA2A5E2EFA00D799DD /* TempUtils.swift */; };
 		D85D16BD2A5E2F0800D799DD /* TempResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D16BC2A5E2F0800D799DD /* TempResource.swift */; };
 		D85D16BF2A5E2F1600D799DD /* TempFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D16BE2A5E2F1600D799DD /* TempFont.swift */; };
+		D85D16C22A5E302400D799DD /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D85D16C12A5E302400D799DD /* SnapKit-Dynamic */; };
+		D85D16C52A5E304A00D799DD /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D85D16C42A5E304A00D799DD /* Then */; };
+		D85D16C82A5E306000D799DD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D85D16C72A5E306000D799DD /* Alamofire */; };
+		D85D16CB2A5E307F00D799DD /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D85D16CA2A5E307F00D799DD /* Swinject-Dynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +73,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D85D16C82A5E306000D799DD /* Alamofire in Frameworks */,
+				D85D16CB2A5E307F00D799DD /* Swinject-Dynamic in Frameworks */,
+				D85D16C22A5E302400D799DD /* SnapKit-Dynamic in Frameworks */,
+				D85D16C52A5E304A00D799DD /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +324,12 @@
 			dependencies = (
 			);
 			name = CleanArchitecture_ShipGo;
+			packageProductDependencies = (
+				D85D16C12A5E302400D799DD /* SnapKit-Dynamic */,
+				D85D16C42A5E304A00D799DD /* Then */,
+				D85D16C72A5E306000D799DD /* Alamofire */,
+				D85D16CA2A5E307F00D799DD /* Swinject-Dynamic */,
+			);
 			productName = CleanArchitecture_ShipGo;
 			productReference = D800BAAF2A5CEA5F001F19A3 /* CleanArchitecture_ShipGo.app */;
 			productType = "com.apple.product-type.application";
@@ -344,6 +358,12 @@
 				Base,
 			);
 			mainGroup = D800BAA62A5CEA5F001F19A3;
+			packageReferences = (
+				D85D16C02A5E302400D799DD /* XCRemoteSwiftPackageReference "SnapKit" */,
+				D85D16C32A5E304A00D799DD /* XCRemoteSwiftPackageReference "Then" */,
+				D85D16C62A5E306000D799DD /* XCRemoteSwiftPackageReference "Alamofire" */,
+				D85D16C92A5E307F00D799DD /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = D800BAB02A5CEA5F001F19A3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -600,6 +620,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D85D16C02A5E302400D799DD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		D85D16C32A5E304A00D799DD /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		D85D16C62A5E306000D799DD /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		D85D16C92A5E307F00D799DD /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D85D16C12A5E302400D799DD /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D85D16C02A5E302400D799DD /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+		D85D16C42A5E304A00D799DD /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D85D16C32A5E304A00D799DD /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		D85D16C72A5E306000D799DD /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D85D16C62A5E306000D799DD /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		D85D16CA2A5E307F00D799DD /* Swinject-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D85D16C92A5E307F00D799DD /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = "Swinject-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D800BABB2A5CEA5F001F19A3 /* CleanArchitecture_ShipGo.xcdatamodeld */ = {
