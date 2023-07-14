@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+protocol Entity {}
+
+// MARK: - 예제용 추후 삭제 예정
+struct exampleEntity: Entity {
+}

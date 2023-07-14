@@ -47,6 +47,8 @@
 		D8B6611D2A612B0B0049B8D9 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6611C2A612B0B0049B8D9 /* BuyViewController.swift */; };
 		D8B6611F2A612B3D0049B8D9 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6611E2A612B3D0049B8D9 /* CreateAccountViewController.swift */; };
 		D8B661212A612B7B0049B8D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B661202A612B7B0049B8D9 /* ViewController.swift */; };
+		D8B661252A614AA10049B8D9 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B661242A614AA10049B8D9 /* OnBoardingViewController.swift */; };
+		D8B661272A614AC70049B8D9 /* ViewControllerTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B661262A614AC70049B8D9 /* ViewControllerTemplate.swift */; };
 		D8D483212A5F7FE300B474E4 /* ScreenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483202A5F7FE300B474E4 /* ScreenUtil.swift */; };
 		D8D483232A5F807300B474E4 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483222A5F807300B474E4 /* Errors.swift */; };
 		D8D483252A5F80B600B474E4 /* NetworkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */; };
@@ -91,6 +93,8 @@
 		D8B6611C2A612B0B0049B8D9 /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
 		D8B6611E2A612B3D0049B8D9 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		D8B661202A612B7B0049B8D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D8B661242A614AA10049B8D9 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		D8B661262A614AC70049B8D9 /* ViewControllerTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTemplate.swift; sourceTree = "<group>"; };
 		D8D483202A5F7FE300B474E4 /* ScreenUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtil.swift; sourceTree = "<group>"; };
 		D8D483222A5F807300B474E4 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWrapper.swift; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 		D85D16832A5E2A9B00D799DD /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				D8B661262A614AC70049B8D9 /* ViewControllerTemplate.swift */,
+				D8B661232A614A8B0049B8D9 /* OnBoarding */,
 				D8B6611B2A612AF90049B8D9 /* test */,
 				D85D168C2A5E2B5B00D799DD /* Login */,
 			);
@@ -366,6 +372,14 @@
 			path = test;
 			sourceTree = "<group>";
 		};
+		D8B661232A614A8B0049B8D9 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				D8B661242A614AA10049B8D9 /* OnBoardingViewController.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -466,6 +480,7 @@
 				D8D483232A5F807300B474E4 /* Errors.swift in Sources */,
 				D85D16A82A5E2D3D00D799DD /* LoginUseCaseable.swift in Sources */,
 				D85D16B72A5E2EAE00D799DD /* LoginRepositoryImpl.swift in Sources */,
+				D8B661252A614AA10049B8D9 /* OnBoardingViewController.swift in Sources */,
 				D800BABD2A5CEA5F001F19A3 /* CleanArchitecture_ShipGo.xcdatamodeld in Sources */,
 				D85D16AF2A5E2E2300D799DD /* RemoteDataSourceImpl.swift in Sources */,
 				D8D483212A5F7FE300B474E4 /* ScreenUtil.swift in Sources */,
@@ -476,6 +491,7 @@
 				D85D169A2A5E2CB600D799DD /* Entity.swift in Sources */,
 				D85D16A02A5E2CEF00D799DD /* LoginRequestModel.swift in Sources */,
 				D8B6610F2A60D7130049B8D9 /* AppContainer.swift in Sources */,
+				D8B661272A614AC70049B8D9 /* ViewControllerTemplate.swift in Sources */,
 				D8B661212A612B7B0049B8D9 /* ViewController.swift in Sources */,
 				D85D16B92A5E2EE700D799DD /* TempComponent.swift in Sources */,
 				D8B6611D2A612B0B0049B8D9 /* BuyViewController.swift in Sources */,
