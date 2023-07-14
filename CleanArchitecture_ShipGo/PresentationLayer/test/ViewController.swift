@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-// MARK: - 첫 화면
+// MARK: - 진입 시 첫 화면
 class ViewController: UIViewController {
     
     weak var coordinator: AppCoordinator?
@@ -57,5 +57,3 @@ class ViewController: UIViewController {
         print(coordinator)
     }
 }
-
-// 화면 구성 해서 테스트
