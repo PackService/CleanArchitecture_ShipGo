@@ -44,6 +44,7 @@
 		D8B6610D2A60D3A80049B8D9 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8B661042A60D3A80049B8D9 /* Pretendard-Medium.otf */; };
 		D8B6610F2A60D7130049B8D9 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6610E2A60D7130049B8D9 /* AppContainer.swift */; };
 		D8B661122A60D91B0049B8D9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B661112A60D91B0049B8D9 /* Coordinator.swift */; };
+		D8B661142A60F72E0049B8D9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B661132A60F72E0049B8D9 /* AppCoordinator.swift */; };
 		D8D483212A5F7FE300B474E4 /* ScreenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483202A5F7FE300B474E4 /* ScreenUtil.swift */; };
 		D8D483232A5F807300B474E4 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483222A5F807300B474E4 /* Errors.swift */; };
 		D8D483252A5F80B600B474E4 /* NetworkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */; };
@@ -85,6 +86,7 @@
 		D8B661042A60D3A80049B8D9 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		D8B6610E2A60D7130049B8D9 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		D8B661112A60D91B0049B8D9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D8B661132A60F72E0049B8D9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		D8D483202A5F7FE300B474E4 /* ScreenUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtil.swift; sourceTree = "<group>"; };
 		D8D483222A5F807300B474E4 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWrapper.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				D8B661112A60D91B0049B8D9 /* Coordinator.swift */,
+				D8B661132A60F72E0049B8D9 /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 			files = (
 				D85D16B12A5E2E3600D799DD /* RemoteDataSourceable.swift in Sources */,
 				D85D16A22A5E2CFC00D799DD /* LoginResponseModel.swift in Sources */,
+				D8B661142A60F72E0049B8D9 /* AppCoordinator.swift in Sources */,
 				D85D16902A5E2B8C00D799DD /* LoginViewController.swift in Sources */,
 				D85D168B2A5E2B3300D799DD /* TempPresentationLayer.swift in Sources */,
 				D8D483232A5F807300B474E4 /* Errors.swift in Sources */,

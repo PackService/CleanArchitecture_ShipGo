@@ -7,6 +7,8 @@
 
 import Foundation
 
-protocol Coordinator: AnyObject { //bumjun
-
+protocol Coordinator: AnyObject {
+    var childCoordinator: [Coordinator] { get set }
+    
+    func start()
 }
