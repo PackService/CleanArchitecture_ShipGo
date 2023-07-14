@@ -13,6 +13,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .orange
+        
+        // MARK: - 폰트 확인용
+        for family in UIFont.familyNames {
+            print(family)
+            
+            for sub in UIFont.fontNames(forFamilyName: family) {
+                print("====> \(sub)")
+            }
+        }
     }
 
 
