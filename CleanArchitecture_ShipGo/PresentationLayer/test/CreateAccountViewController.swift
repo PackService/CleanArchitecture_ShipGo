@@ -12,9 +12,7 @@ class CreateAccountViewController: UIViewController {
     weak var coordinator: AppCoordinator?
     
     override func viewDidLoad() {
-        print("Create viewController 등장")
         super.viewDidLoad()
-        
     }
     
 }

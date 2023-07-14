@@ -47,13 +47,10 @@ class ViewController: UIViewController {
     
     
     @objc func loginButtonTapped(_ button: UIButton) {
-        print("눌림")
         coordinator?.createAccount()
     }
     
     @objc func buyButtonTapped(_ button: UIButton) {
-        print("눌림")
         coordinator?.buySubscription()
-        print(coordinator)
     }
 }

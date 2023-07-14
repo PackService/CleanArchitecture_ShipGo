@@ -24,7 +24,6 @@ class AppCoordinator: NSObject, Coordinator {
     }
     
     func buySubscription() {
-        print("AppCoordinator BuySubscription 실행")
         let child = BuyCoordinator(navigationController: navigationController)
         child.parentCoordinator = self
         childCoordinators.append(child)

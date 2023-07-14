@@ -18,7 +18,6 @@ class BuyCoordinator: Coordinator {
     }
 
     func start() {
-        print("start 함수 호출")
         let vc = BuyViewController()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)

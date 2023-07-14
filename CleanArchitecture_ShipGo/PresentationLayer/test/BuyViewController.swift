@@ -12,9 +12,7 @@ class BuyViewController: UIViewController {
     weak var coordinator: BuyCoordinator?
     
     override func viewDidLoad() {
-        print("buy viewController 등장")
         super.viewDidLoad()
-
     }
     
 }
