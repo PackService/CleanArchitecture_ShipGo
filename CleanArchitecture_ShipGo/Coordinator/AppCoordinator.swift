@@ -7,48 +7,61 @@
 
 import UIKit
 
-// MARK: - 메모리 누수 check
-// https://zeddios.medium.com/coordinator-pattern-bf4a1bc46930
-class AppCoordinator: Coordinator, LoginCoordinatorDelegate, MainCoordinatorDelegate {
-
-    var childCoordinator: [Coordinator] = []
-    private var navigationController: UINavigationController!
+class AppCoordinator: NSObject, Coordinator {
     
-    var isLoggedIn: Bool = false
+    var childCoordinators = [Coordinator]()
+    var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     func start() {
-        if self.isLoggedIn {
-            self.showMainViewController()
-        } else {
-            self.showLoginViewController()
+        let vc = ViewController()
+        vc.coordinator = self
+        navigationController.delegate = self
+        navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func buySubscription() {
+        print("AppCoordinator BuySubscription 실행")
+        let child = BuyCoordinator(navigationController: navigationController)
+        child.parentCoordinator = self
+        childCoordinators.append(child)
+        child.start()
+    }
+    
+    func createAccount() {
+        let vc = CreateAccountViewController()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func childDidFinish(_ child: Coordinator?) {
+        for (index, coordinator) in childCoordinators.enumerated() {
+            if coordinator === child {
+                childCoordinators.remove(at: index)
+                break
+            }
         }
     }
     
-    private func showMainViewController() {
-        let coordinator = MainCoordinator(navigationController: self.navigationController)
-        coordinator.delegate = self
-        coordinator.start()
-        self.childCoordinator.append(coordinator)
-    }
-    
-    private func showLoginViewController() {
-        let coordinator = LoginCoordinator(navigationController: self.navigationController)
-        coordinator.delegate = self
-        coordinator.start()
-        self.childCoordinator.append(coordinator)
-    }
-    
-    func didLoggedIn(_ coordinator: LoginCoordinator) {
-        self.childCoordinator = self.childCoordinator.filter { $0 !== coordinator }
-        self.showMainViewController()
-    }
-    
-    func didLoggedOut(_ coordinator: MainCoordinator) {
-        self.childCoordinator = self.childCoordinator.filter { $0 !== coordinator }
-        self.showLoginViewController()
+}
+
+extension AppCoordinator: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        
+        guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else {
+            return
+        }
+        
+        if navigationController.viewControllers.contains(fromViewController) {
+            return
+        }
+        
+        
+        if let buyViewController = fromViewController as? BuyViewController {
+            childDidFinish(buyViewController.coordinator)
+        }
     }
 }
