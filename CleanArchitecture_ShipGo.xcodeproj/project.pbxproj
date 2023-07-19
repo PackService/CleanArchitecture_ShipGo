@@ -12,6 +12,8 @@
 		D800BABD2A5CEA5F001F19A3 /* CleanArchitecture_ShipGo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D800BABB2A5CEA5F001F19A3 /* CleanArchitecture_ShipGo.xcdatamodeld */; };
 		D800BABF2A5CEA61001F19A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D800BABE2A5CEA61001F19A3 /* Assets.xcassets */; };
 		D800BAC22A5CEA61001F19A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D800BAC02A5CEA61001F19A3 /* LaunchScreen.storyboard */; };
+		D81082B32A67650A00FBCD9C /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81082B22A67650A00FBCD9C /* UIStackView+Extension.swift */; };
+		D81082B52A67676500FBCD9C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81082B42A67676500FBCD9C /* UIView+Extension.swift */; };
 		D85D16902A5E2B8C00D799DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D168F2A5E2B8C00D799DD /* LoginViewController.swift */; };
 		D85D16922A5E2B9500D799DD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D16912A5E2B9500D799DD /* LoginViewModel.swift */; };
 		D85D169A2A5E2CB600D799DD /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D16992A5E2CB600D799DD /* Entity.swift */; };
@@ -62,6 +64,8 @@
 		D800BABE2A5CEA61001F19A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D800BAC12A5CEA61001F19A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D800BAC32A5CEA61001F19A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D81082B22A67650A00FBCD9C /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
+		D81082B42A67676500FBCD9C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		D85D168F2A5E2B8C00D799DD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D85D16912A5E2B9500D799DD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D85D16992A5E2CB600D799DD /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 		D800BAB12A5CEA5F001F19A3 /* CleanArchitecture_ShipGo */ = {
 			isa = PBXGroup;
 			children = (
+				D81082B12A6764F500FBCD9C /* Extension */,
 				D800BAB22A5CEA5F001F19A3 /* AppDelegate.swift */,
 				D800BAB42A5CEA5F001F19A3 /* SceneDelegate.swift */,
 				D8B6610E2A60D7130049B8D9 /* AppContainer.swift */,
@@ -150,6 +155,15 @@
 				D800BABB2A5CEA5F001F19A3 /* CleanArchitecture_ShipGo.xcdatamodeld */,
 			);
 			path = CleanArchitecture_ShipGo;
+			sourceTree = "<group>";
+		};
+		D81082B12A6764F500FBCD9C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D81082B22A67650A00FBCD9C /* UIStackView+Extension.swift */,
+				D81082B42A67676500FBCD9C /* UIView+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		D85D16832A5E2A9B00D799DD /* PresentationLayer */ = {
@@ -489,8 +503,10 @@
 				D85D169C2A5E2CC800D799DD /* LoginMapper.swift in Sources */,
 				D85D169E2A5E2CDA00D799DD /* LoginRepositoriable.swift in Sources */,
 				D85D169A2A5E2CB600D799DD /* Entity.swift in Sources */,
+				D81082B52A67676500FBCD9C /* UIView+Extension.swift in Sources */,
 				D85D16A02A5E2CEF00D799DD /* LoginRequestModel.swift in Sources */,
 				D8B6610F2A60D7130049B8D9 /* AppContainer.swift in Sources */,
+				D81082B32A67650A00FBCD9C /* UIStackView+Extension.swift in Sources */,
 				D8B661272A614AC70049B8D9 /* ViewControllerTemplate.swift in Sources */,
 				D8B661212A612B7B0049B8D9 /* ViewController.swift in Sources */,
 				D85D16B92A5E2EE700D799DD /* TempComponent.swift in Sources */,
