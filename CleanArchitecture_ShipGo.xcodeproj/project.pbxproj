@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		ADF7A8E72A764ADA0028D260 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7A8E62A764ADA0028D260 /* UIFont+Extension.swift */; };
+		ADF7A8EA2A7650410028D260 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7A8E92A7650410028D260 /* SignUpViewController.swift */; };
+		ADF7A8EC2A7652E60028D260 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7A8EB2A7652E60028D260 /* ColorManager.swift */; };
 		D800BAB32A5CEA5F001F19A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800BAB22A5CEA5F001F19A3 /* AppDelegate.swift */; };
 		D800BAB52A5CEA5F001F19A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800BAB42A5CEA5F001F19A3 /* SceneDelegate.swift */; };
 		D800BABD2A5CEA5F001F19A3 /* CleanArchitecture_ShipGo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D800BABB2A5CEA5F001F19A3 /* CleanArchitecture_ShipGo.xcdatamodeld */; };
@@ -59,6 +61,8 @@
 
 /* Begin PBXFileReference section */
 		ADF7A8E62A764ADA0028D260 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		ADF7A8E92A7650410028D260 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		ADF7A8EB2A7652E60028D260 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		D800BAAF2A5CEA5F001F19A3 /* CleanArchitecture_ShipGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanArchitecture_ShipGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D800BAB22A5CEA5F001F19A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D800BAB42A5CEA5F001F19A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +125,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ADF7A8E82A76501B0028D260 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				ADF7A8E92A7650410028D260 /* SignUpViewController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 		D800BAA62A5CEA5F001F19A3 = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +186,7 @@
 			children = (
 				D8B661262A614AC70049B8D9 /* ViewControllerTemplate.swift */,
 				D8B661232A614A8B0049B8D9 /* OnBoarding */,
+				ADF7A8E82A76501B0028D260 /* SignUp */,
 				D8B6611B2A612AF90049B8D9 /* test */,
 				D85D168C2A5E2B5B00D799DD /* Login */,
 			);
@@ -232,6 +245,7 @@
 				D8D483202A5F7FE300B474E4 /* ScreenUtil.swift */,
 				D8D483222A5F807300B474E4 /* Errors.swift */,
 				D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */,
+				ADF7A8EB2A7652E60028D260 /* ColorManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -496,6 +510,7 @@
 				D85D16902A5E2B8C00D799DD /* LoginViewController.swift in Sources */,
 				D8D483232A5F807300B474E4 /* Errors.swift in Sources */,
 				D85D16A82A5E2D3D00D799DD /* LoginUseCaseable.swift in Sources */,
+				ADF7A8EA2A7650410028D260 /* SignUpViewController.swift in Sources */,
 				D85D16B72A5E2EAE00D799DD /* LoginRepositoryImpl.swift in Sources */,
 				D8B661252A614AA10049B8D9 /* OnBoardingViewController.swift in Sources */,
 				D800BABD2A5CEA5F001F19A3 /* CleanArchitecture_ShipGo.xcdatamodeld in Sources */,
@@ -508,6 +523,7 @@
 				D85D169A2A5E2CB600D799DD /* Entity.swift in Sources */,
 				D81082B52A67676500FBCD9C /* UIView+Extension.swift in Sources */,
 				D85D16A02A5E2CEF00D799DD /* LoginRequestModel.swift in Sources */,
+				ADF7A8EC2A7652E60028D260 /* ColorManager.swift in Sources */,
 				D8B6610F2A60D7130049B8D9 /* AppContainer.swift in Sources */,
 				ADF7A8E72A764ADA0028D260 /* UIFont+Extension.swift in Sources */,
 				D81082B32A67650A00FBCD9C /* UIStackView+Extension.swift in Sources */,
