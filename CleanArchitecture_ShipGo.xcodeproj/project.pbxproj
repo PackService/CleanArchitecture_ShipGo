@@ -10,6 +10,7 @@
 		ADF7A8E72A764ADA0028D260 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7A8E62A764ADA0028D260 /* UIFont+Extension.swift */; };
 		ADF7A8EA2A7650410028D260 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7A8E92A7650410028D260 /* SignUpViewController.swift */; };
 		ADF7A8EC2A7652E60028D260 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7A8EB2A7652E60028D260 /* ColorManager.swift */; };
+		ADF7A8EE2A76544D0028D260 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7A8ED2A76544D0028D260 /* SelectButton.swift */; };
 		D800BAB32A5CEA5F001F19A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800BAB22A5CEA5F001F19A3 /* AppDelegate.swift */; };
 		D800BAB52A5CEA5F001F19A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800BAB42A5CEA5F001F19A3 /* SceneDelegate.swift */; };
 		D800BABD2A5CEA5F001F19A3 /* CleanArchitecture_ShipGo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D800BABB2A5CEA5F001F19A3 /* CleanArchitecture_ShipGo.xcdatamodeld */; };
@@ -63,6 +64,7 @@
 		ADF7A8E62A764ADA0028D260 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		ADF7A8E92A7650410028D260 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		ADF7A8EB2A7652E60028D260 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		ADF7A8ED2A76544D0028D260 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
 		D800BAAF2A5CEA5F001F19A3 /* CleanArchitecture_ShipGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanArchitecture_ShipGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D800BAB22A5CEA5F001F19A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D800BAB42A5CEA5F001F19A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 		D85D16892A5E2AF300D799DD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				ADF7A8ED2A76544D0028D260 /* SelectButton.swift */,
 				D85D16B82A5E2EE700D799DD /* TempComponent.swift */,
 			);
 			path = Components;
@@ -507,6 +510,7 @@
 				D8B661182A611E220049B8D9 /* BuyCoordinator.swift in Sources */,
 				D85D16A22A5E2CFC00D799DD /* LoginResponseModel.swift in Sources */,
 				D8B661142A60F72E0049B8D9 /* AppCoordinator.swift in Sources */,
+				ADF7A8EE2A76544D0028D260 /* SelectButton.swift in Sources */,
 				D85D16902A5E2B8C00D799DD /* LoginViewController.swift in Sources */,
 				D8D483232A5F807300B474E4 /* Errors.swift in Sources */,
 				D85D16A82A5E2D3D00D799DD /* LoginUseCaseable.swift in Sources */,

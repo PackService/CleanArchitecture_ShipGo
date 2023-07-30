@@ -33,7 +33,7 @@ class OnBoardingViewController: UIViewController {
         $0.distribution = .equalSpacing
     })
     // MARK: - custombutton 만들어서 수정하기
-    private lazy var appleSignUpButton = UIButton().then({
+    private lazy var appleSignUpButton = SelectButton().then({
         $0.setTitle("apple", for: .normal)
     })
     
@@ -61,7 +61,7 @@ class OnBoardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .gray
         addViews()
         makeConstraints()
     }
