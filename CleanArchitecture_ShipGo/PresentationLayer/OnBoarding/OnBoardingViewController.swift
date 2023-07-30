@@ -15,12 +15,12 @@ class OnBoardingViewController: UIViewController {
     
     private lazy var titleLabel1 = UILabel().then({
         $0.text = "내 택배 위치를"
-        $0.font = UIFont.systemFont(ofSize: moderateScale(number: 16), weight: .medium)
+        $0.font = UIFont.setFont(size: 26, family: .Bold)
     })
     
     private lazy var titleLabel2 = UILabel().then({
         $0.text = "손쉽게 추적하기"
-        $0.font = UIFont.systemFont(ofSize: moderateScale(number: 16), weight: .medium)
+        $0.font = UIFont.setFont(size: 26, family: .Bold)
     })
     
     private lazy var titleImage = UIImageView().then({
@@ -52,6 +52,7 @@ class OnBoardingViewController: UIViewController {
     
     private lazy var loginLabel = UILabel().then({
         $0.text = "이미 계정이 있나요?"
+        $0.font = UIFont.setFont(size: 16, family: .Medium)
     })
     
     private lazy var loginButton = UIButton().then({
