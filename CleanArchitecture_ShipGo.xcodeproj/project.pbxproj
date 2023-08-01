@@ -55,6 +55,10 @@
 		D8B661212A612B7B0049B8D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B661202A612B7B0049B8D9 /* ViewController.swift */; };
 		D8B661252A614AA10049B8D9 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B661242A614AA10049B8D9 /* OnBoardingViewController.swift */; };
 		D8B661272A614AC70049B8D9 /* ViewControllerTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B661262A614AC70049B8D9 /* ViewControllerTemplate.swift */; };
+		D8CF21032A788DDD00A93912 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21022A788DDD00A93912 /* BaseViewModel.swift */; };
+		D8CF21072A788E3700A93912 /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21062A788E3700A93912 /* OnBoardingViewModel.swift */; };
+		D8CF210A2A788EC500A93912 /* AccountMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21092A788EC500A93912 /* AccountMainViewController.swift */; };
+		D8CF210C2A788EEC00A93912 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF210B2A788EEC00A93912 /* AccountViewModel.swift */; };
 		D8D483212A5F7FE300B474E4 /* ScreenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483202A5F7FE300B474E4 /* ScreenUtil.swift */; };
 		D8D483232A5F807300B474E4 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483222A5F807300B474E4 /* Errors.swift */; };
 		D8D483252A5F80B600B474E4 /* NetworkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */; };
@@ -107,6 +111,10 @@
 		D8B661202A612B7B0049B8D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D8B661242A614AA10049B8D9 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		D8B661262A614AC70049B8D9 /* ViewControllerTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTemplate.swift; sourceTree = "<group>"; };
+		D8CF21022A788DDD00A93912 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		D8CF21062A788E3700A93912 /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
+		D8CF21092A788EC500A93912 /* AccountMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountMainViewController.swift; sourceTree = "<group>"; };
+		D8CF210B2A788EEC00A93912 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		D8D483202A5F7FE300B474E4 /* ScreenUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtil.swift; sourceTree = "<group>"; };
 		D8D483222A5F807300B474E4 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWrapper.swift; sourceTree = "<group>"; };
@@ -154,6 +162,7 @@
 		D800BAB12A5CEA5F001F19A3 /* CleanArchitecture_ShipGo */ = {
 			isa = PBXGroup;
 			children = (
+				D8CF21022A788DDD00A93912 /* BaseViewModel.swift */,
 				D81082B12A6764F500FBCD9C /* Extension */,
 				D800BAB22A5CEA5F001F19A3 /* AppDelegate.swift */,
 				D800BAB42A5CEA5F001F19A3 /* SceneDelegate.swift */,
@@ -186,6 +195,7 @@
 		D85D16832A5E2A9B00D799DD /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				D8CF21082A788EAD00A93912 /* ExamplePresentation */,
 				D8B661262A614AC70049B8D9 /* ViewControllerTemplate.swift */,
 				D8B661232A614A8B0049B8D9 /* OnBoarding */,
 				ADF7A8E82A76501B0028D260 /* SignUp */,
@@ -409,9 +419,35 @@
 		D8B661232A614A8B0049B8D9 /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
-				D8B661242A614AA10049B8D9 /* OnBoardingViewController.swift */,
+				D8CF21042A788E1900A93912 /* View */,
+				D8CF21052A788E2300A93912 /* ViewModel */,
 			);
 			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		D8CF21042A788E1900A93912 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D8B661242A614AA10049B8D9 /* OnBoardingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D8CF21052A788E2300A93912 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D8CF21062A788E3700A93912 /* OnBoardingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D8CF21082A788EAD00A93912 /* ExamplePresentation */ = {
+			isa = PBXGroup;
+			children = (
+				D8CF21092A788EC500A93912 /* AccountMainViewController.swift */,
+				D8CF210B2A788EEC00A93912 /* AccountViewModel.swift */,
+			);
+			path = ExamplePresentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -531,7 +567,9 @@
 				D8B6610F2A60D7130049B8D9 /* AppContainer.swift in Sources */,
 				ADF7A8E72A764ADA0028D260 /* UIFont+Extension.swift in Sources */,
 				D81082B32A67650A00FBCD9C /* UIStackView+Extension.swift in Sources */,
+				D8CF210C2A788EEC00A93912 /* AccountViewModel.swift in Sources */,
 				D8B661272A614AC70049B8D9 /* ViewControllerTemplate.swift in Sources */,
+				D8CF21032A788DDD00A93912 /* BaseViewModel.swift in Sources */,
 				D8B661212A612B7B0049B8D9 /* ViewController.swift in Sources */,
 				D85D16B92A5E2EE700D799DD /* TempComponent.swift in Sources */,
 				D8B6611D2A612B0B0049B8D9 /* BuyViewController.swift in Sources */,
@@ -541,6 +579,8 @@
 				D8B661122A60D91B0049B8D9 /* Coordinator.swift in Sources */,
 				D8D483252A5F80B600B474E4 /* NetworkWrapper.swift in Sources */,
 				D85D16922A5E2B9500D799DD /* LoginViewModel.swift in Sources */,
+				D8CF210A2A788EC500A93912 /* AccountMainViewController.swift in Sources */,
+				D8CF21072A788E3700A93912 /* OnBoardingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
