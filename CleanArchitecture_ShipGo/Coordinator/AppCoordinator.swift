@@ -57,17 +57,9 @@ extension AppCoordinator: UINavigationControllerDelegate {
         if navigationController.viewControllers.contains(fromViewController) {
             return
         }
-        
-        
+        // MARK: - 화면 종료 언제 하는거지
         if let loginViewController = fromViewController as? LoginViewController {
             childDidFinish(loginViewController.coordinator)
         }
     }
 }
-
-
-// MARK: - 화면 순서
-/*
- 
- 
- */

@@ -11,7 +11,7 @@ import Then
 
 class SignUpViewController: UIViewController {
     
-    weak var coordinator: AppCoordinator?
+    weak var coordinator: Coordinator?
     
     private lazy var containerView = UIView()
     
