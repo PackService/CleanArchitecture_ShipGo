@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 import SnapKit
 import Then
 
@@ -13,8 +14,10 @@ class SignUpViewController: UIViewController {
     
     weak var coordinator: Coordinator?
     
-    private lazy var containerView = UIView()
+    private var cancelBag = Set<AnyCancellable>()
+    var viewModel: SignUpViewModel!
     
+    private lazy var containerView = UIView()
     private lazy var titleLabel1 = UILabel().then({
         $0.text = "계정을"
         $0.font = UIFont.setFont(size: moderateScale(number: 26), family: .Bold)
@@ -69,7 +72,7 @@ class SignUpViewController: UIViewController {
         $0.font = UIFont.setFont(size: moderateScale(number: 17), family: .Medium)
     })
     
-    private lazy var createAccountButton = UIButton().then({
+    private lazy var createAccountButton = CompleteButton().then({
         $0.setTitle("계정 만들기", for: .normal)
     })
     
@@ -79,6 +82,7 @@ class SignUpViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         addViews()
         makeConstraints()
+        bind()
     }
 
     private func addViews() {
@@ -92,7 +96,8 @@ class SignUpViewController: UIViewController {
                                    secondAgreementCheck,
                                    secondAgreementLabel,
                                    thirdAgreementCheck,
-                                   thirdAgreementLabel
+                                   thirdAgreementLabel,
+                                   createAccountButton
                                   ])
     }
     
@@ -149,5 +154,19 @@ class SignUpViewController: UIViewController {
             constraints.centerY.equalTo(thirdAgreementCheck)
             constraints.leading.equalTo(thirdAgreementCheck.snp.trailing).offset(moderateScale(number:16))
         }
+        createAccountButton.snp.makeConstraints { constraints in
+            constraints.bottom.equalTo(containerView.snp.bottom).offset(moderateScale(number: -47))
+            constraints.height.equalTo(moderateScale(number: 58))
+            constraints.leading.trailing.equalToSuperview()                                                 
+        }
+    }
+}
+
+extension SignUpViewController {
+    private func bind() {
+        viewModel.getAllAgreePublisher()
+            .sink { [weak self] state in
+                state ? (self?.createAccountButton.backgroundColor = .red) : (self?.createAccountButton.backgroundColor = .green)
+            }
     }
 }

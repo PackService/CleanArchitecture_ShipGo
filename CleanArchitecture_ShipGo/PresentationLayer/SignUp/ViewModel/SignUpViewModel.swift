@@ -14,7 +14,10 @@ class SignUpViewModel: BaseViewModel {
     
     private var cancelBag = Set<AnyCancellable>()
 //    private let usecase: SignUpUseCaseable
-    private var didTapSignUp = PassthroughSubject<Bool, Never>()
+    private var allAgree = PassthroughSubject<Bool, Never>()
+//    private var firstAgreeTap = PassthroughSubject<Bool, Never>()
+//    private var secondAgreeTap =
+
     
     override init() {
         super.init()
@@ -23,5 +26,24 @@ class SignUpViewModel: BaseViewModel {
     
     private func bind() {
         
+    }
+    
+    func getAllAgreePublisher() -> AnyPublisher<Bool, Never> {
+        return allAgree.eraseToAnyPublisher()
+    }
+}
+
+extension SignUpViewModel {
+    func sendAllAgreePublisher(state: Bool) {
+        allAgree.send(state)
+    }
+    func sendFirstAgreePublisher(state: Bool) {
+        firstAgree.send(state)
+    }
+    func sendSecondAgreePublisher(state: Bool) {
+        secondAgree.send(state)
+    }
+    func sendThirdAgreePublisher(state: Bool) {
+        thirdAgree.send(state)
     }
 }
