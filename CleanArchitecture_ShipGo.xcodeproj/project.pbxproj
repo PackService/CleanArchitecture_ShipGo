@@ -61,7 +61,9 @@
 		D8CF21182A78D33B00A93912 /* TabBarSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21172A78D33B00A93912 /* TabBarSettingCoordinator.swift */; };
 		D8CF211A2A78D36600A93912 /* TabBarHomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21192A78D36600A93912 /* TabBarHomeCoordinator.swift */; };
 		D8CF211C2A78D37500A93912 /* TabBarListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF211B2A78D37500A93912 /* TabBarListCoordinator.swift */; };
-		D8CF211E2A78D53600A93912 /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF211D2A78D53600A93912 /* homeViewController.swift */; };
+		D8CF211E2A78D53600A93912 /* HomeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF211D2A78D53600A93912 /* HomeMainViewController.swift */; };
+		D8CF21232A78DD1C00A93912 /* ListMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21222A78DD1C00A93912 /* ListMainViewController.swift */; };
+		D8CF21252A78DD3600A93912 /* SettingMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21242A78DD3600A93912 /* SettingMainViewController.swift */; };
 		D8D483212A5F7FE300B474E4 /* ScreenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483202A5F7FE300B474E4 /* ScreenUtil.swift */; };
 		D8D483232A5F807300B474E4 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483222A5F807300B474E4 /* Errors.swift */; };
 		D8D483252A5F80B600B474E4 /* NetworkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */; };
@@ -120,7 +122,9 @@
 		D8CF21172A78D33B00A93912 /* TabBarSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSettingCoordinator.swift; sourceTree = "<group>"; };
 		D8CF21192A78D36600A93912 /* TabBarHomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarHomeCoordinator.swift; sourceTree = "<group>"; };
 		D8CF211B2A78D37500A93912 /* TabBarListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarListCoordinator.swift; sourceTree = "<group>"; };
-		D8CF211D2A78D53600A93912 /* homeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
+		D8CF211D2A78D53600A93912 /* HomeMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainViewController.swift; sourceTree = "<group>"; };
+		D8CF21222A78DD1C00A93912 /* ListMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMainViewController.swift; sourceTree = "<group>"; };
+		D8CF21242A78DD3600A93912 /* SettingMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMainViewController.swift; sourceTree = "<group>"; };
 		D8D483202A5F7FE300B474E4 /* ScreenUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtil.swift; sourceTree = "<group>"; };
 		D8D483222A5F807300B474E4 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWrapper.swift; sourceTree = "<group>"; };
@@ -202,11 +206,13 @@
 			isa = PBXGroup;
 			children = (
 				D8B661262A614AC70049B8D9 /* ViewControllerTemplate.swift */,
-				D8CF21082A788EAD00A93912 /* ExamplePresentation */,
 				D8B661232A614A8B0049B8D9 /* OnBoarding */,
 				ADF7A8E82A76501B0028D260 /* SignUp */,
 				D85D168C2A5E2B5B00D799DD /* Login */,
-				D8CF211D2A78D53600A93912 /* homeViewController.swift */,
+				D8CF21082A788EAD00A93912 /* ExamplePresentation */,
+				D8CF211F2A78DCB700A93912 /* Home */,
+				D8CF21202A78DCC500A93912 /* List */,
+				D8CF21212A78DCCB00A93912 /* Setting */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -451,6 +457,30 @@
 			path = ExamplePresentation;
 			sourceTree = "<group>";
 		};
+		D8CF211F2A78DCB700A93912 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D8CF211D2A78D53600A93912 /* HomeMainViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D8CF21202A78DCC500A93912 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				D8CF21222A78DD1C00A93912 /* ListMainViewController.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		D8CF21212A78DCCB00A93912 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				D8CF21242A78DD3600A93912 /* SettingMainViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -557,14 +587,16 @@
 				D85D16AF2A5E2E2300D799DD /* RemoteDataSourceImpl.swift in Sources */,
 				D8D483212A5F7FE300B474E4 /* ScreenUtil.swift in Sources */,
 				D85D16B32A5E2E7900D799DD /* RemoteLoginItem.swift in Sources */,
+				D8CF21232A78DD1C00A93912 /* ListMainViewController.swift in Sources */,
 				D8CF21182A78D33B00A93912 /* TabBarSettingCoordinator.swift in Sources */,
 				D85D16A62A5E2D2A00D799DD /* LoginUseCaseImpl.swift in Sources */,
 				D85D169C2A5E2CC800D799DD /* LoginMapper.swift in Sources */,
-				D8CF211E2A78D53600A93912 /* homeViewController.swift in Sources */,
+				D8CF211E2A78D53600A93912 /* HomeMainViewController.swift in Sources */,
 				D85D169E2A5E2CDA00D799DD /* LoginRepositoriable.swift in Sources */,
 				D8CF21102A78B97900A93912 /* LoginCoordinator.swift in Sources */,
 				D85D169A2A5E2CB600D799DD /* Entity.swift in Sources */,
 				D81082B52A67676500FBCD9C /* UIView+Extension.swift in Sources */,
+				D8CF21252A78DD3600A93912 /* SettingMainViewController.swift in Sources */,
 				D8CF211C2A78D37500A93912 /* TabBarListCoordinator.swift in Sources */,
 				D85D16A02A5E2CEF00D799DD /* LoginRequestModel.swift in Sources */,
 				ADF7A8EC2A7652E60028D260 /* ColorManager.swift in Sources */,

@@ -18,7 +18,7 @@ class TabBarListCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = HomeViewController()
+        let vc = ListMainViewController()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

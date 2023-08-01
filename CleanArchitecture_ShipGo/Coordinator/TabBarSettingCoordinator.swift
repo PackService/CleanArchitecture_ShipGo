@@ -18,7 +18,7 @@ class TabBarSettingCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = HomeViewController()
+        let vc = SettingMainViewController()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

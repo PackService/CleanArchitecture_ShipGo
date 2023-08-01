@@ -9,9 +9,8 @@ import UIKit
 import SnapKit
 import Then
 
-class HomeViewController: UIViewController {
+class HomeMainViewController: UIViewController {
     
-    // MARK: - 이거 체크 Coordinaotr 프로토콜 채택해도 가능한건지
     weak var coordinator: Coordinator?
     
     private lazy var containerView = UIView()

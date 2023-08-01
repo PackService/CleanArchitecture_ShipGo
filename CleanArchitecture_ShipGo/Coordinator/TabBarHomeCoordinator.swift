@@ -18,7 +18,7 @@ class TabBarHomeCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = HomeViewController()
+        let vc = HomeMainViewController()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
