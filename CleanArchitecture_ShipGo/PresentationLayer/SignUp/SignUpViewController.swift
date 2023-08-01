@@ -11,6 +11,8 @@ import Then
 
 class SignUpViewController: UIViewController {
     
+    weak var coordinator: AppCoordinator?
+    
     private lazy var containerView = UIView()
     
 //    private lazy var titleLabel1 = UILabel().then({
@@ -28,6 +30,7 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        self.navigationItem.title = "signup"
         addViews()
         makeConstraints()
     }

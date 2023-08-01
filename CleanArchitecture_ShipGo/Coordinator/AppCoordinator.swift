@@ -17,21 +17,21 @@ class AppCoordinator: NSObject, Coordinator {
     }
     
     func start() {
-        let vc = ViewController()
+        let vc = OnBoardingViewController()
         vc.coordinator = self
         navigationController.delegate = self
         navigationController.pushViewController(vc, animated: false)
     }
     
-    func buySubscription() {
-        let child = BuyCoordinator(navigationController: navigationController)
+    func login() {
+        let child = LoginCoordinator(navigationController: navigationController)
         child.parentCoordinator = self
         childCoordinators.append(child)
         child.start()
     }
     
-    func createAccount() {
-        let vc = CreateAccountViewController()
+    func signUp() {
+        let vc = SignUpViewController()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
@@ -59,8 +59,8 @@ extension AppCoordinator: UINavigationControllerDelegate {
         }
         
         
-        if let buyViewController = fromViewController as? BuyViewController {
-            childDidFinish(buyViewController.coordinator)
+        if let loginViewController = fromViewController as? LoginViewController {
+            childDidFinish(loginViewController.coordinator)
         }
     }
 }

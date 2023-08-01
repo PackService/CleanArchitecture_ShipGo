@@ -11,6 +11,7 @@ import Then
 
 class OnBoardingViewController: UIViewController {
     
+    weak var coordinator: AppCoordinator?
     private lazy var containerView = UIView()
     
     private lazy var titleLabel1 = UILabel().then({
@@ -41,8 +42,10 @@ class OnBoardingViewController: UIViewController {
         $0.setTitle("kakao", for: .normal)
     })
     
+    // 회원가입 화면으로 이동
     private lazy var emailSignUpButton = UIButton().then({
         $0.setTitle("email", for: .normal)
+        $0.addTarget(self, action: #selector(emailSignUpButtonTapped(_:)), for: .touchUpInside)
     })
     
     private lazy var loginStackView = UIStackView().then({
@@ -55,8 +58,10 @@ class OnBoardingViewController: UIViewController {
         $0.font = UIFont.setFont(size: 16, family: .Medium)
     })
     
+    // 로그인 화면으로 이동
     private lazy var loginButton = UIButton().then({
         $0.setTitle("로그인", for: .normal)
+        $0.addTarget(self, action: #selector(loginButtonTapped(_:)), for: .touchUpInside)
     })
     
     override func viewDidLoad() {
@@ -108,6 +113,15 @@ class OnBoardingViewController: UIViewController {
             constraints.bottom.equalToSuperview().offset(moderateScale(number: -77))
             constraints.centerX.equalToSuperview()
         })
-        
+    }
+}
+
+extension OnBoardingViewController {
+    @objc func loginButtonTapped(_ button: UIButton) {
+        coordinator?.login()
+    }
+    
+    @objc func emailSignUpButtonTapped(_ button: UIButton) {
+        coordinator?.signUp()
     }
 }

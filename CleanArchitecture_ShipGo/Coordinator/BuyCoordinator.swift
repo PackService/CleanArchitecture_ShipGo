@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BuyCoordinator: Coordinator {
+class LoginCoordinator: Coordinator {
     
     var childCoordinators = [Coordinator]()
     weak var parentCoordinator: AppCoordinator?
@@ -18,7 +18,7 @@ class BuyCoordinator: Coordinator {
     }
 
     func start() {
-        let vc = BuyViewController()
+        let vc = LoginViewController()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

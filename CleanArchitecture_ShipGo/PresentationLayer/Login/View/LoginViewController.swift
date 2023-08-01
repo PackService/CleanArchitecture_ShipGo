@@ -2,17 +2,19 @@
 //  LoginViewController.swift
 //  CleanArchitecture_ShipGo
 //
-//  Created by 이범준 on 2023/07/12.
+//  Created by 이범준 on 2023/08/01.
 //
 
 import UIKit
-import SnapKit
-import Then
-
-protocol LoginViewControllerDelegate {
-    func login()
-}
 
 class LoginViewController: UIViewController {
 
+    weak var coordinator: LoginCoordinator?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .blue
+        self.navigationItem.title = "login"
+    }
+    
 }

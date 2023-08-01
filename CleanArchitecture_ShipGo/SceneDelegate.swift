@@ -10,29 +10,29 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-//    var coordinator: AppCoordinator?
+    var coordinator: AppCoordinator?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-//        guard let windowScene = (scene as? UIWindowScene) else { return }
-//
-//        let appWindow = UIWindow(frame: windowScene.coordinateSpace.bounds)
-//        appWindow.windowScene = windowScene
-//
-//        let navigationController = UINavigationController()
-//        coordinator = AppCoordinator(navigationController: navigationController)
-//        coordinator?.start()
-//
-//        appWindow.rootViewController = navigationController
-//        appWindow.makeKeyAndVisible()
-//
-//        window = appWindow
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+
+        let appWindow = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        appWindow.windowScene = windowScene
+
+        let navigationController = UINavigationController()
+        coordinator = AppCoordinator(navigationController: navigationController)
+        coordinator?.start()
+
+        appWindow.rootViewController = navigationController
+        appWindow.makeKeyAndVisible()
+
+        window = appWindow
         
         // MARK: -화면 확인용
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.windowScene = windowScene
-        window?.rootViewController = OnBoardingViewController()
-        window?.makeKeyAndVisible()
+//        guard let windowScene = (scene as? UIWindowScene) else { return }
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.windowScene = windowScene
+//        window?.rootViewController = OnBoardingViewController()
+//        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
