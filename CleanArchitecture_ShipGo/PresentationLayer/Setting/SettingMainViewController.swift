@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class settingMainViewController: UIViewController {
+class SettingMainViewController: UIViewController {
 
     weak var coordinator: Coordinator?
     

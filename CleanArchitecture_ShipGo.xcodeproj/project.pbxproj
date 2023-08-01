@@ -31,7 +31,7 @@
 		D85D16B32A5E2E7900D799DD /* RemoteLoginItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D16B22A5E2E7900D799DD /* RemoteLoginItem.swift */; };
 		D85D16B52A5E2E9300D799DD /* RemoteLoginMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D16B42A5E2E9300D799DD /* RemoteLoginMapper.swift */; };
 		D85D16B72A5E2EAE00D799DD /* LoginRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D16B62A5E2EAE00D799DD /* LoginRepositoryImpl.swift */; };
-		D85D16B92A5E2EE700D799DD /* TempComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D16B82A5E2EE700D799DD /* TempComponent.swift */; };
+		D85D16B92A5E2EE700D799DD /* CompleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D16B82A5E2EE700D799DD /* CompleteButton.swift */; };
 		D85D16C22A5E302400D799DD /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D85D16C12A5E302400D799DD /* SnapKit-Dynamic */; };
 		D85D16C52A5E304A00D799DD /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D85D16C42A5E304A00D799DD /* Then */; };
 		D85D16C82A5E306000D799DD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D85D16C72A5E306000D799DD /* Alamofire */; };
@@ -64,6 +64,7 @@
 		D8CF211E2A78D53600A93912 /* HomeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF211D2A78D53600A93912 /* HomeMainViewController.swift */; };
 		D8CF21232A78DD1C00A93912 /* ListMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21222A78DD1C00A93912 /* ListMainViewController.swift */; };
 		D8CF21252A78DD3600A93912 /* SettingMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21242A78DD3600A93912 /* SettingMainViewController.swift */; };
+		D8CF21292A78E63A00A93912 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21282A78E63A00A93912 /* SignUpViewModel.swift */; };
 		D8D483212A5F7FE300B474E4 /* ScreenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483202A5F7FE300B474E4 /* ScreenUtil.swift */; };
 		D8D483232A5F807300B474E4 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483222A5F807300B474E4 /* Errors.swift */; };
 		D8D483252A5F80B600B474E4 /* NetworkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */; };
@@ -96,7 +97,7 @@
 		D85D16B22A5E2E7900D799DD /* RemoteLoginItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoginItem.swift; sourceTree = "<group>"; };
 		D85D16B42A5E2E9300D799DD /* RemoteLoginMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoginMapper.swift; sourceTree = "<group>"; };
 		D85D16B62A5E2EAE00D799DD /* LoginRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryImpl.swift; sourceTree = "<group>"; };
-		D85D16B82A5E2EE700D799DD /* TempComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempComponent.swift; sourceTree = "<group>"; };
+		D85D16B82A5E2EE700D799DD /* CompleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteButton.swift; sourceTree = "<group>"; };
 		D8B660FC2A60D3A80049B8D9 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		D8B660FD2A60D3A80049B8D9 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		D8B660FE2A60D3A80049B8D9 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 		D8CF211D2A78D53600A93912 /* HomeMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainViewController.swift; sourceTree = "<group>"; };
 		D8CF21222A78DD1C00A93912 /* ListMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMainViewController.swift; sourceTree = "<group>"; };
 		D8CF21242A78DD3600A93912 /* SettingMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMainViewController.swift; sourceTree = "<group>"; };
+		D8CF21282A78E63A00A93912 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		D8D483202A5F7FE300B474E4 /* ScreenUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtil.swift; sourceTree = "<group>"; };
 		D8D483222A5F807300B474E4 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWrapper.swift; sourceTree = "<group>"; };
@@ -148,7 +150,8 @@
 		ADF7A8E82A76501B0028D260 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				ADF7A8E92A7650410028D260 /* SignUpViewController.swift */,
+				D8CF21262A78E61500A93912 /* View */,
+				D8CF21272A78E62000A93912 /* ViewModel */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -172,7 +175,6 @@
 		D800BAB12A5CEA5F001F19A3 /* CleanArchitecture_ShipGo */ = {
 			isa = PBXGroup;
 			children = (
-				D8CF21022A788DDD00A93912 /* BaseViewModel.swift */,
 				D81082B12A6764F500FBCD9C /* Extension */,
 				D800BAB22A5CEA5F001F19A3 /* AppDelegate.swift */,
 				D800BAB42A5CEA5F001F19A3 /* SceneDelegate.swift */,
@@ -205,6 +207,7 @@
 		D85D16832A5E2A9B00D799DD /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				D8CF21022A788DDD00A93912 /* BaseViewModel.swift */,
 				D8B661262A614AC70049B8D9 /* ViewControllerTemplate.swift */,
 				D8B661232A614A8B0049B8D9 /* OnBoarding */,
 				ADF7A8E82A76501B0028D260 /* SignUp */,
@@ -278,7 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				ADF7A8ED2A76544D0028D260 /* SelectButton.swift */,
-				D85D16B82A5E2EE700D799DD /* TempComponent.swift */,
+				D85D16B82A5E2EE700D799DD /* CompleteButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -481,6 +484,22 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		D8CF21262A78E61500A93912 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ADF7A8E92A7650410028D260 /* SignUpViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D8CF21272A78E62000A93912 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D8CF21282A78E63A00A93912 /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -607,7 +626,8 @@
 				D8B661272A614AC70049B8D9 /* ViewControllerTemplate.swift in Sources */,
 				D8CF21032A788DDD00A93912 /* BaseViewModel.swift in Sources */,
 				D8CF210E2A78B93400A93912 /* LoginViewController.swift in Sources */,
-				D85D16B92A5E2EE700D799DD /* TempComponent.swift in Sources */,
+				D85D16B92A5E2EE700D799DD /* CompleteButton.swift in Sources */,
+				D8CF21292A78E63A00A93912 /* SignUpViewModel.swift in Sources */,
 				D85D16B52A5E2E9300D799DD /* RemoteLoginMapper.swift in Sources */,
 				D800BAB32A5CEA5F001F19A3 /* AppDelegate.swift in Sources */,
 				D800BAB52A5CEA5F001F19A3 /* SceneDelegate.swift in Sources */,
