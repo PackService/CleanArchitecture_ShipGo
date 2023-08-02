@@ -65,6 +65,10 @@
 		D8CF21232A78DD1C00A93912 /* ListMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21222A78DD1C00A93912 /* ListMainViewController.swift */; };
 		D8CF21252A78DD3600A93912 /* SettingMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21242A78DD3600A93912 /* SettingMainViewController.swift */; };
 		D8CF21292A78E63A00A93912 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21282A78E63A00A93912 /* SignUpViewModel.swift */; };
+		D8D31E552A7A34AD0095D4F0 /* RemoteCompanyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D31E542A7A34AD0095D4F0 /* RemoteCompanyItem.swift */; };
+		D8D31E572A7A34D70095D4F0 /* RemoteRecommendModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D31E562A7A34D70095D4F0 /* RemoteRecommendModelItem.swift */; };
+		D8D31E592A7A35C70095D4F0 /* RemoteShowModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D31E582A7A35C70095D4F0 /* RemoteShowModelItem.swift */; };
+		D8D31E5B2A7A35EE0095D4F0 /* RemoteTrackingInfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D31E5A2A7A35EE0095D4F0 /* RemoteTrackingInfoItem.swift */; };
 		D8D483212A5F7FE300B474E4 /* ScreenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483202A5F7FE300B474E4 /* ScreenUtil.swift */; };
 		D8D483232A5F807300B474E4 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483222A5F807300B474E4 /* Errors.swift */; };
 		D8D483252A5F80B600B474E4 /* NetworkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */; };
@@ -127,6 +131,10 @@
 		D8CF21222A78DD1C00A93912 /* ListMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMainViewController.swift; sourceTree = "<group>"; };
 		D8CF21242A78DD3600A93912 /* SettingMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMainViewController.swift; sourceTree = "<group>"; };
 		D8CF21282A78E63A00A93912 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		D8D31E542A7A34AD0095D4F0 /* RemoteCompanyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCompanyItem.swift; sourceTree = "<group>"; };
+		D8D31E562A7A34D70095D4F0 /* RemoteRecommendModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteRecommendModelItem.swift; sourceTree = "<group>"; };
+		D8D31E582A7A35C70095D4F0 /* RemoteShowModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteShowModelItem.swift; sourceTree = "<group>"; };
+		D8D31E5A2A7A35EE0095D4F0 /* RemoteTrackingInfoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTrackingInfoItem.swift; sourceTree = "<group>"; };
 		D8D483202A5F7FE300B474E4 /* ScreenUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtil.swift; sourceTree = "<group>"; };
 		D8D483222A5F807300B474E4 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWrapper.swift; sourceTree = "<group>"; };
@@ -399,6 +407,10 @@
 			isa = PBXGroup;
 			children = (
 				D85D16B22A5E2E7900D799DD /* RemoteLoginItem.swift */,
+				D8D31E542A7A34AD0095D4F0 /* RemoteCompanyItem.swift */,
+				D8D31E562A7A34D70095D4F0 /* RemoteRecommendModelItem.swift */,
+				D8D31E582A7A35C70095D4F0 /* RemoteShowModelItem.swift */,
+				D8D31E5A2A7A35EE0095D4F0 /* RemoteTrackingInfoItem.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -599,9 +611,12 @@
 				D8D483232A5F807300B474E4 /* Errors.swift in Sources */,
 				D85D16A82A5E2D3D00D799DD /* LoginUseCaseable.swift in Sources */,
 				D8CF211A2A78D36600A93912 /* TabBarHomeCoordinator.swift in Sources */,
+				D8D31E552A7A34AD0095D4F0 /* RemoteCompanyItem.swift in Sources */,
 				ADF7A8EA2A7650410028D260 /* SignUpViewController.swift in Sources */,
+				D8D31E592A7A35C70095D4F0 /* RemoteShowModelItem.swift in Sources */,
 				D85D16B72A5E2EAE00D799DD /* LoginRepositoryImpl.swift in Sources */,
 				D8B661252A614AA10049B8D9 /* OnBoardingViewController.swift in Sources */,
+				D8D31E572A7A34D70095D4F0 /* RemoteRecommendModelItem.swift in Sources */,
 				D800BABD2A5CEA5F001F19A3 /* CleanArchitecture_ShipGo.xcdatamodeld in Sources */,
 				D85D16AF2A5E2E2300D799DD /* RemoteDataSourceImpl.swift in Sources */,
 				D8D483212A5F7FE300B474E4 /* ScreenUtil.swift in Sources */,
@@ -635,6 +650,7 @@
 				D8CF21162A78CF5800A93912 /* MainTabBarCoordinator.swift in Sources */,
 				D8D483252A5F80B600B474E4 /* NetworkWrapper.swift in Sources */,
 				D85D16922A5E2B9500D799DD /* LoginViewModel.swift in Sources */,
+				D8D31E5B2A7A35EE0095D4F0 /* RemoteTrackingInfoItem.swift in Sources */,
 				D8CF210A2A788EC500A93912 /* AccountMainViewController.swift in Sources */,
 				D8CF21072A788E3700A93912 /* OnBoardingViewModel.swift in Sources */,
 			);
