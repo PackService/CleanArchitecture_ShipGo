@@ -58,7 +58,6 @@ class OnBoardingViewController: UIViewController {
         $0.font = UIFont.setFont(size: 16, family: .Medium)
     })
     
-    // 로그인 화면으로 이동
     private lazy var loginButton = UIButton().then({
         $0.setTitle("로그인", for: .normal)
         $0.addTarget(self, action: #selector(loginButtonTapped(_:)), for: .touchUpInside)

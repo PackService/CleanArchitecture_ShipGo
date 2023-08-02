@@ -72,7 +72,9 @@ final class SignUpViewController: UIViewController {
     
     private lazy var step2SignUpView = UIView()
     
-    private lazy var emailTextField = UITextField()
+    private lazy var emailTextField = InputTextField().then({
+        $0.placeholder = "이메일을 입력하세요"
+    })
     private lazy var passwordTextField = UITextField()
     private lazy var passwordCheckTextField = UITextField()
     
@@ -87,18 +89,6 @@ final class SignUpViewController: UIViewController {
 
     private func addViews() {
         view.addSubview(containerView)
-//        containerView.addSubViews([titleLabel1,
-//                                   titleLabel2,
-//                                   allAgreementCheck,
-//                                   allAgreementLabel,
-//                                   firstAgreementCheck,
-//                                   firstAgreementLabel,
-//                                   secondAgreementCheck,
-//                                   secondAgreementLabel,
-//                                   thirdAgreementCheck,
-//                                   thirdAgreementLabel,
-//                                   createAccountButton
-//                                  ])
         containerView.addSubViews([titleLabel1,
                                    titleLabel2,
                                    allAgreementCheck,

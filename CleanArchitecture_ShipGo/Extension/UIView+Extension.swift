@@ -8,11 +8,13 @@
 import UIKit
 
 extension UIView {
+    
     func addSubViews(_ views: [UIView]) {
         for view in views {
             addSubview(view)
         }
     }
+    
     func shake(count : Float = 4,for duration : TimeInterval = 0.5,withTranslation translation : Float = 5) {
         
         let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
