@@ -41,6 +41,8 @@ final class SignUpViewController: UIViewController {
         $0.addTarget(self, action: #selector(firstAgreeButtonTapped(_:)), for: .touchUpInside)
     })
     
+    private lazy var step1SignUpView = UIView()
+    
     private lazy var firstAgreementLabel = UILabel().then({
         $0.text = "만 14세 이상입니다"
         $0.font = UIFont.setFont(size: moderateScale(number: 17), family: .Medium)
@@ -68,6 +70,12 @@ final class SignUpViewController: UIViewController {
         $0.setTitle("계정 만들기", for: .normal)
     })
     
+    private lazy var step2SignUpView = UIView()
+    
+    private lazy var emailTextField = UITextField()
+    private lazy var passwordTextField = UITextField()
+    private lazy var passwordCheckTextField = UITextField()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -79,18 +87,35 @@ final class SignUpViewController: UIViewController {
 
     private func addViews() {
         view.addSubview(containerView)
+//        containerView.addSubViews([titleLabel1,
+//                                   titleLabel2,
+//                                   allAgreementCheck,
+//                                   allAgreementLabel,
+//                                   firstAgreementCheck,
+//                                   firstAgreementLabel,
+//                                   secondAgreementCheck,
+//                                   secondAgreementLabel,
+//                                   thirdAgreementCheck,
+//                                   thirdAgreementLabel,
+//                                   createAccountButton
+//                                  ])
         containerView.addSubViews([titleLabel1,
                                    titleLabel2,
                                    allAgreementCheck,
                                    allAgreementLabel,
-                                   firstAgreementCheck,
-                                   firstAgreementLabel,
-                                   secondAgreementCheck,
-                                   secondAgreementLabel,
-                                   thirdAgreementCheck,
-                                   thirdAgreementLabel,
-                                   createAccountButton
-                                  ])
+                                   step1SignUpView,
+                                   step2SignUpView,
+                                   createAccountButton])
+        step1SignUpView.addSubViews([firstAgreementCheck,
+                                     firstAgreementLabel,
+                                     secondAgreementCheck,
+                                     secondAgreementLabel,
+                                     thirdAgreementCheck,
+                                     thirdAgreementLabel])
+        step2SignUpView.addSubViews([emailTextField,
+                                    passwordTextField,
+                                    passwordCheckTextField])
+        
     }
     
     private func makeConstraints() {
@@ -115,10 +140,15 @@ final class SignUpViewController: UIViewController {
             constraints.centerY.equalTo(allAgreementCheck)
             constraints.leading.equalTo(allAgreementCheck.snp.trailing).offset(moderateScale(number:16))
         }
+        step1SignUpView.snp.makeConstraints { constraints in
+            constraints.top.equalTo(allAgreementCheck.snp.bottom).offset(verticalScale(number: 16))
+            constraints.bottom.equalTo(createAccountButton.snp.top)
+            constraints.leading.trailing.equalToSuperview()
+        }
         firstAgreementCheck.snp.makeConstraints { constraints in
             constraints.height.equalTo(moderateScale(number: 24))
             constraints.width.equalTo(moderateScale(number: 24))
-            constraints.top.equalTo(allAgreementCheck.snp.bottom).offset(verticalScale(number: 16))
+            constraints.top.equalToSuperview()
             constraints.leading.equalToSuperview()
         }
         firstAgreementLabel.snp.makeConstraints { constraints in
@@ -146,6 +176,15 @@ final class SignUpViewController: UIViewController {
             constraints.centerY.equalTo(thirdAgreementCheck)
             constraints.leading.equalTo(thirdAgreementCheck.snp.trailing).offset(moderateScale(number:16))
         }
+        step2SignUpView.snp.makeConstraints { constraints in
+            constraints.top.equalTo(allAgreementCheck.snp.bottom).offset(verticalScale(number: 25))
+            constraints.bottom.equalTo(createAccountButton.snp.top)
+            constraints.leading.trailing.equalToSuperview()
+        }
+        emailTextField.snp.makeConstraints{ constraints in
+            constraints.top.leading.trailing.equalToSuperview()
+            constraints.height.equalTo(moderateScale(number: 62))
+        }
         createAccountButton.snp.makeConstraints { constraints in
             constraints.bottom.equalTo(containerView.snp.bottom).offset(moderateScale(number: -47))
             constraints.height.equalTo(moderateScale(number: 58))
@@ -157,6 +196,8 @@ final class SignUpViewController: UIViewController {
         viewModel.allAgreePublisher()
             .sink { [weak self] state in
                 self?.allAgreementCheck.isSelected = state
+                self?.step1SignUpView.isHidden = state
+                self?.step2SignUpView.isHidden = !state
             }
             .store(in: &cancelBag)
     }
@@ -172,6 +213,7 @@ extension SignUpViewController {
     }
     @objc private func firstAgreeButtonTapped(_ button: UIButton) {
         button.isSelected.toggle()
+        self.secondAgreementCheck.shake(count: 4, for: 1.5, withTranslation: 10)
         self.viewModel.sendAgreePublisher(agreementButtonType: .firstAgree, buttonState: button.isSelected)
     }
     @objc private func secondAgreeButtonTapped(_ button: UIButton) {
@@ -187,3 +229,4 @@ extension SignUpViewController {
 
 
 
+// 높이 62짜리 텍스트필드 커스텀하게 만드는게 좋지 않으까라는 생각

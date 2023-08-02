@@ -69,6 +69,7 @@
 		D8D31E572A7A34D70095D4F0 /* RemoteRecommendModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D31E562A7A34D70095D4F0 /* RemoteRecommendModelItem.swift */; };
 		D8D31E592A7A35C70095D4F0 /* RemoteShowModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D31E582A7A35C70095D4F0 /* RemoteShowModelItem.swift */; };
 		D8D31E5B2A7A35EE0095D4F0 /* RemoteTrackingInfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D31E5A2A7A35EE0095D4F0 /* RemoteTrackingInfoItem.swift */; };
+		D8D31E5F2A7A483E0095D4F0 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D31E5E2A7A483E0095D4F0 /* InputTextField.swift */; };
 		D8D483212A5F7FE300B474E4 /* ScreenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483202A5F7FE300B474E4 /* ScreenUtil.swift */; };
 		D8D483232A5F807300B474E4 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483222A5F807300B474E4 /* Errors.swift */; };
 		D8D483252A5F80B600B474E4 /* NetworkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */; };
@@ -135,6 +136,7 @@
 		D8D31E562A7A34D70095D4F0 /* RemoteRecommendModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteRecommendModelItem.swift; sourceTree = "<group>"; };
 		D8D31E582A7A35C70095D4F0 /* RemoteShowModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteShowModelItem.swift; sourceTree = "<group>"; };
 		D8D31E5A2A7A35EE0095D4F0 /* RemoteTrackingInfoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTrackingInfoItem.swift; sourceTree = "<group>"; };
+		D8D31E5E2A7A483E0095D4F0 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		D8D483202A5F7FE300B474E4 /* ScreenUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtil.swift; sourceTree = "<group>"; };
 		D8D483222A5F807300B474E4 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWrapper.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 			children = (
 				ADF7A8ED2A76544D0028D260 /* SelectButton.swift */,
 				D85D16B82A5E2EE700D799DD /* CompleteButton.swift */,
+				D8D31E5E2A7A483E0095D4F0 /* InputTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				D8CF211E2A78D53600A93912 /* HomeMainViewController.swift in Sources */,
 				D85D169E2A5E2CDA00D799DD /* LoginRepositoriable.swift in Sources */,
 				D8CF21102A78B97900A93912 /* LoginCoordinator.swift in Sources */,
+				D8D31E5F2A7A483E0095D4F0 /* InputTextField.swift in Sources */,
 				D85D169A2A5E2CB600D799DD /* Entity.swift in Sources */,
 				D81082B52A67676500FBCD9C /* UIView+Extension.swift in Sources */,
 				D8CF21252A78DD3600A93912 /* SettingMainViewController.swift in Sources */,
