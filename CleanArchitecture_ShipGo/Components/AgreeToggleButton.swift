@@ -6,18 +6,3 @@
 //
 
 import UIKit
-
-//class AgreeToggleButton: UIImageView {
-//    
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        
-//        self.backgroundColor = ColorManager.primaryColor
-//        self.layer.cornerRadius = 30
-//        self.image?.renderingMode(.alwaysTemplate)
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//}

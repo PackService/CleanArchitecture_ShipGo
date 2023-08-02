@@ -65,7 +65,6 @@
 		D8CF21232A78DD1C00A93912 /* ListMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21222A78DD1C00A93912 /* ListMainViewController.swift */; };
 		D8CF21252A78DD3600A93912 /* SettingMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21242A78DD3600A93912 /* SettingMainViewController.swift */; };
 		D8CF21292A78E63A00A93912 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21282A78E63A00A93912 /* SignUpViewModel.swift */; };
-		D8D31E532A7A0B010095D4F0 /* AgreeToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D31E522A7A0B010095D4F0 /* AgreeToggleButton.swift */; };
 		D8D483212A5F7FE300B474E4 /* ScreenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483202A5F7FE300B474E4 /* ScreenUtil.swift */; };
 		D8D483232A5F807300B474E4 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483222A5F807300B474E4 /* Errors.swift */; };
 		D8D483252A5F80B600B474E4 /* NetworkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */; };
@@ -128,7 +127,6 @@
 		D8CF21222A78DD1C00A93912 /* ListMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMainViewController.swift; sourceTree = "<group>"; };
 		D8CF21242A78DD3600A93912 /* SettingMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMainViewController.swift; sourceTree = "<group>"; };
 		D8CF21282A78E63A00A93912 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
-		D8D31E522A7A0B010095D4F0 /* AgreeToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeToggleButton.swift; sourceTree = "<group>"; };
 		D8D483202A5F7FE300B474E4 /* ScreenUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtil.swift; sourceTree = "<group>"; };
 		D8D483222A5F807300B474E4 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWrapper.swift; sourceTree = "<group>"; };
@@ -284,7 +282,6 @@
 			children = (
 				ADF7A8ED2A76544D0028D260 /* SelectButton.swift */,
 				D85D16B82A5E2EE700D799DD /* CompleteButton.swift */,
-				D8D31E522A7A0B010095D4F0 /* AgreeToggleButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -596,7 +593,6 @@
 			files = (
 				D8CF21142A78CD7A00A93912 /* TabBarItemType.swift in Sources */,
 				D85D16B12A5E2E3600D799DD /* RemoteDataSourceable.swift in Sources */,
-				D8D31E532A7A0B010095D4F0 /* AgreeToggleButton.swift in Sources */,
 				D85D16A22A5E2CFC00D799DD /* LoginResponseModel.swift in Sources */,
 				D8B661142A60F72E0049B8D9 /* AppCoordinator.swift in Sources */,
 				ADF7A8EE2A76544D0028D260 /* SelectButton.swift in Sources */,

@@ -28,11 +28,8 @@ final class SignUpViewController: UIViewController {
         $0.font = UIFont.setFont(size: moderateScale(number: 26), family: .Bold)
     })
     
-    private lazy var allAgreementCheck = UIImageView().then({
-        $0.image = UIImage(systemName: "circle.fill")?.withRenderingMode(.alwaysTemplate)
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(allAgreeButtonTapped(_:))) // UIImageView 클릭 제스쳐
-        $0.addGestureRecognizer(tapGesture)
-        $0.isUserInteractionEnabled = true
+    private lazy var allAgreementCheck = SelectButton().then({
+        $0.addTarget(self, action: #selector(allAgreeButtonTapped(_:)), for: .touchUpInside)
     })
     
     private lazy var allAgreementLabel = UILabel().then({
@@ -40,11 +37,8 @@ final class SignUpViewController: UIViewController {
         $0.font = UIFont.setFont(size: moderateScale(number: 20), family: .SemiBold)
     })
     
-    private lazy var firstAgreementCheck = UIImageView().then({
-        $0.image = UIImage(systemName: "circle.fill")?.withRenderingMode(.alwaysTemplate)
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(firstAgreeButtonTapped(_:))) // UIImageView 클릭 제스쳐
-        $0.addGestureRecognizer(tapGesture)
-        $0.isUserInteractionEnabled = true
+    private lazy var firstAgreementCheck = SelectButton().then({
+        $0.addTarget(self, action: #selector(firstAgreeButtonTapped(_:)), for: .touchUpInside)
     })
     
     private lazy var firstAgreementLabel = UILabel().then({
@@ -52,11 +46,8 @@ final class SignUpViewController: UIViewController {
         $0.font = UIFont.setFont(size: moderateScale(number: 17), family: .Medium)
     })
 
-    private lazy var secondAgreementCheck = UIImageView().then({
-        $0.image = UIImage(systemName: "circle.fill")
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(secondAgreeButtonTapped(_:))) // UIImageView 클릭 제스쳐
-        $0.addGestureRecognizer(tapGesture)
-        $0.isUserInteractionEnabled = true
+    private lazy var secondAgreementCheck = SelectButton().then({
+        $0.addTarget(self, action: #selector(secondAgreeButtonTapped(_:)), for: .touchUpInside)
     })
     
     private lazy var secondAgreementLabel = UILabel().then({
@@ -64,11 +55,8 @@ final class SignUpViewController: UIViewController {
         $0.font = UIFont.setFont(size: moderateScale(number: 17), family: .Medium)
     })
     
-    private lazy var thirdAgreementCheck = UIImageView().then({
-        $0.image = UIImage(systemName: "circle.fill")
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(thirdAgreeButtonTapped(_:))) // UIImageView 클릭 제스쳐
-        $0.addGestureRecognizer(tapGesture)
-        $0.isUserInteractionEnabled = true
+    private lazy var thirdAgreementCheck = SelectButton().then({
+        $0.addTarget(self, action: #selector(thirdAgreeButtonTapped(_:)), for: .touchUpInside)
     })
     
     private lazy var thirdAgreementLabel = UILabel().then({
@@ -161,61 +149,41 @@ final class SignUpViewController: UIViewController {
         createAccountButton.snp.makeConstraints { constraints in
             constraints.bottom.equalTo(containerView.snp.bottom).offset(moderateScale(number: -47))
             constraints.height.equalTo(moderateScale(number: 58))
-            constraints.leading.trailing.equalToSuperview()                                                 
+            constraints.leading.trailing.equalToSuperview()
         }
     }
     
     private func bind() {
-//        viewModel.getAllAgreePublisher()
-//            .sink { [weak self] state in
-//                state ? (self?.createAccountButton.backgroundColor = .red) : (self?.createAccountButton.backgroundColor = .green)
-//            }
-//
-        viewModel.firstAgreePublisher()
+        viewModel.allAgreePublisher()
             .sink { [weak self] state in
-                self?.setAgreeButtonColor(self!.firstAgreementCheck, state)
-            }
-            .store(in: &cancelBag)
-        
-        viewModel.secondAgreePublisher()
-            .sink { [weak self] state in
-                self?.setAgreeButtonColor(self!.secondAgreementCheck, state)
+                self?.allAgreementCheck.isSelected = state
             }
             .store(in: &cancelBag)
     }
 }
 
 extension SignUpViewController {
-    @objc private func allAgreeButtonTapped(_ gesture: UITapGestureRecognizer) {
-        print("모든 동의 버튼 클릭!")
-        self.viewModel.sendAgreePublisher(agreementButtonType: .allAgree)
+    @objc private func allAgreeButtonTapped(_ button: UIButton) {
+        button.isSelected.toggle()
+        self.firstAgreementCheck.isSelected = button.isSelected
+        self.secondAgreementCheck.isSelected = button.isSelected
+        self.thirdAgreementCheck.isSelected = button.isSelected
+        self.viewModel.sendAgreePublisher(agreementButtonType: .allAgree, buttonState: button.isSelected)
     }
-    @objc private func firstAgreeButtonTapped(_ gesture: UITapGestureRecognizer) {
-        print("첫번째 동의 버튼 클릭!")
-        self.viewModel.sendAgreePublisher(agreementButtonType: .firstAgree)
+    @objc private func firstAgreeButtonTapped(_ button: UIButton) {
+        button.isSelected.toggle()
+        self.viewModel.sendAgreePublisher(agreementButtonType: .firstAgree, buttonState: button.isSelected)
     }
-    @objc private func secondAgreeButtonTapped(_ gesture: UITapGestureRecognizer) {
-        print("두번째 동의 버튼 클릭!")
-        self.viewModel.sendAgreePublisher(agreementButtonType: .secondAgree)
+    @objc private func secondAgreeButtonTapped(_ button: UIButton) {
+        button.isSelected.toggle()
+        self.viewModel.sendAgreePublisher(agreementButtonType: .secondAgree, buttonState: button.isSelected)
     }
-    @objc private func thirdAgreeButtonTapped(_ gesture: UITapGestureRecognizer) {
-        print("세번째 동의 버튼 클릭!")
-        self.viewModel.sendAgreePublisher(agreementButtonType: .thirdAgree)
+    @objc private func thirdAgreeButtonTapped(_ button: UIButton) {
+        button.isSelected.toggle()
+        self.viewModel.sendAgreePublisher(agreementButtonType: .thirdAgree, buttonState: button.isSelected)
     }
-    
-    private func setAgreeButtonColor(_ agreeButton: UIImageView, _ state: Bool) {
-        if state {
-            agreeButton.image = UIImage(systemName: "checkmark.circle.fill")
-            agreeButton.tintColor = ColorManager.secondaryColor
-        } else {
-            agreeButton.image = UIImage(systemName: "checkmark.circle.fill")
-            agreeButton.tintColor = ColorManager.primaryColor
-        }
-    }
+
 }
 
-class agreeImageButton: UIImageView {
-    
-}
 
 

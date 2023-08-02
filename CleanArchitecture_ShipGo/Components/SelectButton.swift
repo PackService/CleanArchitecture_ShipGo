@@ -15,6 +15,8 @@ final class SelectButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+        tintColor = ColorManager.secondaryColor
     }
     
     required init?(coder: NSCoder) {
@@ -22,11 +24,10 @@ final class SelectButton: UIButton {
     }
     
     private func changeSelectButton() {
-        tintColor = UIColor(red: 27/255, green: 31/255, blue: 47/255, alpha: 1)
+        tintColor = ColorManager.primaryColor
     }
     
     private func changeUnselectButton() {
-        setImage(UIImage(systemName: "arrowtriangle.down.fill"), for: .normal)
-        tintColor = UIColor(red: 150/255, green: 156/255, blue: 184/255, alpha: 1)
+        tintColor = ColorManager.secondaryColor
     }
 }
