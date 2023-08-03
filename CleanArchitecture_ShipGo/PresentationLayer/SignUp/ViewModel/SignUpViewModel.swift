@@ -22,7 +22,8 @@ class SignUpViewModel: BaseViewModel {
     private var firstAgree = CurrentValueSubject<Bool, Never>(false)
     private var secondAgree = CurrentValueSubject<Bool, Never>(false)
     private var thirdAgree = CurrentValueSubject<Bool, Never>(false)
-    private var signUpButtonTapped = CurrentValueSubject<Bool, Never>(false)
+    private var signUpValidation = PassthroughSubject<UserError, Never>()
+//    private var signUpButtonTapped = CurrentValueSubject<Bool, Never>(false)
 
     override init() {
         super.init()
@@ -46,8 +47,8 @@ class SignUpViewModel: BaseViewModel {
         return allAgree.eraseToAnyPublisher()
     }
     
-    func signUpPublisher() -> AnyPublisher<Bool, Never> {
-        return signUpButtonTapped.eraseToAnyPublisher()
+    func signUpPublisher() -> AnyPublisher<UserError, Never> {
+        return signUpValidation.eraseToAnyPublisher()
     }
 }
 
@@ -66,35 +67,17 @@ extension SignUpViewModel {
         }
     }
     
-    func sendUserInfoPublisher(email: String, password: String, passwordCheck: String) -> Bool {
-        
-        return false
+    func sendUserInfoPublisher(email: String, password: String, passwordCheck: String) {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+        let passwordRegex = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,50}"
+        if !NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email) {
+            signUpValidation.send(.emailRegexError)
+        } else if !NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password) {
+            signUpValidation.send(.passwordRegexError)
+        } else if password != passwordCheck {
+            signUpValidation.send(.notEqualPassword)
+        } else {
+            signUpValidation.send(.success)
+        }
     }
-    
-//    // 이메일 정규성 체크
-//    func validateEmail(_ input: String) -> Validation<String, String> {
-//        let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-//        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", regex)
-//        let isValid = emailPredicate.evaluate(with: input)
-//
-//        if isValid {
-//            return .valid(input)
-//        } else {
-//            return .invalid("invalid email")
-//        }
-//    }
-//
-//    // 패스워드 정규성 체크
-//    func validatePassword(_ input: String) -> Validation<String, String> {
-//        let regex = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,50}" // 8자리 ~ 50자리 영어+숫자+특수문자
-//
-//        let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
-//        let isValid = predicate.evaluate(with: input)
-//
-//        if isValid {
-//            return .valid(input)
-//        } else {
-//            return .invalid("invalid password")
-//        }
-//    }
 }

@@ -39,15 +39,21 @@ class InputTextField: UITextField {
         self.rightView = rightPaddingView
         self.backgroundColor = ColorManager.defaultForegroundDisabled
         self.layer.cornerRadius = 10
+        autocapitalizationType = .none
     }
     
     public func setupValidStatus() {
         textColor = .black
+        layer.borderColor = ColorManager.primaryColor?.cgColor
         currentInputStatus = .valid
     }
     
-    public func setupInvalidStatus() {
-        textColor = .red
+    public func setupInvalidStatus(error: String) {
+        shake()
+        text = ""
+        attributedPlaceholder = NSAttributedString(string: error, attributes: [NSAttributedString.Key.foregroundColor : ColorManager.negativeColor])
+        layer.borderWidth = 2.0
+        layer.borderColor = ColorManager.negativeColor?.cgColor
         currentInputStatus = .invalid
     }
 }
@@ -65,7 +71,8 @@ extension InputTextField: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.layer.borderWidth = 2.0
-        self.layer.borderColor = ColorManager.primaryColor?.cgColor
+        self.text = ""
+        setupValidStatus()
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {

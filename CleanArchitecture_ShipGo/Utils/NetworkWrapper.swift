@@ -8,18 +8,15 @@
 import Foundation
 import Alamofire
 
-struct MyNetworkWrapper {
-    static let shared = MyNetworkWrapper()
-    var apiDomain = "https://834536bd-4d2d-42bb-8d70-d028f3bbce11.mock.pstmn.io/"
+struct NetworkWrapper {
+    static let shared = NetworkWrapper()
+    var apiDomain = ""
     private let jsonDecoder = JSONDecoder()
 
-    
-    func getBasicTask(stringURL: String, parameters: Parameters? = nil, header: HTTPHeaders? = nil, completion: @escaping (Result<Data, Error>) -> Void ) {
-        let defaultHeader = configureHeader()
-        
-        AF.request("\(apiDomain)\(stringURL)", method: .get, parameters: parameters ,encoding: URLEncoding.queryString, headers: defaultHeader)
-            .validate()
-            .responseJSON { response in
+    func postBasicTask(stringURL: String, parameters: Parameters? = nil, header: HTTPHeaders? = nil, completion: @escaping (Result<Data, Error>) -> Void ) {
+        var defaultHeader = configureHeader()
+        header?.forEach { defaultHeader[$0.name] = $0.value }
+        AF.request("\(apiDomain)\(stringURL)", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: defaultHeader).validate(statusCode: 200..<300).responseJSON { response in
             switch response.result {
             case .success:
                 if let responseData = response.data {
@@ -31,7 +28,29 @@ struct MyNetworkWrapper {
                 if let responseData = response.data, let json = try? jsonDecoder.decode(NetworkError.self, from: responseData) {
                     completion(.failure(NetworkError(code: json.code, msg: json.msg)))
                 } else {
-                    completion(.failure(NetworkError(code: error.responseCode, msg: "getAuthTask Fail")))
+                    completion(.failure(NetworkError(code: error.responseCode, msg: "post basictask fail")))
+                }
+            }
+        }
+    }
+    
+    func getBasicTask(stringURL: String, parameters: Parameters? = nil, header: HTTPHeaders? = nil, completion: @escaping (Result<Data, Error>) -> Void) {
+        var defaultHeader = configureHeader()
+        header?.forEach { defaultHeader[$0.name] = $0.value }
+        
+        AF.request("\(apiDomain)\(stringURL)", method: .get, encoding: JSONEncoding.default, headers: defaultHeader).validate(statusCode: 200..<300).responseJSON { response in
+            switch response.result {
+            case .success:
+                if let responseData = response.data {
+                    completion(.success(responseData))
+                } else {
+                    completion(.failure(HTTPError.networkFailureError))
+                }
+            case .failure(let error):
+                if let responseData = response.data, let json = try? jsonDecoder.decode(NetworkError.self, from: responseData) {
+                    completion(.failure(NetworkError(code: json.code, msg: json.msg)))
+                } else {
+                    completion(.failure(NetworkError(code: error.responseCode, msg: "get basictask fail")))
                 }
             }
         }

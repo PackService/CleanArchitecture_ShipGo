@@ -211,8 +211,16 @@ final class SignUpViewController: UIViewController {
             .store(in: &cancelBag)
         
         viewModel.signUpPublisher()
-            .sink { [weak self] state in
-                
+            .sink { [weak self] result in
+                if result == .emailRegexError {
+                    self?.emailTextField.setupInvalidStatus(error: result.rawValue)
+                } else if result == .passwordRegexError {
+                    self?.passwordTextField.setupInvalidStatus(error: result.rawValue)
+                } else if result == .notEqualPassword {
+                    self?.passwordCheckTextField.setupInvalidStatus(error: result.rawValue)
+                } else {
+                    self?.coordinator?.login()
+                }
             }
             .store(in: &cancelBag)
     }
@@ -241,7 +249,7 @@ extension SignUpViewController {
     }
     @objc private func createAccountButtonTapped(_ button: UIButton) {
         self.viewModel.sendUserInfoPublisher(email: self.emailTextField.text ?? "", password: self.passwordTextField.text ?? "", passwordCheck: self.passwordCheckTextField.text ?? "")
-        coordinator?.login()
+//        coordinator?.login()
     }
 
 }

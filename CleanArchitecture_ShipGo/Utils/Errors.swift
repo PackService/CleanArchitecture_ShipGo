@@ -27,6 +27,7 @@ struct NetworkCommonErrors {
 }
 
 enum UserError: String, Error, CaseIterable {
+    case success = ""
     case emailRegexError = "이메일 형식이 올바르지 않습니다"
     case passwordRegexError = "비밀번호를 8자 이상 입력하세요"
     case notEqualPassword = "비밀번호와 비밀번호 확인이 일치하지 않습니다"
