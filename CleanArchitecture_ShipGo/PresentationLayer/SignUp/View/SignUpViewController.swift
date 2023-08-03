@@ -68,15 +68,23 @@ final class SignUpViewController: UIViewController {
     
     private lazy var createAccountButton = CompleteButton().then({
         $0.setTitle("계정 만들기", for: .normal)
+        $0.addTarget(self, action: #selector(createAccountButtonTapped(_:)), for: .touchUpInside)
     })
     
     private lazy var step2SignUpView = UIView()
     
     private lazy var emailTextField = InputTextField().then({
         $0.placeholder = "이메일을 입력하세요"
+        $0.font = UIFont.setFont(size: 20, family: .SemiBold)
     })
-    private lazy var passwordTextField = UITextField()
-    private lazy var passwordCheckTextField = UITextField()
+    private lazy var passwordTextField = InputTextField().then({
+        $0.placeholder = "비밀번호"
+        $0.font = UIFont.setFont(size: 20, family: .SemiBold)
+    })
+    private lazy var passwordCheckTextField = InputTextField().then({
+        $0.placeholder = "비밀번호를 한번 더 입력하세요"
+        $0.font = UIFont.setFont(size: 20, family: .SemiBold)
+    })
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -175,6 +183,16 @@ final class SignUpViewController: UIViewController {
             constraints.top.leading.trailing.equalToSuperview()
             constraints.height.equalTo(moderateScale(number: 62))
         }
+        passwordTextField.snp.makeConstraints{ constraints in
+            constraints.top.equalTo(emailTextField.snp.bottom).offset(verticalScale(number: 16))
+            constraints.leading.trailing.equalToSuperview()
+            constraints.height.equalTo(moderateScale(number: 62))
+        }
+        passwordCheckTextField.snp.makeConstraints{ constraints in
+            constraints.top.equalTo(passwordTextField.snp.bottom).offset(verticalScale(number: 16))
+            constraints.leading.trailing.equalToSuperview()
+            constraints.height.equalTo(moderateScale(number: 62))
+        }
         createAccountButton.snp.makeConstraints { constraints in
             constraints.bottom.equalTo(containerView.snp.bottom).offset(moderateScale(number: -47))
             constraints.height.equalTo(moderateScale(number: 58))
@@ -188,6 +206,7 @@ final class SignUpViewController: UIViewController {
                 self?.allAgreementCheck.isSelected = state
                 self?.step1SignUpView.isHidden = state
                 self?.step2SignUpView.isHidden = !state
+                self?.createAccountButton.isEnabled = state
             }
             .store(in: &cancelBag)
     }
@@ -214,9 +233,8 @@ extension SignUpViewController {
         button.isSelected.toggle()
         self.viewModel.sendAgreePublisher(agreementButtonType: .thirdAgree, buttonState: button.isSelected)
     }
+    @objc private func createAccountButtonTapped(_ button: UIButton) {
+        print("계정 만들기 버튼 클릭")
+    }
 
 }
-
-
-
-// 높이 62짜리 텍스트필드 커스텀하게 만드는게 좋지 않으까라는 생각
