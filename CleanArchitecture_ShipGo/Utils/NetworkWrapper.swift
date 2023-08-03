@@ -7,12 +7,25 @@
 
 import Foundation
 import Alamofire
+import Firebase
+import Combine
+//import KakaoSDKAuth
+//import KakaoSDKUser
+import FirebaseFirestoreSwift
+//import CryptoKit
+import FirebaseAuth
+import AuthenticationServices
+import FirebaseAnalytics
 
 struct NetworkWrapper {
+    
     static let shared = NetworkWrapper()
     var apiDomain = ""
     private let jsonDecoder = JSONDecoder()
 
+    let db = Firestore.firestore()
+    private var cancelBag = Set<AnyCancellable>()
+    
     func postBasicTask(stringURL: String, parameters: Parameters? = nil, header: HTTPHeaders? = nil, completion: @escaping (Result<Data, Error>) -> Void ) {
         var defaultHeader = configureHeader()
         header?.forEach { defaultHeader[$0.name] = $0.value }
@@ -65,4 +78,8 @@ struct NetworkWrapper {
         
         return headers
     }
+}
+
+extension NetworkWrapper {
+    
 }

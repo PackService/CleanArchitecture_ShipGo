@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import Combine
+
+protocol RemoteDataSourceable {
+    func signUp(email: String, password: String) -> AnyPublisher<Result<Void, Error>, Never>
+}
