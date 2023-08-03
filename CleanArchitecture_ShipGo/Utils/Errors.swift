@@ -25,3 +25,11 @@ struct NetworkCommonErrors {
     static let commonErrorMessage = "something_wrong"
     static let typeMismatchError = NetworkError(code: 200, msg: "Something went wrong")
 }
+
+enum UserError: String, Error, CaseIterable {
+    case emailRegexError = "이메일 형식이 올바르지 않습니다"
+    case passwordRegexError = "비밀번호를 8자 이상 입력하세요"
+    case notEqualPassword = "비밀번호와 비밀번호 확인이 일치하지 않습니다"
+    case existEmail = "이미 사용중인 이메일입니다"
+}
+

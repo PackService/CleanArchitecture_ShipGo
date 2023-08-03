@@ -67,4 +67,9 @@ extension InputTextField: UITextFieldDelegate {
         self.layer.borderWidth = 2.0
         self.layer.borderColor = ColorManager.primaryColor?.cgColor
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.layer.borderWidth = 0.0
+        self.layer.borderColor = .none
+    }
 }
