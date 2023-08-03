@@ -12,7 +12,7 @@ import Then
 
 final class SignUpViewController: UIViewController {
     
-    weak var coordinator: Coordinator?
+    weak var coordinator: SignUpCoordinator?
     
     private var cancelBag = Set<AnyCancellable>()
     var viewModel: SignUpViewModel = SignUpViewModel()
@@ -241,6 +241,7 @@ extension SignUpViewController {
     }
     @objc private func createAccountButtonTapped(_ button: UIButton) {
         self.viewModel.sendUserInfoPublisher(email: self.emailTextField.text ?? "", password: self.passwordTextField.text ?? "", passwordCheck: self.passwordCheckTextField.text ?? "")
+        coordinator?.login()
     }
 
 }

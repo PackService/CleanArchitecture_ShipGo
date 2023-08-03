@@ -31,9 +31,10 @@ class AppCoordinator: NSObject, Coordinator {
     }
     
     func signUp() {
-        let vc = SignUpViewController()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        let child = SignUpCoordinator(navigationController: navigationController)
+        child.parentCoordinator = self
+        childCoordinators.append(child)
+        child.start()
     }
     
     func childDidFinish(_ child: Coordinator?) {
@@ -57,7 +58,7 @@ extension AppCoordinator: UINavigationControllerDelegate {
         if navigationController.viewControllers.contains(fromViewController) {
             return
         }
-        // MARK: - 화면 종료 언제 하는거지
+        // MARK: - viewcontroller 참조 카운트 메모리 누수 확인
         if let loginViewController = fromViewController as? LoginViewController {
             childDidFinish(loginViewController.coordinator)
         }

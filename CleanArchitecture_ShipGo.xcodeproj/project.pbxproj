@@ -36,6 +36,7 @@
 		D85D16C52A5E304A00D799DD /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D85D16C42A5E304A00D799DD /* Then */; };
 		D85D16C82A5E306000D799DD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D85D16C72A5E306000D799DD /* Alamofire */; };
 		D85D16CB2A5E307F00D799DD /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D85D16CA2A5E307F00D799DD /* Swinject-Dynamic */; };
+		D89C2DF82A7B55B100457EB9 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C2DF72A7B55B100457EB9 /* SignUpCoordinator.swift */; };
 		D8B661052A60D3A80049B8D9 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8B660FC2A60D3A80049B8D9 /* Pretendard-SemiBold.otf */; };
 		D8B661062A60D3A80049B8D9 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8B660FD2A60D3A80049B8D9 /* Pretendard-ExtraLight.otf */; };
 		D8B661072A60D3A80049B8D9 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8B660FE2A60D3A80049B8D9 /* Pretendard-Black.otf */; };
@@ -103,6 +104,7 @@
 		D85D16B42A5E2E9300D799DD /* RemoteLoginMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoginMapper.swift; sourceTree = "<group>"; };
 		D85D16B62A5E2EAE00D799DD /* LoginRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryImpl.swift; sourceTree = "<group>"; };
 		D85D16B82A5E2EE700D799DD /* CompleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteButton.swift; sourceTree = "<group>"; };
+		D89C2DF72A7B55B100457EB9 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
 		D8B660FC2A60D3A80049B8D9 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		D8B660FD2A60D3A80049B8D9 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		D8B660FE2A60D3A80049B8D9 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
@@ -433,6 +435,7 @@
 				D8CF21132A78CD7A00A93912 /* TabBarItemType.swift */,
 				D8B661132A60F72E0049B8D9 /* AppCoordinator.swift */,
 				D8CF210F2A78B97900A93912 /* LoginCoordinator.swift */,
+				D89C2DF72A7B55B100457EB9 /* SignUpCoordinator.swift */,
 				D8CF21152A78CF5800A93912 /* MainTabBarCoordinator.swift */,
 				D8CF21192A78D36600A93912 /* TabBarHomeCoordinator.swift */,
 				D8CF211B2A78D37500A93912 /* TabBarListCoordinator.swift */,
@@ -618,6 +621,7 @@
 				ADF7A8EA2A7650410028D260 /* SignUpViewController.swift in Sources */,
 				D8D31E592A7A35C70095D4F0 /* RemoteShowModelItem.swift in Sources */,
 				D85D16B72A5E2EAE00D799DD /* LoginRepositoryImpl.swift in Sources */,
+				D89C2DF82A7B55B100457EB9 /* SignUpCoordinator.swift in Sources */,
 				D8B661252A614AA10049B8D9 /* OnBoardingViewController.swift in Sources */,
 				D8D31E572A7A34D70095D4F0 /* RemoteRecommendModelItem.swift in Sources */,
 				D800BABD2A5CEA5F001F19A3 /* CleanArchitecture_ShipGo.xcdatamodeld in Sources */,

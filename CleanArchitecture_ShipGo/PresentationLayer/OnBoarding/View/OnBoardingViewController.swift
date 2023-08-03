@@ -18,37 +18,25 @@ class OnBoardingViewController: UIViewController {
         $0.text = "내 택배 위치를"
         $0.font = UIFont.setFont(size: 26, family: .Bold)
     })
-    
     private lazy var titleLabel2 = UILabel().then({
         $0.text = "손쉽게 추적하기"
         $0.font = UIFont.setFont(size: 26, family: .Bold)
     })
-    
     private lazy var titleImage = UIImageView().then({
         $0.image = UIImage(named: "onboarding_illust")
     })
-    
-    private lazy var signUpButtonStackView = UIStackView().then({
-        $0.axis = .vertical
-        $0.alignment = .center
-        $0.distribution = .equalSpacing
-    })
-    // MARK: - custombutton 만들어서 수정하기, 여기말고도 많음
-    private lazy var appleSignUpButton = UIButton().then({
+    private lazy var appleSignUpButton = CompleteButton().then({
         $0.setTitle("apple", for: .normal)
     })
-    
-    private lazy var kakaoSignUpButton = UIButton().then({
+    private lazy var kakaoSignUpButton = CompleteButton().then({
         $0.setTitle("kakao", for: .normal)
     })
-    
-    // 회원가입 화면으로 이동
-    private lazy var emailSignUpButton = UIButton().then({
+    private lazy var emailSignUpButton = CompleteButton().then({
         $0.setTitle("email", for: .normal)
         $0.addTarget(self, action: #selector(emailSignUpButtonTapped(_:)), for: .touchUpInside)
     })
     
-    private lazy var loginStackView = UIStackView().then({
+    private lazy var loginStackView = UIStackView().then({  // MARK: - 여기부터 다시
         $0.axis = .horizontal
         $0.alignment = .firstBaseline
     })
@@ -57,15 +45,15 @@ class OnBoardingViewController: UIViewController {
         $0.text = "이미 계정이 있나요?"
         $0.font = UIFont.setFont(size: 16, family: .Medium)
     })
-    
     private lazy var loginButton = UIButton().then({
         $0.setTitle("로그인", for: .normal)
+        $0.setTitleColor(ColorManager.primaryColor, for: .normal)
         $0.addTarget(self, action: #selector(loginButtonTapped(_:)), for: .touchUpInside)
     })
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .gray
+        view.backgroundColor = .white
         addViews()
         makeConstraints()
     }
@@ -73,23 +61,24 @@ class OnBoardingViewController: UIViewController {
     private func addViews() {
         view.addSubview(containerView)
         containerView.addSubViews([titleLabel1,
-                                  titleLabel2,
-                                  titleImage,
-                                  signUpButtonStackView,
-                                  loginStackView])
-        signUpButtonStackView.addArrangedSubviews([appleSignUpButton,
-                                                   kakaoSignUpButton,
-                                                   emailSignUpButton])
+                                   titleLabel2,
+                                   titleImage,
+                                   appleSignUpButton,
+                                   kakaoSignUpButton,
+                                   emailSignUpButton,
+                                   loginStackView])
         loginStackView.addArrangedSubviews([loginLabel,
                                            loginButton])
     }
     
     private func makeConstraints() {
         containerView.snp.makeConstraints { constraints in
-            constraints.top.bottom.trailing.leading.equalToSuperview()
+            constraints.top.bottom.equalToSuperview()
+            constraints.leading.equalToSuperview().offset(moderateScale(number: 20))
+            constraints.trailing.equalToSuperview().offset(moderateScale(number: -20))
         }
         titleLabel1.snp.makeConstraints { constraints in
-            constraints.top.equalToSuperview().offset(verticalScale(number: 60)) // 전체적으로 화면 위 수정 필요
+            constraints.top.equalToSuperview().offset(verticalScale(number: 60)) // 전체적으로 화면 위와 간격 수정 필요
             constraints.centerX.equalToSuperview()
         }
         titleLabel2.snp.makeConstraints { constraints in
@@ -97,21 +86,33 @@ class OnBoardingViewController: UIViewController {
             constraints.centerX.equalToSuperview()
         }
         titleImage.snp.makeConstraints { constraints in
-            constraints.top.equalTo(titleLabel2.snp.bottom)
-            constraints.height.equalTo(verticalScale(number: 100))
+            constraints.top.equalTo(titleLabel2.snp.bottom).offset(verticalScale(number: 20)) //임시로 넣어놓음
+            constraints.height.equalTo(moderateScale(number: 200))
+            constraints.width.equalTo(moderateScale(number: 100))
             constraints.leading.trailing.equalToSuperview()
         }
-        signUpButtonStackView.snp.makeConstraints { constraints in
-            constraints.top.equalTo(titleImage.snp.bottom).offset(verticalScale(number: 100)) // 수정 필요, 버튼 간 간격도 수정 필요
-            constraints.height.equalTo(verticalScale(number: 200))
-            constraints.leading.equalToSuperview().offset(moderateScale(number: 20))
-            constraints.trailing.equalToSuperview().offset(moderateScale(number: -20))
+    
+        appleSignUpButton.snp.makeConstraints { constraints in
+            constraints.top.equalTo(titleImage.snp.bottom).offset(verticalScale(number: 50)) // 임시로 넣어줌
+            constraints.width.equalToSuperview()
+            constraints.height.equalTo(moderateScale(number: 52))
         }
+        kakaoSignUpButton.snp.makeConstraints { constraints in
+            constraints.top.equalTo(appleSignUpButton.snp.bottom).offset(verticalScale(number: 16))
+            constraints.width.equalToSuperview()
+            constraints.height.equalTo(moderateScale(number: 52))
+        }
+        emailSignUpButton.snp.makeConstraints { constraints in
+            constraints.top.equalTo(kakaoSignUpButton.snp.bottom).offset(verticalScale(number: 16))
+            constraints.width.equalToSuperview()
+            constraints.height.equalTo(moderateScale(number: 52))
+        }
+
         loginStackView.snp.makeConstraints({ constraints in
-            constraints.top.equalTo(signUpButtonStackView.snp.bottom).offset(verticalScale(number: 16))
-            constraints.bottom.equalToSuperview().offset(verticalScale(number: -77))
+            constraints.top.equalTo(emailSignUpButton.snp.bottom).offset(verticalScale(number: 16))
             constraints.centerX.equalToSuperview()
         })
+        
     }
 }
 
