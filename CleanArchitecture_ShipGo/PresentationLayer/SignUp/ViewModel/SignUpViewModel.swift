@@ -22,7 +22,7 @@ class SignUpViewModel: BaseViewModel {
     private var firstAgree = CurrentValueSubject<Bool, Never>(false)
     private var secondAgree = CurrentValueSubject<Bool, Never>(false)
     private var thirdAgree = CurrentValueSubject<Bool, Never>(false)
-    private var loginButtonTapped = CurrentValueSubject<Bool, Never>(false)
+    private var signUpButtonTapped = CurrentValueSubject<Bool, Never>(false)
 
     override init() {
         super.init()
@@ -44,6 +44,10 @@ class SignUpViewModel: BaseViewModel {
     
     func allAgreePublisher() -> AnyPublisher<Bool, Never> {
         return allAgree.eraseToAnyPublisher()
+    }
+    
+    func signUpPublisher() -> AnyPublisher<Bool, Never> {
+        return signUpButtonTapped.eraseToAnyPublisher()
     }
 }
 
@@ -67,30 +71,30 @@ extension SignUpViewModel {
         return false
     }
     
-    // 이메일 정규성 체크
-    func validateEmail(_ input: String) -> Validation<String, String> {
-        let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", regex)
-        let isValid = emailPredicate.evaluate(with: input)
-
-        if isValid {
-            return .valid(input)
-        } else {
-            return .invalid("invalid email")
-        }
-    }
-
-    // 패스워드 정규성 체크
-    func validatePassword(_ input: String) -> Validation<String, String> {
-        let regex = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,50}" // 8자리 ~ 50자리 영어+숫자+특수문자
-
-        let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
-        let isValid = predicate.evaluate(with: input)
-
-        if isValid {
-            return .valid(input)
-        } else {
-            return .invalid("invalid password")
-        }
-    }
+//    // 이메일 정규성 체크
+//    func validateEmail(_ input: String) -> Validation<String, String> {
+//        let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+//        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", regex)
+//        let isValid = emailPredicate.evaluate(with: input)
+//
+//        if isValid {
+//            return .valid(input)
+//        } else {
+//            return .invalid("invalid email")
+//        }
+//    }
+//
+//    // 패스워드 정규성 체크
+//    func validatePassword(_ input: String) -> Validation<String, String> {
+//        let regex = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,50}" // 8자리 ~ 50자리 영어+숫자+특수문자
+//
+//        let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
+//        let isValid = predicate.evaluate(with: input)
+//
+//        if isValid {
+//            return .valid(input)
+//        } else {
+//            return .invalid("invalid password")
+//        }
+//    }
 }

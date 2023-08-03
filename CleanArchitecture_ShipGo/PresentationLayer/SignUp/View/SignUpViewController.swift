@@ -209,6 +209,12 @@ final class SignUpViewController: UIViewController {
                 self?.createAccountButton.isEnabled = state
             }
             .store(in: &cancelBag)
+        
+        viewModel.signUpPublisher()
+            .sink { [weak self] state in
+                
+            }
+            .store(in: &cancelBag)
     }
 }
 
