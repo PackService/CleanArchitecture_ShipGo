@@ -17,13 +17,17 @@ class RemoteDataSourceImpl: RemoteDataSourceable {
     func signUp(email: String, password: String) -> AnyPublisher<Result<Void, Error>, Never> {
         Future<Result<Void, Error>, Never> { [weak self] promise in
             guard let selfRef = self else { return }
+            print(email)
+            print(password)
             Auth.auth().createUser(withEmail: email, password: password) { result, error in
                 if let error = error {
                     promise(.success(.failure(error)))
                     print(error)
                 } else {
 //                    promise(.success(.success(selfRef.remoteSignUpMapper.remoteItemToBasicEntity(remoteItem: ()))))
+                    UserDefaultsUtil.shared.setIsLogin(email: email)
                     promise(.success(.success(print("성공"))))
+                    
                 }
             }
         }.eraseToAnyPublisher()

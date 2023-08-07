@@ -250,7 +250,6 @@ extension SignUpViewController {
         self.viewModel.sendAgreePublisher(agreementButtonType: .thirdAgree, buttonState: button.isSelected)
     }
     @objc private func createAccountButtonTapped(_ button: UIButton) {
-        self.viewModel.sendShouldSignUp(email: self.emailTextField.text ?? "", password: self.passwordTextField.text ?? "")
         self.viewModel.sendUserInfoPublisher(email: self.emailTextField.text ?? "", password: self.passwordTextField.text ?? "", passwordCheck: self.passwordCheckTextField.text ?? "")
     }
 }

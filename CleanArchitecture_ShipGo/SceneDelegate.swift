@@ -11,6 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     var coordinator: Coordinator?
+//    let status = UserDefaults.standard.string(forKey: "status") // status에 사용자 이메일 저장. 이메일 없으면 온보딩 화면 있으면 바로 메인화면으로 가도록
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -19,9 +20,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         appWindow.windowScene = windowScene
 
         let navigationController = UINavigationController()
-        coordinator = AppCoordinator(navigationController: navigationController)
+        
+        if UserDefaultsUtil.shared.getIsLogin() {
+            coordinator = MainTabBarCoordinator(navigationController: navigationController)
+        } else {
+            coordinator = AppCoordinator(navigationController: navigationController)
+        }
         coordinator?.start()
-
         appWindow.rootViewController = navigationController
         appWindow.makeKeyAndVisible()
 

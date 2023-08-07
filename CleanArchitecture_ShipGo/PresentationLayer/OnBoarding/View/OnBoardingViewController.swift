@@ -30,6 +30,8 @@ class OnBoardingViewController: UIViewController {
     })
     private lazy var kakaoSignUpButton = CompleteButton().then({
         $0.setTitle("kakao", for: .normal)
+        // MARK: - popup test
+        $0.addTarget(self, action: #selector(popUpButtonTapped(_:)), for: .touchUpInside)
     })
     private lazy var emailSignUpButton = CompleteButton().then({
         $0.setTitle("email", for: .normal)
@@ -123,5 +125,9 @@ extension OnBoardingViewController {
     
     @objc func emailSignUpButtonTapped(_ button: UIButton) {
         coordinator?.signUp()
+    }
+    // MARK: - popup test
+    @objc func popUpButtonTapped(_ button: UIButton) {
+        showPopUp(title: "타이틀", message: "메세지")
     }
 }

@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 struct RemoteSignUpItem: Codable {
-    
+//    let result: AuthDataResult?
+    let result: String
 }

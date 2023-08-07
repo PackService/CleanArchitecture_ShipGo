@@ -25,9 +25,6 @@ class SignUpViewModel: BaseViewModel {
     private var secondAgree = CurrentValueSubject<Bool, Never>(false)
     private var thirdAgree = CurrentValueSubject<Bool, Never>(false)
     private var signUpValidation = PassthroughSubject<UserError, Never>()
-    
-    private var didTapSignUp = PassthroughSubject<(String, String), Never>()
-    private let didAuthorized = PassthroughSubject<Bool, Never>()
 
     private let shouldSignUp = PassthroughSubject<(String, String), Never>()
     
@@ -50,12 +47,13 @@ class SignUpViewModel: BaseViewModel {
         
         // MARK: -  network error 출력 미완성
         useCase.getErrorSubject()
+//            .filter({ (400..<500).contains($0.getErrorCode() ?? 0) })
             .sink(receiveValue: { [weak self] error in
                 print("signupviewmodel error: \(error)")
                 self?.signUpValidation.send(.existEmail)
             })
             .store(in: &cancelBag)
-
+ // viewmodel말고 remotedatasourceimpldptj rr
         shouldSignUp
             .compactMap { [weak self] email, password -> SignUpRequestModel? in
                 return .init(email: email,
@@ -102,6 +100,7 @@ extension SignUpViewModel {
         } else if password != passwordCheck {
             signUpValidation.send(.notEqualPassword)
         } else {
+            print("viewmodelemail: \(email)")
             sendShouldSignUp(email: email, password: password)
         }
     }

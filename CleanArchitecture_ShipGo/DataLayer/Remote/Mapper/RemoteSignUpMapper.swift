@@ -7,9 +7,13 @@
 
 import Foundation
 // remoteSignupitem 부터 만들기 시작
-//struct RemoteSignUpMapper {
+struct RemoteSignUpMapper {
 //    func remoteItemToEntity(remoteItem: RemoteSignUpItem) -> SignUpEntity {
 //        return .init(errorCode: remoteItem.errorCode ?? 0,
 //                     errorMessage: remoteItem.errorMessage ?? "")
 //    }
-//}
+    
+//    func remoteItemToBasicEntity<T>(remoteItem: T) -> T {
+//        return remoteItem
+//    }
+}

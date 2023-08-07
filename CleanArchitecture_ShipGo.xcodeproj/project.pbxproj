@@ -67,10 +67,11 @@
 		D8B8B9362A7CDF1F008F1807 /* SignUpRpositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B8B9352A7CDF1F008F1807 /* SignUpRpositoryImpl.swift */; };
 		D8B8B9382A7CE34F008F1807 /* RemoteSignUpMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B8B9372A7CE34F008F1807 /* RemoteSignUpMapper.swift */; };
 		D8B8B93C2A7CE5A2008F1807 /* RemoteSignUpItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B8B93B2A7CE5A2008F1807 /* RemoteSignUpItem.swift */; };
+		D8CC37D02A80A1AA003407B5 /* UserDefaultsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC37CF2A80A1AA003407B5 /* UserDefaultsUtil.swift */; };
+		D8CC37D22A80BA89003407B5 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC37D12A80BA89003407B5 /* PopUpViewController.swift */; };
+		D8CC37D42A80C306003407B5 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC37D32A80C306003407B5 /* UIViewController+Extension.swift */; };
 		D8CF21032A788DDD00A93912 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21022A788DDD00A93912 /* BaseViewModel.swift */; };
 		D8CF21072A788E3700A93912 /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21062A788E3700A93912 /* OnBoardingViewModel.swift */; };
-		D8CF210A2A788EC500A93912 /* AccountMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21092A788EC500A93912 /* AccountMainViewController.swift */; };
-		D8CF210C2A788EEC00A93912 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF210B2A788EEC00A93912 /* AccountViewModel.swift */; };
 		D8CF210E2A78B93400A93912 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF210D2A78B93400A93912 /* LoginViewController.swift */; };
 		D8CF21102A78B97900A93912 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF210F2A78B97900A93912 /* LoginCoordinator.swift */; };
 		D8CF21142A78CD7A00A93912 /* TabBarItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21132A78CD7A00A93912 /* TabBarItemType.swift */; };
@@ -146,10 +147,11 @@
 		D8B8B9352A7CDF1F008F1807 /* SignUpRpositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRpositoryImpl.swift; sourceTree = "<group>"; };
 		D8B8B9372A7CE34F008F1807 /* RemoteSignUpMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSignUpMapper.swift; sourceTree = "<group>"; };
 		D8B8B93B2A7CE5A2008F1807 /* RemoteSignUpItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSignUpItem.swift; sourceTree = "<group>"; };
+		D8CC37CF2A80A1AA003407B5 /* UserDefaultsUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtil.swift; sourceTree = "<group>"; };
+		D8CC37D12A80BA89003407B5 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		D8CC37D32A80C306003407B5 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		D8CF21022A788DDD00A93912 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		D8CF21062A788E3700A93912 /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
-		D8CF21092A788EC500A93912 /* AccountMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountMainViewController.swift; sourceTree = "<group>"; };
-		D8CF210B2A788EEC00A93912 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		D8CF210D2A78B93400A93912 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D8CF210F2A78B97900A93912 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		D8CF21132A78CD7A00A93912 /* TabBarItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemType.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				D81082B42A67676500FBCD9C /* UIView+Extension.swift */,
 				ADF7A8E62A764ADA0028D260 /* UIFont+Extension.swift */,
 				D8B8B92F2A7CD86A008F1807 /* Error+Extension.swift */,
+				D8CC37D32A80C306003407B5 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -258,10 +261,10 @@
 				D8B661232A614A8B0049B8D9 /* OnBoarding */,
 				ADF7A8E82A76501B0028D260 /* SignUp */,
 				D85D168C2A5E2B5B00D799DD /* Login */,
-				D8CF21082A788EAD00A93912 /* ExamplePresentation */,
 				D8CF211F2A78DCB700A93912 /* Home */,
 				D8CF21202A78DCC500A93912 /* List */,
 				D8CF21212A78DCCB00A93912 /* Setting */,
+				D8CC37D12A80BA89003407B5 /* PopUpViewController.swift */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 		D85D16852A5E2ABA00D799DD /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				D8CC37CE2A80A177003407B5 /* Local */,
 				D85D16AA2A5E2DE000D799DD /* RepositoryImpl */,
 				D85D16A92A5E2DD600D799DD /* Remote */,
 			);
@@ -496,6 +500,14 @@
 			path = OnBoarding;
 			sourceTree = "<group>";
 		};
+		D8CC37CE2A80A177003407B5 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				D8CC37CF2A80A1AA003407B5 /* UserDefaultsUtil.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
 		D8CF21042A788E1900A93912 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,15 +522,6 @@
 				D8CF21062A788E3700A93912 /* OnBoardingViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		D8CF21082A788EAD00A93912 /* ExamplePresentation */ = {
-			isa = PBXGroup;
-			children = (
-				D8CF21092A788EC500A93912 /* AccountMainViewController.swift */,
-				D8CF210B2A788EEC00A93912 /* AccountViewModel.swift */,
-			);
-			path = ExamplePresentation;
 			sourceTree = "<group>";
 		};
 		D8CF211F2A78DCB700A93912 /* Home */ = {
@@ -677,7 +680,9 @@
 				D8D31E592A7A35C70095D4F0 /* RemoteShowModelItem.swift in Sources */,
 				D85D16B72A5E2EAE00D799DD /* LoginRepositoryImpl.swift in Sources */,
 				D89C2DFE2A7B94C100457EB9 /* SignUpUsecaseImpl.swift in Sources */,
+				D8CC37D42A80C306003407B5 /* UIViewController+Extension.swift in Sources */,
 				D89C2DF82A7B55B100457EB9 /* SignUpCoordinator.swift in Sources */,
+				D8CC37D22A80BA89003407B5 /* PopUpViewController.swift in Sources */,
 				D8B661252A614AA10049B8D9 /* OnBoardingViewController.swift in Sources */,
 				D8D31E572A7A34D70095D4F0 /* RemoteRecommendModelItem.swift in Sources */,
 				D800BABD2A5CEA5F001F19A3 /* CleanArchitecture_ShipGo.xcdatamodeld in Sources */,
@@ -704,7 +709,6 @@
 				ADF7A8E72A764ADA0028D260 /* UIFont+Extension.swift in Sources */,
 				D81082B32A67650A00FBCD9C /* UIStackView+Extension.swift in Sources */,
 				D89C2E002A7B9B8800457EB9 /* SignUpRepositoriable.swift in Sources */,
-				D8CF210C2A788EEC00A93912 /* AccountViewModel.swift in Sources */,
 				D8B661272A614AC70049B8D9 /* ViewControllerTemplate.swift in Sources */,
 				D8CF21032A788DDD00A93912 /* BaseViewModel.swift in Sources */,
 				D8CF210E2A78B93400A93912 /* LoginViewController.swift in Sources */,
@@ -719,8 +723,8 @@
 				D8D483252A5F80B600B474E4 /* NetworkWrapper.swift in Sources */,
 				D85D16922A5E2B9500D799DD /* LoginViewModel.swift in Sources */,
 				D8D31E5B2A7A35EE0095D4F0 /* RemoteTrackingInfoItem.swift in Sources */,
-				D8CF210A2A788EC500A93912 /* AccountMainViewController.swift in Sources */,
 				D8CF21072A788E3700A93912 /* OnBoardingViewModel.swift in Sources */,
+				D8CC37D02A80A1AA003407B5 /* UserDefaultsUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
