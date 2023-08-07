@@ -18,13 +18,19 @@ enum AgreementButtonType {
 class SignUpViewModel: BaseViewModel {
     
     private var cancelBag = Set<AnyCancellable>()
+    private let useCase: SignUpUseCaseable = SignUpUseCaseImpl() // 나중에 의존성 주입으로 변경 필요
+    
     private var allAgree = CurrentValueSubject<Bool, Never>(false)
     private var firstAgree = CurrentValueSubject<Bool, Never>(false)
     private var secondAgree = CurrentValueSubject<Bool, Never>(false)
     private var thirdAgree = CurrentValueSubject<Bool, Never>(false)
     private var signUpValidation = PassthroughSubject<UserError, Never>()
-//    private var signUpButtonTapped = CurrentValueSubject<Bool, Never>(false)
+    
+    private var didTapSignUp = PassthroughSubject<(String, String), Never>()
+    private let didAuthorized = PassthroughSubject<Bool, Never>()
 
+    private let shouldSignUp = PassthroughSubject<(String, String), Never>()
+    
     override init() {
         super.init()
         bind()
@@ -39,6 +45,25 @@ class SignUpViewModel: BaseViewModel {
                 } else {
                     self?.allAgree.send(false)
                 }
+            }
+            .store(in: &cancelBag)
+        
+        // MARK: -  network error 출력 미완성
+        useCase.getErrorSubject()
+            .sink(receiveValue: { [weak self] error in
+                print("signupviewmodel error: \(error)")
+                self?.signUpValidation.send(.existEmail)
+            })
+            .store(in: &cancelBag)
+
+        shouldSignUp
+            .compactMap { [weak self] email, password -> SignUpRequestModel? in
+                return .init(email: email,
+                             password: password)
+            }
+            .flatMap(useCase.signUp(requestModel:))
+            .sink { [weak self] _ in
+                self?.signUpValidation.send(.success)
             }
             .store(in: &cancelBag)
     }
@@ -77,7 +102,11 @@ extension SignUpViewModel {
         } else if password != passwordCheck {
             signUpValidation.send(.notEqualPassword)
         } else {
-            signUpValidation.send(.success)
+            sendShouldSignUp(email: email, password: password)
         }
+    }
+    
+    func sendShouldSignUp(email: String, password: String) {
+        shouldSignUp.send((email, password))
     }
 }

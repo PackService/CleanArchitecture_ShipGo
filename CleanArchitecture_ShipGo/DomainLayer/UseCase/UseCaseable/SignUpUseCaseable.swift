@@ -9,7 +9,6 @@ import Foundation
 import Combine
 
 protocol SignUpUseCaseable {
-//    func snsSignUp(requestModel: SNSSignUpRequestModel) -> AnyPublisher<Void, Never>
-    func signUp(requestModel: EmailSignUpRequestModel) -> AnyPublisher<Void, Never>
+    func signUp(requestModel: SignUpRequestModel) -> AnyPublisher<Void, Never>
     func getErrorSubject() -> AnyPublisher<Error, Never>
 }

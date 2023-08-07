@@ -19,6 +19,8 @@ class HomeMainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         self.navigationItem.title = "Home"
+        
+        print("api 테스트")
         addViews()
         makeConstraints()
     }

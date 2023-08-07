@@ -7,6 +7,9 @@
 
 import Foundation
 
-//struct SignUpMapper {
-//    func
-//}
+struct SignUpMapper {
+
+    func entityToBasicResponseModel<T>(entity: T) -> T {
+        return entity
+    }
+}

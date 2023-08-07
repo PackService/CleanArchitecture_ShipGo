@@ -38,7 +38,7 @@
 		D85D16CB2A5E307F00D799DD /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D85D16CA2A5E307F00D799DD /* Swinject-Dynamic */; };
 		D89C2DF82A7B55B100457EB9 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C2DF72A7B55B100457EB9 /* SignUpCoordinator.swift */; };
 		D89C2DFA2A7B93B000457EB9 /* SignUpUseCaseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C2DF92A7B93B000457EB9 /* SignUpUseCaseable.swift */; };
-		D89C2DFC2A7B943E00457EB9 /* EmailSignUpRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C2DFB2A7B943E00457EB9 /* EmailSignUpRequestModel.swift */; };
+		D89C2DFC2A7B943E00457EB9 /* SignUpRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C2DFB2A7B943E00457EB9 /* SignUpRequestModel.swift */; };
 		D89C2DFE2A7B94C100457EB9 /* SignUpUsecaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C2DFD2A7B94C100457EB9 /* SignUpUsecaseImpl.swift */; };
 		D89C2E002A7B9B8800457EB9 /* SignUpRepositoriable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C2DFF2A7B9B8800457EB9 /* SignUpRepositoriable.swift */; };
 		D89C2E022A7B9BE200457EB9 /* SignUpMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C2E012A7B9BE200457EB9 /* SignUpMapper.swift */; };
@@ -62,6 +62,11 @@
 		D8B661142A60F72E0049B8D9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B661132A60F72E0049B8D9 /* AppCoordinator.swift */; };
 		D8B661252A614AA10049B8D9 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B661242A614AA10049B8D9 /* OnBoardingViewController.swift */; };
 		D8B661272A614AC70049B8D9 /* ViewControllerTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B661262A614AC70049B8D9 /* ViewControllerTemplate.swift */; };
+		D8B8B9302A7CD86A008F1807 /* Error+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B8B92F2A7CD86A008F1807 /* Error+Extension.swift */; };
+		D8B8B9342A7CDE35008F1807 /* SignUpEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B8B9332A7CDE35008F1807 /* SignUpEntity.swift */; };
+		D8B8B9362A7CDF1F008F1807 /* SignUpRpositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B8B9352A7CDF1F008F1807 /* SignUpRpositoryImpl.swift */; };
+		D8B8B9382A7CE34F008F1807 /* RemoteSignUpMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B8B9372A7CE34F008F1807 /* RemoteSignUpMapper.swift */; };
+		D8B8B93C2A7CE5A2008F1807 /* RemoteSignUpItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B8B93B2A7CE5A2008F1807 /* RemoteSignUpItem.swift */; };
 		D8CF21032A788DDD00A93912 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21022A788DDD00A93912 /* BaseViewModel.swift */; };
 		D8CF21072A788E3700A93912 /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21062A788E3700A93912 /* OnBoardingViewModel.swift */; };
 		D8CF210A2A788EC500A93912 /* AccountMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF21092A788EC500A93912 /* AccountMainViewController.swift */; };
@@ -117,7 +122,7 @@
 		D85D16B82A5E2EE700D799DD /* CompleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteButton.swift; sourceTree = "<group>"; };
 		D89C2DF72A7B55B100457EB9 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
 		D89C2DF92A7B93B000457EB9 /* SignUpUseCaseable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCaseable.swift; sourceTree = "<group>"; };
-		D89C2DFB2A7B943E00457EB9 /* EmailSignUpRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpRequestModel.swift; sourceTree = "<group>"; };
+		D89C2DFB2A7B943E00457EB9 /* SignUpRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequestModel.swift; sourceTree = "<group>"; };
 		D89C2DFD2A7B94C100457EB9 /* SignUpUsecaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUsecaseImpl.swift; sourceTree = "<group>"; };
 		D89C2DFF2A7B9B8800457EB9 /* SignUpRepositoriable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRepositoriable.swift; sourceTree = "<group>"; };
 		D89C2E012A7B9BE200457EB9 /* SignUpMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMapper.swift; sourceTree = "<group>"; };
@@ -136,6 +141,11 @@
 		D8B661132A60F72E0049B8D9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		D8B661242A614AA10049B8D9 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		D8B661262A614AC70049B8D9 /* ViewControllerTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTemplate.swift; sourceTree = "<group>"; };
+		D8B8B92F2A7CD86A008F1807 /* Error+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extension.swift"; sourceTree = "<group>"; };
+		D8B8B9332A7CDE35008F1807 /* SignUpEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEntity.swift; sourceTree = "<group>"; };
+		D8B8B9352A7CDF1F008F1807 /* SignUpRpositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRpositoryImpl.swift; sourceTree = "<group>"; };
+		D8B8B9372A7CE34F008F1807 /* RemoteSignUpMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSignUpMapper.swift; sourceTree = "<group>"; };
+		D8B8B93B2A7CE5A2008F1807 /* RemoteSignUpItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSignUpItem.swift; sourceTree = "<group>"; };
 		D8CF21022A788DDD00A93912 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		D8CF21062A788E3700A93912 /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
 		D8CF21092A788EC500A93912 /* AccountMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountMainViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +245,7 @@
 				D81082B22A67650A00FBCD9C /* UIStackView+Extension.swift */,
 				D81082B42A67676500FBCD9C /* UIView+Extension.swift */,
 				ADF7A8E62A764ADA0028D260 /* UIFont+Extension.swift */,
+				D8B8B92F2A7CD86A008F1807 /* Error+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -368,7 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				D85D169F2A5E2CEF00D799DD /* LoginRequestModel.swift */,
-				D89C2DFB2A7B943E00457EB9 /* EmailSignUpRequestModel.swift */,
+				D89C2DFB2A7B943E00457EB9 /* SignUpRequestModel.swift */,
 			);
 			path = RequestModel;
 			sourceTree = "<group>";
@@ -395,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				D85D16992A5E2CB600D799DD /* Entity.swift */,
+				D8B8B9332A7CDE35008F1807 /* SignUpEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -432,6 +444,7 @@
 			isa = PBXGroup;
 			children = (
 				D85D16B62A5E2EAE00D799DD /* LoginRepositoryImpl.swift */,
+				D8B8B9352A7CDF1F008F1807 /* SignUpRpositoryImpl.swift */,
 			);
 			path = RepositoryImpl;
 			sourceTree = "<group>";
@@ -444,6 +457,7 @@
 				D8D31E562A7A34D70095D4F0 /* RemoteRecommendModelItem.swift */,
 				D8D31E582A7A35C70095D4F0 /* RemoteShowModelItem.swift */,
 				D8D31E5A2A7A35EE0095D4F0 /* RemoteTrackingInfoItem.swift */,
+				D8B8B93B2A7CE5A2008F1807 /* RemoteSignUpItem.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -452,6 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				D85D16B42A5E2E9300D799DD /* RemoteLoginMapper.swift */,
+				D8B8B9372A7CE34F008F1807 /* RemoteSignUpMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -648,13 +663,17 @@
 				D85D16B12A5E2E3600D799DD /* RemoteDataSourceable.swift in Sources */,
 				D85D16A22A5E2CFC00D799DD /* LoginResponseModel.swift in Sources */,
 				D8B661142A60F72E0049B8D9 /* AppCoordinator.swift in Sources */,
+				D8B8B9342A7CDE35008F1807 /* SignUpEntity.swift in Sources */,
+				D8B8B93C2A7CE5A2008F1807 /* RemoteSignUpItem.swift in Sources */,
 				ADF7A8EE2A76544D0028D260 /* SelectButton.swift in Sources */,
 				D8D483232A5F807300B474E4 /* Errors.swift in Sources */,
 				D85D16A82A5E2D3D00D799DD /* LoginUseCaseable.swift in Sources */,
 				D8CF211A2A78D36600A93912 /* TabBarHomeCoordinator.swift in Sources */,
+				D8B8B9302A7CD86A008F1807 /* Error+Extension.swift in Sources */,
 				D8D31E552A7A34AD0095D4F0 /* RemoteCompanyItem.swift in Sources */,
 				ADF7A8EA2A7650410028D260 /* SignUpViewController.swift in Sources */,
-				D89C2DFC2A7B943E00457EB9 /* EmailSignUpRequestModel.swift in Sources */,
+				D8B8B9382A7CE34F008F1807 /* RemoteSignUpMapper.swift in Sources */,
+				D89C2DFC2A7B943E00457EB9 /* SignUpRequestModel.swift in Sources */,
 				D8D31E592A7A35C70095D4F0 /* RemoteShowModelItem.swift in Sources */,
 				D85D16B72A5E2EAE00D799DD /* LoginRepositoryImpl.swift in Sources */,
 				D89C2DFE2A7B94C100457EB9 /* SignUpUsecaseImpl.swift in Sources */,
@@ -676,6 +695,7 @@
 				D85D169A2A5E2CB600D799DD /* Entity.swift in Sources */,
 				D81082B52A67676500FBCD9C /* UIView+Extension.swift in Sources */,
 				D8CF21252A78DD3600A93912 /* SettingMainViewController.swift in Sources */,
+				D8B8B9362A7CDF1F008F1807 /* SignUpRpositoryImpl.swift in Sources */,
 				D89C2DFA2A7B93B000457EB9 /* SignUpUseCaseable.swift in Sources */,
 				D8CF211C2A78D37500A93912 /* TabBarListCoordinator.swift in Sources */,
 				D85D16A02A5E2CEF00D799DD /* LoginRequestModel.swift in Sources */,

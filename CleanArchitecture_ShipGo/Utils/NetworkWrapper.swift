@@ -39,9 +39,9 @@ struct NetworkWrapper {
                 }
             case .failure(let error):
                 if let responseData = response.data, let json = try? jsonDecoder.decode(NetworkError.self, from: responseData) {
-                    completion(.failure(NetworkError(code: json.code, msg: json.msg)))
+                    completion(.failure(NetworkError(statusCode: json.statusCode, message: json.message)))
                 } else {
-                    completion(.failure(NetworkError(code: error.responseCode, msg: "post basictask fail")))
+                    completion(.failure(NetworkError(statusCode: error.responseCode, message: "post basictask fail")))
                 }
             }
         }
@@ -61,9 +61,9 @@ struct NetworkWrapper {
                 }
             case .failure(let error):
                 if let responseData = response.data, let json = try? jsonDecoder.decode(NetworkError.self, from: responseData) {
-                    completion(.failure(NetworkError(code: json.code, msg: json.msg)))
+                    completion(.failure(NetworkError(statusCode: json.statusCode, message: json.message)))
                 } else {
-                    completion(.failure(NetworkError(code: error.responseCode, msg: "get basictask fail")))
+                    completion(.failure(NetworkError(statusCode: error.responseCode, message: "get basictask fail")))
                 }
             }
         }
@@ -80,6 +80,3 @@ struct NetworkWrapper {
     }
 }
 
-extension NetworkWrapper {
-    
-}

@@ -6,10 +6,8 @@
 //
 
 import Foundation
+import Combine
 
-//protocol SignUpRepositoriable {
-//    //    func snsSignUp(requestModel: SNSSignUpRequestModel) -> AnyPublisher<Void, Never>
-//    func signUp(requestModel: EmailSignUpRequestModel) -> AnyPublisher<Void, Never>
-//    func getErrorSubject() -> AnyPublisher<Error, Never>
-//    
-//}
+protocol SignUpRepositoriable {
+    func signUp(email: String, password: String) -> AnyPublisher<Result<Void, Error>, Never>
+}

@@ -9,6 +9,7 @@ import UIKit
 import Combine
 import SnapKit
 import Then
+import FirebaseAuth
 
 final class SignUpViewController: UIViewController {
     
@@ -218,7 +219,9 @@ final class SignUpViewController: UIViewController {
                     self?.passwordTextField.setupInvalidStatus(error: result.rawValue)
                 } else if result == .notEqualPassword {
                     self?.passwordCheckTextField.setupInvalidStatus(error: result.rawValue)
-                } else {
+                } else if result == .existEmail {
+                    self?.emailTextField.setupInvalidStatus(error: result.rawValue)
+                } else if result == .success {
                     self?.coordinator?.login()
                 }
             }
@@ -236,7 +239,6 @@ extension SignUpViewController {
     }
     @objc private func firstAgreeButtonTapped(_ button: UIButton) {
         button.isSelected.toggle()
-        self.secondAgreementCheck.shake(count: 4, for: 1.5, withTranslation: 10)
         self.viewModel.sendAgreePublisher(agreementButtonType: .firstAgree, buttonState: button.isSelected)
     }
     @objc private func secondAgreeButtonTapped(_ button: UIButton) {
@@ -248,8 +250,7 @@ extension SignUpViewController {
         self.viewModel.sendAgreePublisher(agreementButtonType: .thirdAgree, buttonState: button.isSelected)
     }
     @objc private func createAccountButtonTapped(_ button: UIButton) {
+        self.viewModel.sendShouldSignUp(email: self.emailTextField.text ?? "", password: self.passwordTextField.text ?? "")
         self.viewModel.sendUserInfoPublisher(email: self.emailTextField.text ?? "", password: self.passwordTextField.text ?? "", passwordCheck: self.passwordCheckTextField.text ?? "")
-//        coordinator?.login()
     }
-
 }

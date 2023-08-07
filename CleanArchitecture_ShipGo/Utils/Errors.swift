@@ -15,15 +15,22 @@ enum HTTPError: LocalizedError {
 }
 
 struct NetworkError: Error, Decodable {
-    var code: Int? = 0
-    var msg: String? = ""
+    var statusCode: Int? = 0
+    var error: String? = ""
+    var message: String? = ""
+    var forbiddenWords: [String]?
+    
+    struct Message: Decodable {
+        let error: String?
+        let message: String?
+    }
 }
 
 struct NetworkCommonErrors {
     private init() {}
     
     static let commonErrorMessage = "something_wrong"
-    static let typeMismatchError = NetworkError(code: 200, msg: "Something went wrong")
+    static let typeMismatchError = NetworkError(statusCode: 200, message: "Something went wrong")
 }
 
 enum UserError: String, Error, CaseIterable {
