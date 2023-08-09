@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Combine
 
 enum CurrentPasswordInputStatus {
     case valid
@@ -15,7 +14,6 @@ enum CurrentPasswordInputStatus {
 
 class InputTextField: UITextField {
     private var rightButton: UIButton!
-    private var cancelBag = Set<AnyCancellable>()
     private var currentInputStatus: CurrentPasswordInputStatus = .invalid
     
     override init(frame: CGRect) {
@@ -30,13 +28,9 @@ class InputTextField: UITextField {
     
     private func setupViews() {
         delegate = self
-        rightViewMode = .always
         leftViewMode = .always
         let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: Int(moderateScale(number: 20)), height: Int(self.frame.height)))
         self.leftView = leftPaddingView
-        let rightPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: Int(moderateScale(number: 20)), height: Int(self.frame.height)))
-        rightPaddingView.backgroundColor = .black
-        self.rightView = rightPaddingView
         self.backgroundColor = ColorManager.defaultForegroundDisabled
         self.layer.cornerRadius = 10
         autocapitalizationType = .none
