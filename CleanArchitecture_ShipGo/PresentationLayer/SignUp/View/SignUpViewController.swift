@@ -14,11 +14,11 @@ import FirebaseAuth
 final class SignUpViewController: UIViewController {
     
     weak var coordinator: SignUpCoordinator?
-    
     private var cancelBag = Set<AnyCancellable>()
     var viewModel: SignUpViewModel = SignUpViewModel()
     
     private lazy var containerView = UIView()
+    
     private lazy var titleLabel1 = UILabel().then({
         $0.text = "계정을"
         $0.font = UIFont.setFont(size: moderateScale(number: 26), family: .Bold)

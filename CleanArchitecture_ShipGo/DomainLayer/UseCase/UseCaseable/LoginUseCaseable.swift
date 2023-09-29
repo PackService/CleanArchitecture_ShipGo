@@ -6,3 +6,9 @@
 //
 
 import Foundation
+import Combine
+
+protocol LoginUseCaseable {
+    func login(requestModel: LoginRequestModel) -> AnyPublisher<Void, Never>
+    func getErrorSubject() -> AnyPublisher<Error, Never>
+}

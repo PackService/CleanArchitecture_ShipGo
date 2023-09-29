@@ -6,10 +6,16 @@
 //
 
 import UIKit
+import Combine
+import SnapKit
+import Then
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
     weak var coordinator: LoginCoordinator?
+    private var cancelBag = Set<AnyCancellable>()
+    var viewModel: LoginViewModel = LoginViewModel()
     
     private lazy var containerView = UIView()
     
@@ -61,6 +67,7 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .white
         addViews()
         makeConstraints()
+        bind()
     }
 
     private func addViews() {
@@ -127,6 +134,24 @@ class LoginViewController: UIViewController {
             constraints.leading.trailing.equalToSuperview()
             constraints.height.equalTo(moderateScale(number: 52))
         }
+    }
+    
+    private func bind() {
+        viewModel.signUpPublisher()
+            .sink { [weak self] result in
+                if result == .emailRegexError {
+                    self?.emailTextField.setupInvalidStatus(error: result.rawValue)
+                } else if result == .passwordRegexError {
+                    self?.passwordTextField.setupInvalidStatus(error: result.rawValue)
+                } else if result == .notEqualPassword {
+                    self?.passwordCheckTextField.setupInvalidStatus(error: result.rawValue)
+                } else if result == .existEmail {
+                    self?.emailTextField.setupInvalidStatus(error: result.rawValue)
+                } else if result == .success {
+                    self?.coordinator?.login()
+                }
+            }
+            .store(in: &cancelBag)
     }
 }
 

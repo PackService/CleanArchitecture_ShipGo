@@ -30,23 +30,24 @@ class RemoteDataSourceImpl: RemoteDataSourceable {
                     
                 }
             }
-        }.eraseToAnyPublisher()
+        }
+        .eraseToAnyPublisher()
     }
     
+    func login(email: String, password: String) -> AnyPublisher<Result<Void, Error>, Never> {
+        Future<Result<Void, Error>, Never> { [weak self] promise in
+            print("login Email: \(email)")
+            print("login Password: \(password)")
+            
+            Auth.auth().signIn(withEmail: email, password: password) { result, error in
+                if let error = error {
+                    promise(.success(.failure(error)))
+                    print("remoteImpl login error :\(error)")
+                } else {
+                    promise(.success(.success(print("성공"))))
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
 }
-
-//Auth.auth().createUser(withEmail: email, password: password) { result, error  in
-//    print("firebaseRegister 결과 :\(String(describing: result))")
-//    if let error = error { // 이미 해당 이메일 존재하는 경우
-//        print("Error: \(error.localizedDescription)")
-//        completion(.failure(NetworkError(code: 1, msg: "파이어베이스 등록 오류여")))
-//        return
-//    }
-//    guard let user = result?.user else { return }
-//    let trackInfo = UserInfo(email: email, history: [], trackInfos: nil)
-//
-//    if error == nil { // 회원가입 완료
-////                self.db.collection("users").document(user.uid).setData(["email": user.email, "history": []])
-//        completion(.success(result?.user))
-//    }
-//}
