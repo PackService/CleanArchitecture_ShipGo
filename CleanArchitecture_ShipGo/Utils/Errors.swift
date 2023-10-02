@@ -39,5 +39,6 @@ enum UserError: String, Error, CaseIterable {
     case passwordRegexError = "비밀번호를 8자 이상 입력하세요"
     case notEqualPassword = "비밀번호와 비밀번호 확인이 일치하지 않습니다"
     case existEmail = "이미 사용중인 이메일입니다"
+    case wrongEmailAndPassword = "이메일 또는 비밀번호가 일치하지 않습니다"
 }
 
