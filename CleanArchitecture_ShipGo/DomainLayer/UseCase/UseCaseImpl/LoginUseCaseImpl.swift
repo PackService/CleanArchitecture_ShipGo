@@ -10,12 +10,12 @@ import Combine
 
 final class LoginUseCaseImpl: LoginUseCaseable {
     
-    private let repository: SignUpRepositoriable = SignUpRepositoryImpl()
+    private let repository: LoginRepositoriable = LoginRepositoryImpl()
     private let mapper = SignUpMapper()
     private let errorSubject = CurrentValueSubject<Error, Never>(NetworkError())
     
-    func signUp(requestModel: SignUpRequestModel) -> AnyPublisher<Void, Never> {
-        repository.signUp(email: requestModel.email,
+    func login(requestModel: LoginRequestModel) -> AnyPublisher<Void, Never> {
+        repository.login(email: requestModel.email,
                           password: requestModel.password)
         .compactMap { [weak self] result -> Void? in
             guard let selfRef = self else { return nil }
