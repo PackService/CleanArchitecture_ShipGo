@@ -80,10 +80,12 @@ final class SignUpViewController: UIViewController {
     })
     private lazy var passwordTextField = InputTextField().then({
         $0.placeholder = "비밀번호"
+        $0.isSecureTextEntry = true
         $0.font = UIFont.setFont(size: 20, family: .SemiBold)
     })
     private lazy var passwordCheckTextField = InputTextField().then({
         $0.placeholder = "비밀번호를 한번 더 입력하세요"
+        $0.isSecureTextEntry = true
         $0.font = UIFont.setFont(size: 20, family: .SemiBold)
     })
     

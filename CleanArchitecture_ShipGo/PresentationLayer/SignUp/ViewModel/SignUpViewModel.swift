@@ -19,7 +19,6 @@ class SignUpViewModel: BaseViewModel {
     
     private var cancelBag = Set<AnyCancellable>()
     private let useCase: SignUpUseCaseable = SignUpUseCaseImpl() // 나중에 의존성 주입으로 변경 필요
-    
     private var allAgree = CurrentValueSubject<Bool, Never>(false)
     private var firstAgree = CurrentValueSubject<Bool, Never>(false)
     private var secondAgree = CurrentValueSubject<Bool, Never>(false)
@@ -45,15 +44,13 @@ class SignUpViewModel: BaseViewModel {
             }
             .store(in: &cancelBag)
         
-        // MARK: -  network error 출력 미완성
         useCase.getErrorSubject()
-//            .filter({ (400..<500).contains($0.getErrorCode() ?? 0) })
             .sink(receiveValue: { [weak self] error in
                 print("signupviewmodel error: \(error)")
                 self?.signUpValidation.send(.existEmail)
             })
             .store(in: &cancelBag)
- // viewmodel말고 remotedatasourceimpldptj rr
+ 
         shouldSignUp
             .compactMap { [weak self] email, password -> SignUpRequestModel? in
                 return .init(email: email,
