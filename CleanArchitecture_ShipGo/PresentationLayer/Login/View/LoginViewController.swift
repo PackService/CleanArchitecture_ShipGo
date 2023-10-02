@@ -36,10 +36,11 @@ class LoginViewController: UIViewController {
     })
     private lazy var passwordTextField = InputTextField().then({
         $0.placeholder = "password"
+        $0.isSecureTextEntry = true
     })
     private lazy var loginButton = CompleteButton().then({ // 로그인 버튼 누르면 탭바되도록 나중에 수정
         $0.setTitle("로그인", for: .normal)
-        $0.addTarget(self, action: #selector(tabBarButtonTapped(_:)), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(loginButtonTapped(_:)), for: .touchUpInside)
     })
     private lazy var signUpStackView = UIStackView().then({
         $0.axis = .horizontal
@@ -137,18 +138,14 @@ class LoginViewController: UIViewController {
     }
     
     private func bind() {
-        viewModel.signUpPublisher()
+        viewModel.loginPublisher()
             .sink { [weak self] result in
-                if result == .emailRegexError {
-                    self?.emailTextField.setupInvalidStatus(error: result.rawValue)
-                } else if result == .passwordRegexError {
-                    self?.passwordTextField.setupInvalidStatus(error: result.rawValue)
-                } else if result == .notEqualPassword {
-                    self?.passwordCheckTextField.setupInvalidStatus(error: result.rawValue)
-                } else if result == .existEmail {
-                    self?.emailTextField.setupInvalidStatus(error: result.rawValue)
-                } else if result == .success {
-                    self?.coordinator?.login()
+                if result == .success {
+                    print("로그인 성공해서 탭 바 화면으로 이동")
+                    self?.coordinator?.tabBar()
+                } else {
+                    self?.showPopUp(title: "에러",
+                              message: result.rawValue)
                 }
             }
             .store(in: &cancelBag)
@@ -156,7 +153,12 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController {
-    @objc func tabBarButtonTapped(_ button: UIButton) {
+    @objc func tabBarButtonTapped(_ button: UIButton) { // 탭 바 화면으로 이동하는 것, 해당 로직 로그인 성공 시 되도록 수정
         coordinator?.tabBar()
+    }
+    
+    @objc private func loginButtonTapped(_ button: UIButton) {
+        self.viewModel.sendShouldLogin(email: self.emailTextField.text ?? "",
+                                       password: self.passwordTextField.text ?? "")
     }
 }
