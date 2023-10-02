@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 protocol LoginRepositoriable {
-    
+    func login(email: String, password: String) -> AnyPublisher<Result<Void, Error>, Never>
 }
