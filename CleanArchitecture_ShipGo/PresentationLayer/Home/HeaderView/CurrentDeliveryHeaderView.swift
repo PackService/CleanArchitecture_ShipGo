@@ -14,20 +14,15 @@ final class CurrentDeliveryHeaderView: UICollectionReusableView {
     static let supplementaryViewOfKind = "AccountHeaderViewKind"
 
     private lazy var containerView = UIView().then({
-        $0.backgroundColor = .white
+        $0.backgroundColor = .blue
     })
     
-    private lazy var logoImageView = UILabel().then({
-        $0.text = "ConaPay"
+    private lazy var titleLabel = UILabel().then({
+        $0.text = "지금 배송중"
     })
     
-    private lazy var QRCodeButton = UIButton().then({
-        $0.setImage(UIImage(systemName: "qrcode.viewfinder"), for: .normal)
-        $0.tintColor = UIColor(red: 60/255, green: 64/255, blue: 82/255, alpha: 1)
-    })
-    
-    private lazy var menuButton = UIButton().then({
-        $0.setImage(UIImage(systemName: "line.3.horizontal"), for: .normal)
+    private lazy var addButton = UIButton().then({
+        $0.setImage(UIImage(systemName: "cirle.fill"), for: .normal)
         $0.tintColor = UIColor(red: 60/255, green: 64/255, blue: 82/255, alpha: 1)
     })
     
@@ -45,24 +40,19 @@ final class CurrentDeliveryHeaderView: UICollectionReusableView {
 extension CurrentDeliveryHeaderView {
     private func addViews() {
         addSubview(containerView)
-        containerView.addSubview(logoImageView)
-        containerView.addSubview(QRCodeButton)
-        containerView.addSubview(menuButton)
+        containerView.addSubViews([titleLabel,
+                                  addButton])
     }
     
     private func makeConstraints() {
         containerView.snp.makeConstraints { constraints in
-            constraints.edges.equalToSuperview()
+            constraints.top.bottom.leading.trailing.equalToSuperview()
         }
-        logoImageView.snp.makeConstraints { constraints in
+        titleLabel.snp.makeConstraints { constraints in
             constraints.leading.equalToSuperview().offset(moderateScale(number: 20))
             constraints.centerY.equalToSuperview()
         }
-        QRCodeButton.snp.makeConstraints { constraints in
-            constraints.trailing.equalTo(menuButton.snp.leading).offset(moderateScale(number: -20))
-            constraints.centerY.equalToSuperview()
-        }
-        menuButton.snp.makeConstraints { constraints in
+        addButton.snp.makeConstraints { constraints in
             constraints.trailing.equalToSuperview().offset(moderateScale(number: -23))
             constraints.centerY.equalToSuperview()
         }
