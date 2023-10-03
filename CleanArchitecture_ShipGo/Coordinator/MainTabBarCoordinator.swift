@@ -25,6 +25,7 @@ class MainTabBarCoordinator: Coordinator {
         self.type = CoordinatorType.tab
         self.navigationController = navigationController
         self.tabBarController = UITabBarController()
+        self.navigationController.navigationBar.isHidden = true
     }
 
     func start() {

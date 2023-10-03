@@ -18,7 +18,7 @@ class ListMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        self.navigationItem.title = "List"
+        self.navigationController?.navigationBar.isHidden = true
         addViews()
         makeConstraints()
     }

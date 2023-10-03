@@ -13,21 +13,33 @@ class HomeMainViewController: UIViewController {
     
     weak var coordinator: Coordinator?
     
-    private lazy var containerView = UIView()
+    private lazy var containerView = UIView().then({
+        $0.backgroundColor = .yellow
+    })
+    
+    private lazy var headerView = CurrentDeliveryHeaderView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        self.navigationItem.title = "Home"
+        self.navigationController?.navigationBar.isHidden = true
         
-        print("api 테스트")
         addViews()
         makeConstraints()
     }
 
     private func addViews() {
+        view.addSubview(containerView)
+//        containerView.addSubview(headerView)
     }
     
     private func makeConstraints() {
+        containerView.snp.makeConstraints { constraints in
+            constraints.edges.equalToSuperview()
+        }
+//        headerView.snp.makeConstraints { constraints in
+//            constraints.centerX.equalToSuperview()
+//            constraints.centerY.equalToSuperview()
+//        }
     }
 }
