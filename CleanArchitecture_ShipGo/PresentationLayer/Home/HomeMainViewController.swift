@@ -24,6 +24,8 @@ class HomeMainViewController: UIViewController {
     
     private typealias DataSource = UICollectionViewDiffableDataSource<Section, Int>
     private typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Int>
+    private typealias HeaderRegistration = UICollectionView.SupplementaryRegistration<CurrentDeliveryHeaderView>
+    private typealias FooterRegistration = UICollectionView.SupplementaryRegistration<CurrentDeliveryFooterView>
     
     private var dataSource: DataSource!
     private var cancelBag = Set<AnyCancellable>()
@@ -56,6 +58,7 @@ class HomeMainViewController: UIViewController {
         $0.register(InsightDeliveryCell.self, forCellWithReuseIdentifier: InsightDeliveryCell.reuseIdentifier)
         $0.register(CurrentDeliveryHeaderView.self, forSupplementaryViewOfKind: CurrentDeliveryHeaderView.supplementaryViewOfKind, withReuseIdentifier: CurrentDeliveryHeaderView.reuseIdentifier)
         $0.register(InsightDeliveryHeaderView.self, forSupplementaryViewOfKind: InsightDeliveryHeaderView.supplementaryViewOfKind, withReuseIdentifier: InsightDeliveryHeaderView.reuseIdentifier)
+        $0.register(CurrentDeliveryFooterView.self, forSupplementaryViewOfKind: CurrentDeliveryFooterView.supplementaryViewOfKind, withReuseIdentifier: CurrentDeliveryFooterView.reuseIdentifier)
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -106,16 +109,20 @@ extension HomeMainViewController {
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
                 let section = NSCollectionLayoutSection(group: group)
-                section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: CGFloat(moderateScale(number: -10)), trailing: 0)
-                let headerFooterSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(moderateScale(number: 56)))
+                section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(moderateScale(number: 56)))
                 let header = NSCollectionLayoutBoundarySupplementaryItem(
-                    layoutSize: headerFooterSize,
+                    layoutSize: headerSize,
                     elementKind: CurrentDeliveryHeaderView.supplementaryViewOfKind,
                     alignment: .top
                 )
-                header.pinToVisibleBounds = true
-                header.zIndex = 1
-                section.boundarySupplementaryItems = [header]
+                
+                let footer =  NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(moderateScale(number: 36))),
+                    elementKind: CurrentDeliveryFooterView.supplementaryViewOfKind,
+                    alignment: .bottom
+                )
+                section.boundarySupplementaryItems = [header, footer]
                 return section
             default:
                 let itemSize = NSCollectionLayoutSize(
@@ -163,27 +170,32 @@ extension HomeMainViewController {
             }
         })
         
+        
         dataSource.supplementaryViewProvider = { [weak self] collectionView, kind, indexPath in
             let section = Section(rawValue: indexPath.section)
             switch section {
             case .currentDeliverySection:
-                guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CurrentDeliveryHeaderView.reuseIdentifier, for: indexPath) as? CurrentDeliveryHeaderView else {
-                    fatalError("Could not dequeue sectionHeader: \(CurrentDeliveryHeaderView.reuseIdentifier)")
+                print("아아아아아ㅏ")
+                print(kind)
+                if kind == CurrentDeliveryHeaderView.supplementaryViewOfKind {
+                    guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CurrentDeliveryHeaderView.reuseIdentifier, for: indexPath) as? CurrentDeliveryHeaderView else {
+                        fatalError("Could not dequeue sectionHeader: \(CurrentDeliveryHeaderView.reuseIdentifier)")
+                    }
+                    return sectionHeader
+                } else if kind == CurrentDeliveryFooterView.supplementaryViewOfKind {
+                    guard let sectionFooter = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CurrentDeliveryFooterView.reuseIdentifier, for: indexPath) as? CurrentDeliveryFooterView else {
+                        fatalError("Could not dequeue sectionFooter: \(CurrentDeliveryFooterView.reuseIdentifier)")
+                    }
+                    return sectionFooter
                 }
-                return sectionHeader
+                return UICollectionReusableView() // 빈 뷰를 반환하도록 수정
             case .insightDeliverySection:
                 guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: InsightDeliveryHeaderView.reuseIdentifier, for: indexPath) as? InsightDeliveryHeaderView else {
                     fatalError("Could not dequeue sectionHeader: \(InsightDeliveryHeaderView.reuseIdentifier)")
                 }
-                
-//                sectionHeader.delegate = self
-                
-//                if sectionHeader.viewModel == nil {
-//                    sectionHeader.viewModel = self.viewModel
-//                }
                 return sectionHeader
             default:
-                return UICollectionReusableView()
+                return UICollectionReusableView() // 빈 뷰를 반환하도록 수정
             }
         }
     }
