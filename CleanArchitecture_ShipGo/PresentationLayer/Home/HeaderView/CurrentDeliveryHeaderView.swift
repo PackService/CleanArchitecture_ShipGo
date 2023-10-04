@@ -22,7 +22,7 @@ final class CurrentDeliveryHeaderView: UICollectionReusableView {
     })
     
     private lazy var addButton = UIButton().then({
-        $0.setImage(UIImage(systemName: "cirle.fill"), for: .normal)
+        $0.setImage(UIImage(systemName: "circle.fill"), for: .normal)
         $0.tintColor = UIColor(red: 60/255, green: 64/255, blue: 82/255, alpha: 1)
     })
     
@@ -53,7 +53,7 @@ extension CurrentDeliveryHeaderView {
             constraints.centerY.equalToSuperview()
         }
         addButton.snp.makeConstraints { constraints in
-            constraints.trailing.equalToSuperview().offset(moderateScale(number: -23))
+            constraints.trailing.equalToSuperview().offset(moderateScale(number: -20))
             constraints.centerY.equalToSuperview()
         }
     }
