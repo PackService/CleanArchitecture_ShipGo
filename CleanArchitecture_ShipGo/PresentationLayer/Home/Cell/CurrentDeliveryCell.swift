@@ -18,34 +18,20 @@ final class CurrentDeliveryCell: BaseCollectionViewCell<Int> {
         $0.layer.borderColor = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1).cgColor
     })
     
-    private lazy var summaryLabel = UILabel().then({
-        $0.text = "International Transfer"
-        $0.textColor = .black
-        $0.font = UIFont(name: "Pretendard-Medium", size: 14)
+    private lazy var deliveryCompanyImageView = UIImageView().then({
+        $0.image = UIImage(systemName: "circle.fill")
     })
     
-    private lazy var dateLabel = UILabel().then({
-        $0.text = "07.03"
-        $0.textColor = .black
-        $0.font = UIFont(name: "Pretendard-Medium", size: 12)
+    private lazy var nameLabel = UILabel().then({
+        $0.text = "토리든 고분자 뭐시기"
     })
     
-    private lazy var typeLabel = UILabel().then({
-        $0.text = "Deposit"
-        $0.textColor = .black
-        $0.font = UIFont(name: "Pretendard-Medium", size: 12)
-    })
-    
-    private lazy var moneyLabel = UILabel().then({
-        $0.text = "$123.23"
-        $0.textColor = .black
-        $0.font = UIFont(name: "Pretendard-Bold", size: 16)
+    private lazy var numberLabel = UILabel().then({
+        $0.text = "00001111000"
     })
     
     private lazy var stateLabel = UILabel().then({
-        $0.text = "Approved"
-        $0.textColor = .black
-        $0.font = UIFont(name: "Pretendard-Regular", size: 12)
+        $0.text = "간선상차"
     })
     
     required init?(coder: NSCoder) {
@@ -67,37 +53,29 @@ final class CurrentDeliveryCell: BaseCollectionViewCell<Int> {
 extension CurrentDeliveryCell {
     private func addViews() {
         self.contentView.addSubview(containerView)
-        [summaryLabel,
-         dateLabel,
-         typeLabel,
-         moneyLabel,
-         stateLabel
-        ].forEach { containerView.addSubview($0) }
+        containerView.addSubViews([deliveryCompanyImageView,
+                                  nameLabel,
+                                  numberLabel,
+                                  stateLabel])
     }
     
     private func makeConstraints() {
         containerView.snp.makeConstraints { constraints in
             constraints.top.bottom.leading.trailing.equalToSuperview()
         }
-        summaryLabel.snp.makeConstraints { constraints in
-            constraints.top.equalToSuperview().offset(moderateScale(number: 18))
-            constraints.leading.equalToSuperview().offset(moderateScale(number: 20))
+        deliveryCompanyImageView.snp.makeConstraints { constraints in
+            constraints.top.equalToSuperview().offset(moderateScale(number: 24))
+            constraints.leading.equalToSuperview().offset(moderateScale(number: 16))
+            constraints.width.height.equalTo(moderateScale(number: 44))
         }
-        dateLabel.snp.makeConstraints { constraints in
-            constraints.top.equalTo(summaryLabel.snp.bottom).offset(moderateScale(number: 6))
-            constraints.leading.equalTo(summaryLabel.snp.leading)
+        nameLabel.snp.makeConstraints { constraints in
+            constraints.top.equalTo(deliveryCompanyImageView.snp.top)
+            constraints.leading.equalTo(deliveryCompanyImageView.snp.trailing).offset(moderateScale(number: 12))
+            constraints.trailing.equalToSuperview().offset(moderateScale(number: -46))
         }
-        typeLabel.snp.makeConstraints { constraints in
-            constraints.top.equalTo(dateLabel.snp.top)
-            constraints.leading.equalTo(dateLabel.snp.trailing).offset(moderateScale(number: 10))
-        }
-        moneyLabel.snp.makeConstraints { constraints in
-            constraints.top.equalToSuperview().offset(moderateScale(number: 19))
-            constraints.trailing.equalToSuperview().offset(moderateScale(number: -20))
-        }
-        stateLabel.snp.makeConstraints { constraints in
-            constraints.top.equalTo(moneyLabel.snp.bottom).offset(moderateScale(number: 6))
-            constraints.trailing.equalTo(moneyLabel.snp.trailing)
+        numberLabel.snp.makeConstraints { constraints in
+            constraints.top.equalTo(deliveryCompanyImageView.snp.centerY)
+            constraints.leading.equalTo(deliveryCompanyImageView.snp.trailing).offset(moderateScale(number: 12))
         }
     }
 }

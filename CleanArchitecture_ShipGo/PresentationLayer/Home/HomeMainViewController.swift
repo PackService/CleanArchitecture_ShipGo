@@ -19,7 +19,7 @@ class HomeMainViewController: UIViewController {
     
     weak var coordinator: Coordinator?
     
-    var itemModel1: [Int] = [1,2,3,4,5]
+    var itemModel1: [Int] = [1]
     var itemModel2: [Int] = [4,5,6,7,8]
     
     private typealias DataSource = UICollectionViewDiffableDataSource<Section, Int>
@@ -93,7 +93,7 @@ extension HomeMainViewController {
                 let itemInset: CGFloat = CGFloat(moderateScale(number: 10))
 
                 let itemSize = NSCollectionLayoutSize(
-                    widthDimension: .fractionalWidth(1/2),
+                    widthDimension: .fractionalWidth(1),
                     heightDimension: .fractionalHeight(1)
                 )
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
