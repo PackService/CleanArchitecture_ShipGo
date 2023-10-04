@@ -84,10 +84,6 @@ class HomeMainViewController: UIViewController {
     }
 }
 
-
-
-
-
 extension HomeMainViewController {
     static private func getLayout() -> UICollectionViewCompositionalLayout {
         UICollectionViewCompositionalLayout { (section, env) -> NSCollectionLayoutSection? in
@@ -175,8 +171,6 @@ extension HomeMainViewController {
             let section = Section(rawValue: indexPath.section)
             switch section {
             case .currentDeliverySection:
-                print("아아아아아ㅏ")
-                print(kind)
                 if kind == CurrentDeliveryHeaderView.supplementaryViewOfKind {
                     guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CurrentDeliveryHeaderView.reuseIdentifier, for: indexPath) as? CurrentDeliveryHeaderView else {
                         fatalError("Could not dequeue sectionHeader: \(CurrentDeliveryHeaderView.reuseIdentifier)")
@@ -195,7 +189,7 @@ extension HomeMainViewController {
                 }
                 return sectionHeader
             default:
-                return UICollectionReusableView() // 빈 뷰를 반환하도록 수정
+                return UICollectionReusableView()
             }
         }
     }

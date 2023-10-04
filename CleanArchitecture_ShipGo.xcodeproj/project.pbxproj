@@ -67,6 +67,8 @@
 		D8B661142A60F72E0049B8D9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B661132A60F72E0049B8D9 /* AppCoordinator.swift */; };
 		D8B661252A614AA10049B8D9 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B661242A614AA10049B8D9 /* OnBoardingViewController.swift */; };
 		D8B661272A614AC70049B8D9 /* ViewControllerTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B661262A614AC70049B8D9 /* ViewControllerTemplate.swift */; };
+		D8B6CEA02ACD3F7100CFE3EE /* CurrentDeliveryFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6CE9F2ACD3F7100CFE3EE /* CurrentDeliveryFooterView.swift */; };
+		D8B6CEA42ACD62A900CFE3EE /* HomeMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B6CEA32ACD62A900CFE3EE /* HomeMainViewModel.swift */; };
 		D8B8B9302A7CD86A008F1807 /* Error+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B8B92F2A7CD86A008F1807 /* Error+Extension.swift */; };
 		D8B8B9342A7CDE35008F1807 /* SignUpEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B8B9332A7CDE35008F1807 /* SignUpEntity.swift */; };
 		D8B8B9362A7CDF1F008F1807 /* SignUpRpositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B8B9352A7CDF1F008F1807 /* SignUpRpositoryImpl.swift */; };
@@ -152,6 +154,8 @@
 		D8B661132A60F72E0049B8D9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		D8B661242A614AA10049B8D9 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		D8B661262A614AC70049B8D9 /* ViewControllerTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTemplate.swift; sourceTree = "<group>"; };
+		D8B6CE9F2ACD3F7100CFE3EE /* CurrentDeliveryFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDeliveryFooterView.swift; sourceTree = "<group>"; };
+		D8B6CEA32ACD62A900CFE3EE /* HomeMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainViewModel.swift; sourceTree = "<group>"; };
 		D8B8B92F2A7CD86A008F1807 /* Error+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extension.swift"; sourceTree = "<group>"; };
 		D8B8B9332A7CDE35008F1807 /* SignUpEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEntity.swift; sourceTree = "<group>"; };
 		D8B8B9352A7CDF1F008F1807 /* SignUpRpositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRpositoryImpl.swift; sourceTree = "<group>"; };
@@ -529,6 +533,33 @@
 			path = OnBoarding;
 			sourceTree = "<group>";
 		};
+		D8B6CE9E2ACD3F2E00CFE3EE /* FooterView */ = {
+			isa = PBXGroup;
+			children = (
+				D8B6CE9F2ACD3F7100CFE3EE /* CurrentDeliveryFooterView.swift */,
+			);
+			path = FooterView;
+			sourceTree = "<group>";
+		};
+		D8B6CEA12ACD61DD00CFE3EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D8CF211D2A78D53600A93912 /* HomeMainViewController.swift */,
+				AD93E6E12ACBFA030010BD03 /* HeaderView */,
+				AD93E6E22ACBFA140010BD03 /* Cell */,
+				D8B6CE9E2ACD3F2E00CFE3EE /* FooterView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D8B6CEA22ACD620700CFE3EE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D8B6CEA32ACD62A900CFE3EE /* HomeMainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D8CC37CE2A80A177003407B5 /* Local */ = {
 			isa = PBXGroup;
 			children = (
@@ -556,9 +587,8 @@
 		D8CF211F2A78DCB700A93912 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				D8CF211D2A78D53600A93912 /* HomeMainViewController.swift */,
-				AD93E6E12ACBFA030010BD03 /* HeaderView */,
-				AD93E6E22ACBFA140010BD03 /* Cell */,
+				D8B6CEA12ACD61DD00CFE3EE /* View */,
+				D8B6CEA22ACD620700CFE3EE /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -721,6 +751,7 @@
 				D85D16AF2A5E2E2300D799DD /* RemoteDataSourceImpl.swift in Sources */,
 				AD93E6E02ACBF8F80010BD03 /* BaseCollectionViewCell.swift in Sources */,
 				D8D483212A5F7FE300B474E4 /* ScreenUtil.swift in Sources */,
+				D8B6CEA02ACD3F7100CFE3EE /* CurrentDeliveryFooterView.swift in Sources */,
 				D85D16B32A5E2E7900D799DD /* RemoteLoginItem.swift in Sources */,
 				D8CF21232A78DD1C00A93912 /* ListMainViewController.swift in Sources */,
 				D8CF21182A78D33B00A93912 /* TabBarSettingCoordinator.swift in Sources */,
@@ -732,6 +763,7 @@
 				D8D31E5F2A7A483E0095D4F0 /* InputTextField.swift in Sources */,
 				D85D169A2A5E2CB600D799DD /* Entity.swift in Sources */,
 				D81082B52A67676500FBCD9C /* UIView+Extension.swift in Sources */,
+				D8B6CEA42ACD62A900CFE3EE /* HomeMainViewModel.swift in Sources */,
 				D8CF21252A78DD3600A93912 /* SettingMainViewController.swift in Sources */,
 				D8B8B9362A7CDF1F008F1807 /* SignUpRpositoryImpl.swift in Sources */,
 				D89C2DFA2A7B93B000457EB9 /* SignUpUseCaseable.swift in Sources */,
