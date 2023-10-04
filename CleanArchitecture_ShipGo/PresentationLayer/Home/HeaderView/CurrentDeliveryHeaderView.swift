@@ -10,8 +10,8 @@ import SnapKit
 import Then
 
 final class CurrentDeliveryHeaderView: UICollectionReusableView {
-    static let reuseIdentifier = "AccountHeaderView"
-    static let supplementaryViewOfKind = "AccountHeaderViewKind"
+    static let reuseIdentifier = "CurrentDeliveryHeaderView"
+    static let supplementaryViewOfKind = "CurrentDeliveryHeaderViewKind"
 
     private lazy var containerView = UIView().then({
         $0.backgroundColor = .blue

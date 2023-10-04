@@ -10,8 +10,8 @@ import SnapKit
 import Then
 
 final class InsightDeliveryHeaderView: UICollectionReusableView {
-    static let reuseIdentifier = "AccountHeaderView"
-    static let supplementaryViewOfKind = "AccountHeaderViewKind"
+    static let reuseIdentifier = "InsightDeliveryHeaderView"
+    static let supplementaryViewOfKind = "InsightDeliveryHeaderViewKind"
 
     private lazy var containerView = UIView().then({
         $0.backgroundColor = .white
