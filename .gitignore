@@ -42,6 +42,7 @@ DerivedData/
 *.dSYM.zip
 *.dSYM
 *.DS_Store
+*.xcconfig
 
 ## Playgrounds
 timeline.xctimeline
