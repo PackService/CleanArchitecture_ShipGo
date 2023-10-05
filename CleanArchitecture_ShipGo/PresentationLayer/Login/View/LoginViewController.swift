@@ -66,6 +66,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        print(Bundle.main.object(forInfoDictionaryKey: "DELIVERY_API_KEY") as? String)
         addViews()
         makeConstraints()
         bind()

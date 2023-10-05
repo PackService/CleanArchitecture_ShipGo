@@ -185,6 +185,7 @@
 		D8D483202A5F7FE300B474E4 /* ScreenUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtil.swift; sourceTree = "<group>"; };
 		D8D483222A5F807300B474E4 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWrapper.swift; sourceTree = "<group>"; };
+		D8DF58802ACE4E3E00EE977A /* ApiSetting.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ApiSetting.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +270,7 @@
 				D800BAC02A5CEA61001F19A3 /* LaunchScreen.storyboard */,
 				D800BAC32A5CEA61001F19A3 /* Info.plist */,
 				D800BABB2A5CEA5F001F19A3 /* CleanArchitecture_ShipGo.xcdatamodeld */,
+				D8DF58802ACE4E3E00EE977A /* ApiSetting.xcconfig */,
 			);
 			path = CleanArchitecture_ShipGo;
 			sourceTree = "<group>";
@@ -926,6 +928,7 @@
 		};
 		D800BAC72A5CEA61001F19A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8DF58802ACE4E3E00EE977A /* ApiSetting.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -954,6 +957,7 @@
 		};
 		D800BAC82A5CEA61001F19A3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8DF58802ACE4E3E00EE977A /* ApiSetting.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
