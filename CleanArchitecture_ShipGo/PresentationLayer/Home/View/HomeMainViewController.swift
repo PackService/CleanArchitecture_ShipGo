@@ -20,7 +20,7 @@ class HomeMainViewController: UIViewController {
     weak var coordinator: Coordinator?
     
     var itemModel1: [Int] = [1]
-    var itemModel2: [Int] = [4,5,6,7,8]
+    var itemModel2: [Int] = [4]
     
     private typealias DataSource = UICollectionViewDiffableDataSource<Section, Int>
     private typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Int>
@@ -55,7 +55,7 @@ class HomeMainViewController: UIViewController {
         $0.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 247/255, alpha: 1)
         $0.clipsToBounds = true
         $0.register(CurrentDeliveryCell.self, forCellWithReuseIdentifier: CurrentDeliveryCell.reuseIdentifier)
-        $0.register(InsightDeliveryCell.self, forCellWithReuseIdentifier: InsightDeliveryCell.reuseIdentifier)
+        $0.register(InsightDeliveryMainCell.self, forCellWithReuseIdentifier: InsightDeliveryMainCell.reuseIdentifier)
         $0.register(CurrentDeliveryHeaderView.self, forSupplementaryViewOfKind: CurrentDeliveryHeaderView.supplementaryViewOfKind, withReuseIdentifier: CurrentDeliveryHeaderView.reuseIdentifier)
         $0.register(InsightDeliveryHeaderView.self, forSupplementaryViewOfKind: InsightDeliveryHeaderView.supplementaryViewOfKind, withReuseIdentifier: InsightDeliveryHeaderView.reuseIdentifier)
         $0.register(CurrentDeliveryFooterView.self, forSupplementaryViewOfKind: CurrentDeliveryFooterView.supplementaryViewOfKind, withReuseIdentifier: CurrentDeliveryFooterView.reuseIdentifier)
@@ -147,7 +147,7 @@ extension HomeMainViewController {
             }
         }
     }
-    
+    // MARK: -섹션 3 만들어서 셀만 있는거 넣는게 제일 나을듯
     private func setUpCollectionView() {
         dataSource = DataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
             let section = Section(rawValue: indexPath.section)
@@ -158,8 +158,8 @@ extension HomeMainViewController {
                 (cell as? CurrentDeliveryCell)?.model = itemIdentifier
                 return cell
             case .insightDeliverySection:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: InsightDeliveryCell.reuseIdentifier, for: indexPath)
-                (cell as? InsightDeliveryCell)?.model = itemIdentifier
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: InsightDeliveryMainCell.reuseIdentifier, for: indexPath)
+                (cell as? InsightDeliveryMainCell)?.model = itemIdentifier
                 return cell
             default:
                 return UICollectionViewCell()

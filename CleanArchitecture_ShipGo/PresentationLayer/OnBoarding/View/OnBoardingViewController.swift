@@ -93,7 +93,6 @@ class OnBoardingViewController: UIViewController {
             constraints.width.equalTo(moderateScale(number: 100))
             constraints.leading.trailing.equalToSuperview()
         }
-    
         appleSignUpButton.snp.makeConstraints { constraints in
             constraints.top.equalTo(titleImage.snp.bottom).offset(verticalScale(number: 50)) // 임시로 넣어줌
             constraints.width.equalToSuperview()
@@ -109,7 +108,6 @@ class OnBoardingViewController: UIViewController {
             constraints.width.equalToSuperview()
             constraints.height.equalTo(moderateScale(number: 52))
         }
-
         loginStackView.snp.makeConstraints({ constraints in
             constraints.top.equalTo(emailSignUpButton.snp.bottom).offset(verticalScale(number: 16))
             constraints.centerX.equalToSuperview()
