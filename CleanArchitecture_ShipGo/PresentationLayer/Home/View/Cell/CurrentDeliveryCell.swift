@@ -34,6 +34,8 @@ final class CurrentDeliveryCell: BaseCollectionViewCell<Int> {
         $0.text = "간선상차"
     })
     
+    private lazy var progressView = CustomProgressView()
+    
     required init?(coder: NSCoder) {
         fatalError()
     }
@@ -56,7 +58,8 @@ extension CurrentDeliveryCell {
         containerView.addSubViews([deliveryCompanyImageView,
                                   nameLabel,
                                   numberLabel,
-                                  stateLabel])
+                                  stateLabel,
+                                  progressView])
     }
     
     private func makeConstraints() {
@@ -76,6 +79,12 @@ extension CurrentDeliveryCell {
         numberLabel.snp.makeConstraints { constraints in
             constraints.top.equalTo(deliveryCompanyImageView.snp.centerY)
             constraints.leading.equalTo(deliveryCompanyImageView.snp.trailing).offset(moderateScale(number: 12))
+        }
+        progressView.snp.makeConstraints { constraints in
+            constraints.top.equalTo(numberLabel.snp.bottom)
+            constraints.leading.equalToSuperview().offset(moderateScale(number: 16))
+            constraints.trailing.equalToSuperview().offset(moderateScale(number: -16))
+            constraints.height.equalTo(moderateScale(number: 16))
         }
     }
 }

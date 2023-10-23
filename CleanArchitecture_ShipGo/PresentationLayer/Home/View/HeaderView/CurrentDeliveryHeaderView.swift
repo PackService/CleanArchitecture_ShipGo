@@ -19,6 +19,7 @@ final class CurrentDeliveryHeaderView: UICollectionReusableView {
     
     private lazy var titleLabel = UILabel().then({
         $0.text = "지금 배송중"
+        $0.font = UIFont.setFont(size: moderateScale(number: 26), family: .Bold)
     })
     
     private lazy var addButton = UIButton().then({
