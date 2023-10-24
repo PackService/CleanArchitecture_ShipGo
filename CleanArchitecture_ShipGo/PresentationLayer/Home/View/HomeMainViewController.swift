@@ -13,6 +13,7 @@ import Combine
 enum Section: Int {
     case currentDeliverySection
     case insightDeliverySection
+    case insightDetailSection
 }
 
 class HomeMainViewController: UIViewController {
@@ -21,6 +22,7 @@ class HomeMainViewController: UIViewController {
     
     var itemModel1: [Int] = [1]
     var itemModel2: [Int] = [4]
+    var itemModel3: [Int] = [5,6,7,8]
     
     private typealias DataSource = UICollectionViewDiffableDataSource<Section, Int>
     private typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Int>
@@ -56,6 +58,7 @@ class HomeMainViewController: UIViewController {
         $0.clipsToBounds = true
         $0.register(CurrentDeliveryCell.self, forCellWithReuseIdentifier: CurrentDeliveryCell.reuseIdentifier)
         $0.register(InsightDeliveryMainCell.self, forCellWithReuseIdentifier: InsightDeliveryMainCell.reuseIdentifier)
+        $0.register(InsightDeliverySubCell.self, forCellWithReuseIdentifier: InsightDeliverySubCell.reuseIdentifier)
         $0.register(CurrentDeliveryHeaderView.self, forSupplementaryViewOfKind: CurrentDeliveryHeaderView.supplementaryViewOfKind, withReuseIdentifier: CurrentDeliveryHeaderView.reuseIdentifier)
         $0.register(InsightDeliveryHeaderView.self, forSupplementaryViewOfKind: InsightDeliveryHeaderView.supplementaryViewOfKind, withReuseIdentifier: InsightDeliveryHeaderView.reuseIdentifier)
         $0.register(CurrentDeliveryFooterView.self, forSupplementaryViewOfKind: CurrentDeliveryFooterView.supplementaryViewOfKind, withReuseIdentifier: CurrentDeliveryFooterView.reuseIdentifier)
@@ -76,9 +79,11 @@ class HomeMainViewController: UIViewController {
     func fetchSnapShot() {// MARK: - 여기부터 다시 시작
         var snapshot = NSDiffableDataSourceSnapshot<Section, Int>()
         snapshot.appendSections([.currentDeliverySection,
-                                 .insightDeliverySection])
+                                 .insightDeliverySection,
+                                 .insightDetailSection])
         itemModel1.map { snapshot.appendItems([$0], toSection: .currentDeliverySection)}
         itemModel2.map { snapshot.appendItems([$0], toSection: .insightDeliverySection)}
+        itemModel3.map { snapshot.appendItems([$0], toSection: .insightDetailSection)}
         
         dataSource.apply(snapshot)
     }
@@ -120,7 +125,7 @@ extension HomeMainViewController {
                 )
                 section.boundarySupplementaryItems = [header, footer]
                 return section
-            default:
+            case 1:
                 let itemSize = NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1),
                     heightDimension: .fractionalHeight(1)
@@ -144,10 +149,26 @@ extension HomeMainViewController {
                 header.zIndex = 2
                 section.boundarySupplementaryItems = [header]
                 return section
+            default:
+                let itemSize = NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(0.5),
+                    heightDimension: .fractionalHeight(1)
+                )
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                
+                let groupSize = NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1),
+                    heightDimension: .fractionalHeight(CGFloat(moderateScale(number: 77/812)))
+                )
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+
+                let section = NSCollectionLayoutSection(group: group)
+                
+                return section
             }
         }
     }
-    // MARK: -섹션 3 만들어서 셀만 있는거 넣는게 제일 나을듯
+    
     private func setUpCollectionView() {
         dataSource = DataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
             let section = Section(rawValue: indexPath.section)
@@ -160,6 +181,10 @@ extension HomeMainViewController {
             case .insightDeliverySection:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: InsightDeliveryMainCell.reuseIdentifier, for: indexPath)
                 (cell as? InsightDeliveryMainCell)?.model = itemIdentifier
+                return cell
+            case .insightDetailSection:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: InsightDeliverySubCell.reuseIdentifier, for: indexPath)
+                (cell as? InsightDeliverySubCell)?.model = itemIdentifier
                 return cell
             default:
                 return UICollectionViewCell()
