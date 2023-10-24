@@ -79,6 +79,11 @@ extension CurrentDeliveryCell {
         numberLabel.snp.makeConstraints { constraints in
             constraints.top.equalTo(deliveryCompanyImageView.snp.centerY)
             constraints.leading.equalTo(deliveryCompanyImageView.snp.trailing).offset(moderateScale(number: 12))
+            constraints.trailing.equalToSuperview().offset(moderateScale(number: -16))
+        }
+        stateLabel.snp.makeConstraints { constraints in
+            constraints.top.equalTo(nameLabel.snp.bottom)
+            constraints.trailing.equalToSuperview().offset(moderateScale(number: -16))
         }
         progressView.snp.makeConstraints { constraints in
             constraints.top.equalTo(numberLabel.snp.bottom)
