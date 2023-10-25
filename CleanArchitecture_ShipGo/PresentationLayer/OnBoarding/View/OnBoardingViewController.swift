@@ -37,7 +37,6 @@ class OnBoardingViewController: UIViewController {
         $0.setTitle("email", for: .normal)
         $0.addTarget(self, action: #selector(emailSignUpButtonTapped(_:)), for: .touchUpInside)
     })
-    
     private lazy var loginStackView = UIStackView().then({  // MARK: - 여기부터 다시
         $0.axis = .horizontal
         $0.alignment = .firstBaseline

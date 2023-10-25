@@ -14,12 +14,17 @@ final class InsightDeliverySubCell: BaseCollectionViewCell<Int> {
     static let reuseIdentifier = "InsightDeliverySubCell"
     
     private lazy var containerView = UIView().then({
-        $0.backgroundColor = ColorManager.primaryColor
+        $0.layer.shadowOffset = CGSize(width: 1, height: 1)
+        $0.layer.shadowColor = ColorManager.black?.cgColor
+        $0.backgroundColor = ColorManager.background
+        $0.layer.cornerRadius = 10
+        $0.layer.shadowOpacity = 0.05
+        $0.layer.shadowRadius = 20
     })
     
     private lazy var titleLabel = UILabel().then({
         $0.text = "일일 최다 배송 개수"
-        $0.font = UIFont.setFont(size: 13, family: .Medium)
+        $0.font = UIFont.setFont(size: 13)
     })
     
     private lazy var contentLabel = UILabel().then({
@@ -27,8 +32,8 @@ final class InsightDeliverySubCell: BaseCollectionViewCell<Int> {
         $0.font = UIFont.setFont(size: 20, family: .SemiBold)
     })
     
-    private lazy var detailButton = UIButton().then({
-        $0.setImage(UIImage(systemName: "circle.fill"), for: .normal)
+    private lazy var newImageView = UIImageView().then({
+        $0.image = UIImage(systemName: "circle.fill")
     })
     
     required init?(coder: NSCoder) {
@@ -51,25 +56,26 @@ extension InsightDeliverySubCell {
         self.contentView.addSubview(containerView)
         [titleLabel,
          contentLabel,
-         detailButton
+         newImageView
         ].forEach { containerView.addSubview($0) }
     }
     
     private func makeConstraints() {
         containerView.snp.makeConstraints { constraints in
-            constraints.top.bottom.leading.trailing.equalToSuperview()
+            constraints.top.bottom.leading.equalToSuperview().offset(moderateScale(number: 2))
+            constraints.trailing.equalToSuperview().offset(moderateScale(number: -2))
         }
         titleLabel.snp.makeConstraints { constraints in
-            constraints.top.equalToSuperview().offset(moderateScale(number: 18))
+            constraints.top.equalToSuperview().offset(moderateScale(number: 16))
             constraints.leading.equalToSuperview().offset(moderateScale(number: 20))
         }
         contentLabel.snp.makeConstraints { constraints in
-            constraints.top.equalTo(titleLabel.snp.bottom).offset(moderateScale(number: 16))
+            constraints.top.equalTo(titleLabel.snp.bottom).offset(moderateScale(number: 8))
             constraints.leading.equalTo(titleLabel.snp.leading)
         }
-        detailButton.snp.makeConstraints { constraints in
+        newImageView.snp.makeConstraints { constraints in
             constraints.centerY.equalTo(titleLabel.snp.centerY)
-            constraints.trailing.equalToSuperview().offset(moderateScale(number: 16))
+            constraints.leading.equalTo(titleLabel.snp.trailing).offset(moderateScale(number: 4))
         }
     }
 }

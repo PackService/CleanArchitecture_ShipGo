@@ -150,15 +150,17 @@ extension HomeMainViewController {
                 section.boundarySupplementaryItems = [header]
                 return section
             default:
+                let itemInset: CGFloat = CGFloat(moderateScale(number: 5)) // MARK: - 이런식으로 inset 줌
                 let itemSize = NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(0.5),
                     heightDimension: .fractionalHeight(1)
                 )
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                item.contentInsets = NSDirectionalEdgeInsets(top: itemInset, leading: itemInset, bottom: itemInset, trailing: itemInset)
                 
                 let groupSize = NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1),
-                    heightDimension: .fractionalHeight(CGFloat(moderateScale(number: 88/812)))
+                    heightDimension: .fractionalHeight(CGFloat(moderateScale(number: 98/812)))
                 )
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
