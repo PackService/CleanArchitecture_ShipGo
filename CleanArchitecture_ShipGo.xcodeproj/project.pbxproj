@@ -50,6 +50,7 @@
 		D891ED1D2AE8EA1C002B1C7D /* RegisterTrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D891ED1C2AE8EA1C002B1C7D /* RegisterTrackViewController.swift */; };
 		D891ED232AE902F9002B1C7D /* SnapKit-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D85D16C12A5E302400D799DD /* SnapKit-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D891ED242AE902FC002B1C7D /* Swinject-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D85D16CA2A5E307F00D799DD /* Swinject-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D891ED262AE9110D002B1C7D /* SelectTrackCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D891ED252AE9110D002B1C7D /* SelectTrackCompanyViewController.swift */; };
 		D89C2DF82A7B55B100457EB9 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C2DF72A7B55B100457EB9 /* SignUpCoordinator.swift */; };
 		D89C2DFA2A7B93B000457EB9 /* SignUpUseCaseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C2DF92A7B93B000457EB9 /* SignUpUseCaseable.swift */; };
 		D89C2DFC2A7B943E00457EB9 /* SignUpRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C2DFB2A7B943E00457EB9 /* SignUpRequestModel.swift */; };
@@ -164,6 +165,7 @@
 		D85D16B62A5E2EAE00D799DD /* LoginRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryImpl.swift; sourceTree = "<group>"; };
 		D85D16B82A5E2EE700D799DD /* CompleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteButton.swift; sourceTree = "<group>"; };
 		D891ED1C2AE8EA1C002B1C7D /* RegisterTrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTrackViewController.swift; sourceTree = "<group>"; };
+		D891ED252AE9110D002B1C7D /* SelectTrackCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTrackCompanyViewController.swift; sourceTree = "<group>"; };
 		D89C2DF72A7B55B100457EB9 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
 		D89C2DF92A7B93B000457EB9 /* SignUpUseCaseable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCaseable.swift; sourceTree = "<group>"; };
 		D89C2DFB2A7B943E00457EB9 /* SignUpRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequestModel.swift; sourceTree = "<group>"; };
@@ -616,6 +618,7 @@
 			children = (
 				D8CF211D2A78D53600A93912 /* HomeMainViewController.swift */,
 				D891ED1C2AE8EA1C002B1C7D /* RegisterTrackViewController.swift */,
+				D891ED252AE9110D002B1C7D /* SelectTrackCompanyViewController.swift */,
 				AD93E6E12ACBFA030010BD03 /* HeaderView */,
 				AD93E6E22ACBFA140010BD03 /* Cell */,
 				D8B6CE9E2ACD3F2E00CFE3EE /* FooterView */,
@@ -820,6 +823,7 @@
 				D89C2DF82A7B55B100457EB9 /* SignUpCoordinator.swift in Sources */,
 				D8CC37D22A80BA89003407B5 /* PopUpViewController.swift in Sources */,
 				D8B661252A614AA10049B8D9 /* OnBoardingViewController.swift in Sources */,
+				D891ED262AE9110D002B1C7D /* SelectTrackCompanyViewController.swift in Sources */,
 				D81E35932AE625490025BBCF /* CustomProgressView.swift in Sources */,
 				D8D31E572A7A34D70095D4F0 /* RemoteRecommendModelItem.swift in Sources */,
 				D851F9F12AE764D70013C8B2 /* ListCell.swift in Sources */,
