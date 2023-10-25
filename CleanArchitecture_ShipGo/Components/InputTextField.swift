@@ -10,11 +10,14 @@ import UIKit
 enum CurrentPasswordInputStatus {
     case valid
     case invalid
+    case activeLeftItem
 }
 
 class InputTextField: UITextField {
-    private var rightButton: UIButton!
+
     private var currentInputStatus: CurrentPasswordInputStatus = .invalid
+    
+    private var rightButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,13 +39,25 @@ class InputTextField: UITextField {
         autocapitalizationType = .none
     }
     
-    public func setupValidStatus() {
+    func activeLeftItemView() {
+        currentInputStatus = .activeLeftItem
+        self.isUserInteractionEnabled = false
+        textColor = .black
+        rightViewMode = .always
+        rightButton = UIButton()
+        rightButton.contentMode = .scaleAspectFit
+        rightButton.setImage(UIImage(named: "circle.fill"), for: .normal)
+        let rightPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: moderateScale(number: 20), height: self.frame.height))
+        rightView = rightPaddingView
+    }
+    
+    func setupValidStatus() {
         textColor = .black
         layer.borderColor = ColorManager.primaryColor?.cgColor
         currentInputStatus = .valid
     }
     
-    public func setupInvalidStatus(error: String) {
+    func setupInvalidStatus(error: String) {
         shake()
         text = ""
         attributedPlaceholder = NSAttributedString(string: error, attributes: [NSAttributedString.Key.foregroundColor : ColorManager.negativeColor])

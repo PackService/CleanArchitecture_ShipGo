@@ -58,4 +58,8 @@ extension CurrentDeliveryHeaderView {
             constraints.centerY.equalToSuperview()
         }
     }
+    
+//    @objc func registerTrackNumberTapped(_ button: UIButton) { // 탭 바 화면으로 이동하는 것, 해당 로직 로그인 성공 시 되도록 수정
+//        let vc = RegisterTrackViewController()
+//    }
 }

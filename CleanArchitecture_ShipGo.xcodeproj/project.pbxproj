@@ -47,6 +47,9 @@
 		D85D16C52A5E304A00D799DD /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D85D16C42A5E304A00D799DD /* Then */; };
 		D85D16C82A5E306000D799DD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D85D16C72A5E306000D799DD /* Alamofire */; };
 		D85D16CB2A5E307F00D799DD /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D85D16CA2A5E307F00D799DD /* Swinject-Dynamic */; };
+		D891ED1D2AE8EA1C002B1C7D /* RegisterTrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D891ED1C2AE8EA1C002B1C7D /* RegisterTrackViewController.swift */; };
+		D891ED232AE902F9002B1C7D /* SnapKit-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D85D16C12A5E302400D799DD /* SnapKit-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D891ED242AE902FC002B1C7D /* Swinject-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D85D16CA2A5E307F00D799DD /* Swinject-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D89C2DF82A7B55B100457EB9 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C2DF72A7B55B100457EB9 /* SignUpCoordinator.swift */; };
 		D89C2DFA2A7B93B000457EB9 /* SignUpUseCaseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C2DF92A7B93B000457EB9 /* SignUpUseCaseable.swift */; };
 		D89C2DFC2A7B943E00457EB9 /* SignUpRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C2DFB2A7B943E00457EB9 /* SignUpRequestModel.swift */; };
@@ -106,6 +109,21 @@
 		D8D483252A5F80B600B474E4 /* NetworkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D891ED212AE90219002B1C7D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D891ED232AE902F9002B1C7D /* SnapKit-Dynamic in Embed Frameworks */,
+				D891ED242AE902FC002B1C7D /* Swinject-Dynamic in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		AD93E6DF2ACBF8F80010BD03 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		AD93E6E32ACBFA2B0010BD03 /* CurrentDeliveryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDeliveryHeaderView.swift; sourceTree = "<group>"; };
@@ -145,6 +163,7 @@
 		D85D16B42A5E2E9300D799DD /* RemoteLoginMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoginMapper.swift; sourceTree = "<group>"; };
 		D85D16B62A5E2EAE00D799DD /* LoginRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryImpl.swift; sourceTree = "<group>"; };
 		D85D16B82A5E2EE700D799DD /* CompleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteButton.swift; sourceTree = "<group>"; };
+		D891ED1C2AE8EA1C002B1C7D /* RegisterTrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTrackViewController.swift; sourceTree = "<group>"; };
 		D89C2DF72A7B55B100457EB9 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
 		D89C2DF92A7B93B000457EB9 /* SignUpUseCaseable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCaseable.swift; sourceTree = "<group>"; };
 		D89C2DFB2A7B943E00457EB9 /* SignUpRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequestModel.swift; sourceTree = "<group>"; };
@@ -596,6 +615,7 @@
 			isa = PBXGroup;
 			children = (
 				D8CF211D2A78D53600A93912 /* HomeMainViewController.swift */,
+				D891ED1C2AE8EA1C002B1C7D /* RegisterTrackViewController.swift */,
 				AD93E6E12ACBFA030010BD03 /* HeaderView */,
 				AD93E6E22ACBFA140010BD03 /* Cell */,
 				D8B6CE9E2ACD3F2E00CFE3EE /* FooterView */,
@@ -687,6 +707,7 @@
 				D800BAAB2A5CEA5F001F19A3 /* Sources */,
 				D800BAAC2A5CEA5F001F19A3 /* Frameworks */,
 				D800BAAD2A5CEA5F001F19A3 /* Resources */,
+				D891ED212AE90219002B1C7D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -814,6 +835,7 @@
 				D85D169C2A5E2CC800D799DD /* LoginMapper.swift in Sources */,
 				D8CF211E2A78D53600A93912 /* HomeMainViewController.swift in Sources */,
 				D85D169E2A5E2CDA00D799DD /* LoginRepositoriable.swift in Sources */,
+				D891ED1D2AE8EA1C002B1C7D /* RegisterTrackViewController.swift in Sources */,
 				D8CF21102A78B97900A93912 /* LoginCoordinator.swift in Sources */,
 				D8D31E5F2A7A483E0095D4F0 /* InputTextField.swift in Sources */,
 				D85D169A2A5E2CB600D799DD /* Entity.swift in Sources */,

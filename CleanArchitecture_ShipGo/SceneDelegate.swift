@@ -14,30 +14,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //    let status = UserDefaults.standard.string(forKey: "status") // status에 사용자 이메일 저장. 이메일 없으면 온보딩 화면 있으면 바로 메인화면으로 가도록
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-
-        let appWindow = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        appWindow.windowScene = windowScene
-
-        let navigationController = UINavigationController()
-        
-        if UserDefaultsUtil.shared.getIsLogin() {
-            coordinator = MainTabBarCoordinator(navigationController: navigationController)
-        } else {
-            coordinator = AppCoordinator(navigationController: navigationController)
-        }
-        coordinator?.start()
-        appWindow.rootViewController = navigationController
-        appWindow.makeKeyAndVisible()
-
-        window = appWindow
+//        guard let windowScene = (scene as? UIWindowScene) else { return }
+//
+//        let appWindow = UIWindow(frame: windowScene.coordinateSpace.bounds)
+//        appWindow.windowScene = windowScene
+//
+//        let navigationController = UINavigationController()
+//
+//        if UserDefaultsUtil.shared.getIsLogin() {
+//            coordinator = MainTabBarCoordinator(navigationController: navigationController)
+//        } else {
+//            coordinator = AppCoordinator(navigationController: navigationController)
+//        }
+//        coordinator?.start()
+//        appWindow.rootViewController = navigationController
+//        appWindow.makeKeyAndVisible()
+//
+//        window = appWindow
         
         // MARK: -화면 확인용
-//        guard let windowScene = (scene as? UIWindowScene) else { return }
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.windowScene = windowScene
-//        window?.rootViewController = OnBoardingViewController()
-//        window?.makeKeyAndVisible()
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.windowScene = windowScene
+        window?.rootViewController = RegisterTrackViewController()
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
