@@ -14,15 +14,19 @@ class CustomProgressView: UIView {
     var time: Float = 0.0
     var timer: Timer?
     
-    private lazy var containerView = UIView().then({
-        $0.backgroundColor = .blue
-    })
+    private lazy var containerView = UIView()
     
     private lazy var progressView = UIProgressView().then({
         $0.progressImage = UIImage(systemName: "circle.fill")
         $0.progressViewStyle = .default
-        $0.progressTintColor = .green
-        $0.trackTintColor = .lightGray
+        $0.progressTintColor = ColorManager.primaryColor
+        $0.trackTintColor = ColorManager.secondaryColor
+    })
+    
+    private lazy var stageStackView = UIStackView().then({
+        $0.axis = .horizontal
+        $0.alignment = .center
+        $0.distribution = .equalSpacing
     })
     
     private lazy var firstStageImage = UIImageView().then({
@@ -58,11 +62,12 @@ extension CustomProgressView {
     
     func addViews() {
         addSubview(containerView)
-        containerView.addSubview(progressView)
-        progressView.addSubViews([firstStageImage,
-                                 secondStageImage,
-                                 thirdStageImage,
-                                 fourthStageImage])
+        containerView.addSubViews([progressView,
+                                   stageStackView])
+        stageStackView.addArrangedSubviews([firstStageImage,
+                                    secondStageImage,
+                                    thirdStageImage,
+                                    fourthStageImage])
     }
     
     func makeConstraints() {
@@ -70,17 +75,25 @@ extension CustomProgressView {
             constraints.top.bottom.leading.trailing.equalToSuperview()
         }
         progressView.snp.makeConstraints { constraints in
+            constraints.centerY.equalToSuperview()
+            constraints.centerX.equalToSuperview()
+            constraints.width.equalToSuperview()
+        }
+        stageStackView.snp.makeConstraints { constraints in
             constraints.top.bottom.leading.trailing.equalToSuperview()
+            constraints.centerY.equalToSuperview()
         }
         firstStageImage.snp.makeConstraints { constraints in
-            constraints.centerX.equalTo(progressView.snp.leading)
-            constraints.centerY.equalToSuperview()
-            constraints.width.height.equalTo(moderateScale(number: 40))
+            constraints.width.height.equalTo(moderateScale(number: 32))
+        }
+        secondStageImage.snp.makeConstraints { constraints in
+            constraints.width.height.equalTo(moderateScale(number: 32))
+        }
+        thirdStageImage.snp.makeConstraints { constraints in
+            constraints.width.height.equalTo(moderateScale(number: 32))
         }
         fourthStageImage.snp.makeConstraints { constraints in
-            constraints.centerX.equalTo(progressView.snp.trailing)
-            constraints.centerY.equalToSuperview()
-            constraints.width.height.equalTo(moderateScale(number: 40))
+            constraints.width.height.equalTo(moderateScale(number: 32))
         }
     }
     
@@ -88,39 +101,19 @@ extension CustomProgressView {
         time += 0.1
         progressView.setProgress(time, animated: true)
         if time > 0.1 {
-            firstStageImage.tintColor = .green
+            firstStageImage.tintColor = ColorManager.primaryColor
         }
         if time > 0.33 {
-            secondStageImage.tintColor = .green
+            secondStageImage.tintColor = ColorManager.primaryColor
         }
         if time > 0.66 {
-            thirdStageImage.tintColor = .green
+            thirdStageImage.tintColor = ColorManager.primaryColor
         }
         if time > 0.99 {
-            fourthStageImage.tintColor = .green
+            fourthStageImage.tintColor = ColorManager.primaryColor
         }
         if time >= 1 {
             timer!.invalidate()
         }
     }
 }
-
-//private func addViews() {
-//    addSubview(containerView)
-//    containerView.addSubViews([titleLabel,
-//                              addButton])
-//}
-//
-//private func makeConstraints() {
-//    containerView.snp.makeConstraints { constraints in
-//        constraints.top.bottom.leading.trailing.equalToSuperview()
-//    }
-//    titleLabel.snp.makeConstraints { constraints in
-//        constraints.leading.equalToSuperview().offset(moderateScale(number: 20))
-//        constraints.centerY.equalToSuperview()
-//    }
-//    addButton.snp.makeConstraints { constraints in
-//        constraints.trailing.equalToSuperview().offset(moderateScale(number: -20))
-//        constraints.centerY.equalToSuperview()
-//    }
-//}

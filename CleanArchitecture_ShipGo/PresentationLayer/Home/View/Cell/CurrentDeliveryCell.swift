@@ -13,7 +13,7 @@ final class CurrentDeliveryCell: BaseCollectionViewCell<Int> {
     static let reuseIdentifier = "CurrentDeliveryCell"
     
     private lazy var containerView = UIView().then({
-        $0.backgroundColor = .white
+        $0.backgroundColor = ColorManager.background
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1).cgColor
     })
@@ -23,6 +23,7 @@ final class CurrentDeliveryCell: BaseCollectionViewCell<Int> {
     })
     
     private lazy var nameLabel = UILabel().then({
+//        $0.font = UIFont.setFont(size: 13, family: .Medium)
         $0.text = "토리든 고분자 뭐시기"
     })
     
@@ -86,10 +87,10 @@ extension CurrentDeliveryCell {
             constraints.trailing.equalToSuperview().offset(moderateScale(number: -16))
         }
         progressView.snp.makeConstraints { constraints in
-            constraints.top.equalTo(numberLabel.snp.bottom)
+            constraints.top.equalTo(numberLabel.snp.bottom).offset(moderateScale(number: 18))
             constraints.leading.equalToSuperview().offset(moderateScale(number: 16))
             constraints.trailing.equalToSuperview().offset(moderateScale(number: -16))
-            constraints.height.equalTo(moderateScale(number: 16))
+            constraints.height.equalTo(moderateScale(number: 32))
         }
     }
 }

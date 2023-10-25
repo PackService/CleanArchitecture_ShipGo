@@ -13,7 +13,8 @@ final class InsightDeliveryCell: BaseCollectionViewCell<Int> {
     static let reuseIdentifier = "TransactionCell"
     
     private lazy var containerView = UIView().then({
-        $0.backgroundColor = .white
+        $0.backgroundColor = ColorManager.secondaryColor
+        $0.layer.cornerRadius = 10
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1).cgColor
     })

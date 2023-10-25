@@ -49,12 +49,12 @@ class HomeMainViewController: UIViewController {
         config.interSectionSpacing = 16
         layout.configuration = config
         $0.collectionViewLayout = layout
+        $0.backgroundColor = ColorManager.background
         $0.isScrollEnabled = true
         $0.showsHorizontalScrollIndicator = false
         $0.showsVerticalScrollIndicator = true
         $0.scrollIndicatorInsets = UIEdgeInsets(top: -2, left: 0, bottom: 0, right: 4)
         $0.contentInset = .zero
-        $0.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 247/255, alpha: 1)
         $0.clipsToBounds = true
         $0.register(CurrentDeliveryCell.self, forCellWithReuseIdentifier: CurrentDeliveryCell.reuseIdentifier)
         $0.register(InsightDeliveryMainCell.self, forCellWithReuseIdentifier: InsightDeliveryMainCell.reuseIdentifier)
@@ -67,7 +67,7 @@ class HomeMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = ColorManager.background
         self.navigationController?.navigationBar.isHidden = true
         addViews()
         makeConstraints()
@@ -94,14 +94,14 @@ extension HomeMainViewController {
         UICollectionViewCompositionalLayout { (section, env) -> NSCollectionLayoutSection? in
             switch section {
             case 0:
-                let itemInset: CGFloat = CGFloat(moderateScale(number: 10))
+//                let itemInset: CGFloat = CGFloat(moderateScale(number: 10)) // MARK: - 이런식으로 inset 줌
 
                 let itemSize = NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1),
                     heightDimension: .fractionalHeight(1)
                 )
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets = NSDirectionalEdgeInsets(top: itemInset, leading: itemInset, bottom: 0, trailing: itemInset)
+//                item.contentInsets = NSDirectionalEdgeInsets(top: itemInset, leading: itemInset, bottom: 0, trailing: itemInset)
 
                 let groupSize = NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1),
@@ -134,7 +134,7 @@ extension HomeMainViewController {
 
                 let groupSize = NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1),
-                    heightDimension: .fractionalHeight(CGFloat(moderateScale(number: 77/812)))
+                    heightDimension: .fractionalHeight(CGFloat(moderateScale(number: 88/812)))
                 )
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
@@ -158,7 +158,7 @@ extension HomeMainViewController {
                 
                 let groupSize = NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1),
-                    heightDimension: .fractionalHeight(CGFloat(moderateScale(number: 77/812)))
+                    heightDimension: .fractionalHeight(CGFloat(moderateScale(number: 88/812)))
                 )
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
@@ -230,7 +230,8 @@ extension HomeMainViewController {
         collectionView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(moderateScale(number: 64))
             $0.bottom.equalToSuperview().offset(moderateScale(number: -64))
-            $0.leading.trailing.equalToSuperview()
+            $0.leading.equalToSuperview().offset(moderateScale(number: 20))
+            $0.trailing.equalToSuperview().offset(moderateScale(number: -20))
         }
     }
 }

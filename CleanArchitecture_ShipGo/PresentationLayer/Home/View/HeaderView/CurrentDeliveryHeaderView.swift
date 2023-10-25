@@ -14,7 +14,7 @@ final class CurrentDeliveryHeaderView: UICollectionReusableView {
     static let supplementaryViewOfKind = "CurrentDeliveryHeaderViewKind"
 
     private lazy var containerView = UIView().then({
-        $0.backgroundColor = .blue
+        $0.backgroundColor = ColorManager.background
     })
     
     private lazy var titleLabel = UILabel().then({
@@ -50,11 +50,11 @@ extension CurrentDeliveryHeaderView {
             constraints.top.bottom.leading.trailing.equalToSuperview()
         }
         titleLabel.snp.makeConstraints { constraints in
-            constraints.leading.equalToSuperview().offset(moderateScale(number: 20))
+            constraints.leading.equalToSuperview()
             constraints.centerY.equalToSuperview()
         }
         addButton.snp.makeConstraints { constraints in
-            constraints.trailing.equalToSuperview().offset(moderateScale(number: -20))
+            constraints.trailing.equalToSuperview()
             constraints.centerY.equalToSuperview()
         }
     }

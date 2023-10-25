@@ -44,7 +44,7 @@ extension InsightDeliveryHeaderView {
             constraints.edges.equalToSuperview()
         }
         titleLabel.snp.makeConstraints { constraints in
-            constraints.leading.equalToSuperview().offset(moderateScale(number: 20))
+            constraints.leading.equalToSuperview()
             constraints.centerY.equalToSuperview()
         }
     }

@@ -14,17 +14,17 @@ final class InsightDeliverySubCell: BaseCollectionViewCell<Int> {
     static let reuseIdentifier = "InsightDeliverySubCell"
     
     private lazy var containerView = UIView().then({
-        $0.backgroundColor = .white
-        $0.layer.borderWidth = 1
-        $0.layer.borderColor = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1).cgColor
+        $0.backgroundColor = ColorManager.primaryColor
     })
     
     private lazy var titleLabel = UILabel().then({
         $0.text = "일일 최다 배송 개수"
+        $0.font = UIFont.setFont(size: 13, family: .Medium)
     })
     
     private lazy var contentLabel = UILabel().then({
         $0.text = "맑은 생수 2L"
+        $0.font = UIFont.setFont(size: 20, family: .SemiBold)
     })
     
     private lazy var detailButton = UIButton().then({
