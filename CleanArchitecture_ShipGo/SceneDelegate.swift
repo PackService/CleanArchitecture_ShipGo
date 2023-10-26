@@ -36,7 +36,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = RegisterTrackViewController()
+        window?.rootViewController = SelectTrackCompanyViewController()
         window?.makeKeyAndVisible()
     }
 

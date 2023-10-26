@@ -51,6 +51,7 @@
 		D891ED232AE902F9002B1C7D /* SnapKit-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D85D16C12A5E302400D799DD /* SnapKit-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D891ED242AE902FC002B1C7D /* Swinject-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D85D16CA2A5E307F00D799DD /* Swinject-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D891ED262AE9110D002B1C7D /* SelectTrackCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D891ED252AE9110D002B1C7D /* SelectTrackCompanyViewController.swift */; };
+		D891ED282AE91D5D002B1C7D /* CompanyLogoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D891ED272AE91D5D002B1C7D /* CompanyLogoCell.swift */; };
 		D89C2DF82A7B55B100457EB9 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C2DF72A7B55B100457EB9 /* SignUpCoordinator.swift */; };
 		D89C2DFA2A7B93B000457EB9 /* SignUpUseCaseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C2DF92A7B93B000457EB9 /* SignUpUseCaseable.swift */; };
 		D89C2DFC2A7B943E00457EB9 /* SignUpRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C2DFB2A7B943E00457EB9 /* SignUpRequestModel.swift */; };
@@ -63,6 +64,7 @@
 		D89C2E0B2A7BAC5D00457EB9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D89C2E0A2A7BAC5D00457EB9 /* FirebaseFirestore */; };
 		D89C2E0D2A7BAC5D00457EB9 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D89C2E0C2A7BAC5D00457EB9 /* FirebaseFirestoreSwift */; };
 		D89C2E0F2A7BAC5D00457EB9 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D89C2E0E2A7BAC5D00457EB9 /* FirebaseStorage */; };
+		D8B61D002AEA34E900F88764 /* TrackCompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B61CFF2AEA34E900F88764 /* TrackCompanyViewModel.swift */; };
 		D8B661052A60D3A80049B8D9 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8B660FC2A60D3A80049B8D9 /* Pretendard-SemiBold.otf */; };
 		D8B661062A60D3A80049B8D9 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8B660FD2A60D3A80049B8D9 /* Pretendard-ExtraLight.otf */; };
 		D8B661072A60D3A80049B8D9 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8B660FE2A60D3A80049B8D9 /* Pretendard-Black.otf */; };
@@ -166,6 +168,7 @@
 		D85D16B82A5E2EE700D799DD /* CompleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteButton.swift; sourceTree = "<group>"; };
 		D891ED1C2AE8EA1C002B1C7D /* RegisterTrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTrackViewController.swift; sourceTree = "<group>"; };
 		D891ED252AE9110D002B1C7D /* SelectTrackCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTrackCompanyViewController.swift; sourceTree = "<group>"; };
+		D891ED272AE91D5D002B1C7D /* CompanyLogoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyLogoCell.swift; sourceTree = "<group>"; };
 		D89C2DF72A7B55B100457EB9 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
 		D89C2DF92A7B93B000457EB9 /* SignUpUseCaseable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCaseable.swift; sourceTree = "<group>"; };
 		D89C2DFB2A7B943E00457EB9 /* SignUpRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequestModel.swift; sourceTree = "<group>"; };
@@ -173,6 +176,7 @@
 		D89C2DFF2A7B9B8800457EB9 /* SignUpRepositoriable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRepositoriable.swift; sourceTree = "<group>"; };
 		D89C2E012A7B9BE200457EB9 /* SignUpMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMapper.swift; sourceTree = "<group>"; };
 		D89C2E032A7BABD600457EB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D8B61CFF2AEA34E900F88764 /* TrackCompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCompanyViewModel.swift; sourceTree = "<group>"; };
 		D8B660FC2A60D3A80049B8D9 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		D8B660FD2A60D3A80049B8D9 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		D8B660FE2A60D3A80049B8D9 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
@@ -257,6 +261,7 @@
 				AD93E6E92ACBFA4F0010BD03 /* InsightDeliveryCell.swift */,
 				D81E35942AE65AD40025BBCF /* InsightDeliveryMainCell.swift */,
 				D81E35962AE65AF20025BBCF /* InsightDeliverySubCell.swift */,
+				D891ED272AE91D5D002B1C7D /* CompanyLogoCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -630,6 +635,7 @@
 			isa = PBXGroup;
 			children = (
 				D8B6CEA32ACD62A900CFE3EE /* HomeMainViewModel.swift */,
+				D8B61CFF2AEA34E900F88764 /* TrackCompanyViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -866,6 +872,7 @@
 				D85D16B92A5E2EE700D799DD /* CompleteButton.swift in Sources */,
 				D89C2E022A7B9BE200457EB9 /* SignUpMapper.swift in Sources */,
 				D8CF21292A78E63A00A93912 /* SignUpViewModel.swift in Sources */,
+				D891ED282AE91D5D002B1C7D /* CompanyLogoCell.swift in Sources */,
 				D85D16B52A5E2E9300D799DD /* RemoteLoginMapper.swift in Sources */,
 				D800BAB32A5CEA5F001F19A3 /* AppDelegate.swift in Sources */,
 				D800BAB52A5CEA5F001F19A3 /* SceneDelegate.swift in Sources */,
@@ -876,6 +883,7 @@
 				D85D16922A5E2B9500D799DD /* LoginViewModel.swift in Sources */,
 				D8D31E5B2A7A35EE0095D4F0 /* RemoteTrackingInfoItem.swift in Sources */,
 				D8CF21072A788E3700A93912 /* OnBoardingViewModel.swift in Sources */,
+				D8B61D002AEA34E900F88764 /* TrackCompanyViewModel.swift in Sources */,
 				D8CC37D02A80A1AA003407B5 /* UserDefaultsUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

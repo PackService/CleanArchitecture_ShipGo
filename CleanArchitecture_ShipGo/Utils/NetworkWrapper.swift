@@ -20,7 +20,7 @@ import FirebaseAnalytics
 struct NetworkWrapper {
     
     static let shared = NetworkWrapper()
-    var apiDomain = ""
+    var apiDomain = "https://info.sweettracker.co.kr/api/v1/"
     private let jsonDecoder = JSONDecoder()
 
     let db = Firestore.firestore()
@@ -78,5 +78,9 @@ struct NetworkWrapper {
         
         return headers
     }
+    
+    
+    
+    // MARK: -위에는 필요없는
 }
 

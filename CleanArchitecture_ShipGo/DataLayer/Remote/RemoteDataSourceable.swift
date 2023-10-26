@@ -11,4 +11,6 @@ import Combine
 protocol RemoteDataSourceable {
     func signUp(email: String, password: String) -> AnyPublisher<Result<Void, Error>, Never>
     func login(email: String, password: String) -> AnyPublisher<Result<Void, Error>, Never>
+    
+    func 
 }
