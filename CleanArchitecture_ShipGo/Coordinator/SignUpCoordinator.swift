@@ -30,3 +30,5 @@ class SignUpCoordinator: Coordinator {
         child.start()
     }
 }
+
+// MARK: -회원가입이나 로그인 후 메인 탭바 진입시 이를 삭제해주는 로직 필요

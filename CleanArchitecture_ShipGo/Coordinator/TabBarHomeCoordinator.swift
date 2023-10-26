@@ -22,4 +22,10 @@ class TabBarHomeCoordinator: Coordinator {
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func registerTrackNumber() {
+        let vc = RegisterTrackViewController()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
 }

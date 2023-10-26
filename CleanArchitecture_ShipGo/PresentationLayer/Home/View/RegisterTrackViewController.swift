@@ -11,7 +11,7 @@ import Then
 import Combine
 
 class RegisterTrackViewController: UIViewController {
-//    weak var coordinator: LoginCoordinator?
+    weak var coordinator: Coordinator? // MARK: - 그냥 Coordinator도 되나..?
     private var cancelBag = Set<AnyCancellable>()
 //    var viewModel: LoginViewModel = LoginViewModel()
     

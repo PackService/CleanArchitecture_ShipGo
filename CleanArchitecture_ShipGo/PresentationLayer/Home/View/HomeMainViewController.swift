@@ -18,7 +18,7 @@ enum Section: Int {
 
 class HomeMainViewController: UIViewController {
     
-    weak var coordinator: Coordinator?
+    weak var coordinator: TabBarHomeCoordinator?
     
     var itemModel1: [Int] = [1]
     var itemModel2: [Int] = [4]
@@ -235,5 +235,9 @@ extension HomeMainViewController {
             $0.leading.equalToSuperview().offset(moderateScale(number: 20))
             $0.trailing.equalToSuperview().offset(moderateScale(number: -20))
         }
+    }
+    
+    @objc func RegisterTrackNumberButtonTapped(){ // MARK: - 이거하려면 viewmodel있어야함
+        coordinator?.registerTrackNumber()
     }
 }

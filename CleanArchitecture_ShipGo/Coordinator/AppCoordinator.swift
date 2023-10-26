@@ -62,5 +62,11 @@ extension AppCoordinator: UINavigationControllerDelegate {
         if let loginViewController = fromViewController as? LoginViewController {
             childDidFinish(loginViewController.coordinator)
         }
+        
+        if let onBoardingViewController = fromViewController as? OnBoardingViewController {
+            childDidFinish(onBoardingViewController.coordinator)
+        }
+        
+//        if let
     }
 }

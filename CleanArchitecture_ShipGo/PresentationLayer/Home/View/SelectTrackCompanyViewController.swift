@@ -14,6 +14,7 @@ enum TrackCompanySection: Int {
     case logoListSection
 }
 
+// MARK: - CompanyModel쓰면 될듯
 class SelectTrackCompanyViewController: UIViewController {
     weak var coordinator: Coordinator?
     
@@ -24,7 +25,7 @@ class SelectTrackCompanyViewController: UIViewController {
     
     private var dataSource: DataSource!
     private var cancelBag = Set<AnyCancellable>()
-    private var viewModel: TrackCompanyViewModel = TrackCompanyViewModel()
+//    private var viewModel: TrackCompanyViewModel = TrackCompanyViewModel()
     private var snapshot = Snapshot()
     
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout()).then {
