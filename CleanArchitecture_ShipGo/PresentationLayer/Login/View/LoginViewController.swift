@@ -10,12 +10,13 @@ import Combine
 import SnapKit
 import Then
 import FirebaseAuth
+import Swinject
 
 class LoginViewController: UIViewController {
 
     weak var coordinator: LoginCoordinator?
     private var cancelBag = Set<AnyCancellable>()
-    var viewModel: LoginViewModel = LoginViewModel()
+    var viewModel: LoginViewModel!
     
     private lazy var containerView = UIView()
     
