@@ -11,7 +11,7 @@ import Then
 import Combine
 
 class RegisterTrackViewController: UIViewController {
-    weak var coordinator: Coordinator? // MARK: - 그냥 Coordinator도 되나..?
+    weak var coordinator: TabBarHomeCoordinator?
     private var cancelBag = Set<AnyCancellable>()
     var viewModel: HomeMainViewModel!
     
@@ -85,5 +85,6 @@ class RegisterTrackViewController: UIViewController {
     
     @objc func registerButtonTapped(_ button: UIButton) {
         viewModel.sendShowRegister(state: false)
+        coordinator?.start() // MARK: - 메모리 누수 발생하니까 바꾸자
     }
 }
