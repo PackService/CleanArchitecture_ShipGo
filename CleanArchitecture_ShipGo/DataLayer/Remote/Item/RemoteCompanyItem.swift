@@ -6,7 +6,7 @@
 //
 
 // MARK: - CompanyModel
-struct CompanyModel: Codable {
+struct RemoteCompanyItem: Codable {
     let company: [Company]
     
     enum CodingKeys: String, CodingKey {
@@ -15,8 +15,8 @@ struct CompanyModel: Codable {
 }
 
 // MARK: - Company
-struct Company: Hashable, Identifiable, Codable {
-    var id: String
+struct Company: Codable {
+    let id: String
     let international: String
     let name: String
     
@@ -27,42 +27,34 @@ struct Company: Hashable, Identifiable, Codable {
     }
 }
 
-//MARK: - Logo
-//struct Logo {
-//    let image: Image
-//    let bgColor: Color
-//    let fgColor: Color
+//enum LogoType: String {
+//
+//    case cj = "04"
+//    case cupost = "46"
+//    case daesin = "22"
+//    case dhl = "13"
+//    case ems = "12"
+//    case fedex = "21"
+//    case gsi = "41"
+//    case gspostbox = "24"
+//    case hanjin = "05"
+//    case hapdong = "32"
+//    case ilyana = "11"
+//    case koreapost = "01"
+//    case kyeongdong = "23"
+//    case logen = "06"
+//    case lotte = "08"
+//    case lxpantos = "37"
+//    case nonghyup = "53"
+//    case tnt = "25"
+//    case ups = "14"
+//    case usps = "26"
+//    case etc = "998"
+//
+////    var logo: Logo {
+////        switch self {
+////        case .cj, .cupost, .daesin, .dhl, .ems, .fedex, .gsi, .gspostbox, .hanjin, .hapdong, .ilyana, .koreapost, .kyeongdong, .logen, .lotte, .lxpantos, .nonghyup, .tnt, .ups, .usps, .etc:
+////            return Logo(image: Image("logo_\(self)"), bgColor: Color("bgcolor_\(self)"), fgColor: Color("fgcolor_\(self)"))
+////        }
+////    }
 //}
-
-//MARK: - LogoType
-enum LogoType: String {
-    
-    case cj = "04"
-    case cupost = "46"
-    case daesin = "22"
-    case dhl = "13"
-    case ems = "12"
-    case fedex = "21"
-    case gsi = "41"
-    case gspostbox = "24"
-    case hanjin = "05"
-    case hapdong = "32"
-    case ilyana = "11"
-    case koreapost = "01"
-    case kyeongdong = "23"
-    case logen = "06"
-    case lotte = "08"
-    case lxpantos = "37"
-    case nonghyup = "53"
-    case tnt = "25"
-    case ups = "14"
-    case usps = "26"
-    case etc = "998"
-    
-//    var logo: Logo {
-//        switch self {
-//        case .cj, .cupost, .daesin, .dhl, .ems, .fedex, .gsi, .gspostbox, .hanjin, .hapdong, .ilyana, .koreapost, .kyeongdong, .logen, .lotte, .lxpantos, .nonghyup, .tnt, .ups, .usps, .etc:
-//            return Logo(image: Image("logo_\(self)"), bgColor: Color("bgcolor_\(self)"), fgColor: Color("fgcolor_\(self)"))
-//        }
-//    }
-}

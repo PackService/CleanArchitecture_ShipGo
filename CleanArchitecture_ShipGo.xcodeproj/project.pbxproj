@@ -64,6 +64,12 @@
 		D89C2E0B2A7BAC5D00457EB9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D89C2E0A2A7BAC5D00457EB9 /* FirebaseFirestore */; };
 		D89C2E0D2A7BAC5D00457EB9 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D89C2E0C2A7BAC5D00457EB9 /* FirebaseFirestoreSwift */; };
 		D89C2E0F2A7BAC5D00457EB9 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D89C2E0E2A7BAC5D00457EB9 /* FirebaseStorage */; };
+		D8B284F22AEBB1CC00A7B5D6 /* RemoteCompanyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B284F12AEBB1CC00A7B5D6 /* RemoteCompanyMapper.swift */; };
+		D8B284F42AEBB3A100A7B5D6 /* CompanyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B284F32AEBB3A100A7B5D6 /* CompanyEntity.swift */; };
+		D8B284F62AEBB49500A7B5D6 /* CompanyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B284F52AEBB49500A7B5D6 /* CompanyMapper.swift */; };
+		D8B284F82AEBB4BF00A7B5D6 /* CompanyRepositoriable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B284F72AEBB4BF00A7B5D6 /* CompanyRepositoriable.swift */; };
+		D8B284FA2AEBB60E00A7B5D6 /* CompanyRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B284F92AEBB60E00A7B5D6 /* CompanyRequestModel.swift */; };
+		D8B284FC2AEBB62700A7B5D6 /* CompanyResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B284FB2AEBB62700A7B5D6 /* CompanyResponseModel.swift */; };
 		D8B61D002AEA34E900F88764 /* TrackCompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B61CFF2AEA34E900F88764 /* TrackCompanyViewModel.swift */; };
 		D8B661052A60D3A80049B8D9 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8B660FC2A60D3A80049B8D9 /* Pretendard-SemiBold.otf */; };
 		D8B661062A60D3A80049B8D9 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8B660FD2A60D3A80049B8D9 /* Pretendard-ExtraLight.otf */; };
@@ -176,6 +182,12 @@
 		D89C2DFF2A7B9B8800457EB9 /* SignUpRepositoriable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRepositoriable.swift; sourceTree = "<group>"; };
 		D89C2E012A7B9BE200457EB9 /* SignUpMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMapper.swift; sourceTree = "<group>"; };
 		D89C2E032A7BABD600457EB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D8B284F12AEBB1CC00A7B5D6 /* RemoteCompanyMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCompanyMapper.swift; sourceTree = "<group>"; };
+		D8B284F32AEBB3A100A7B5D6 /* CompanyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyEntity.swift; sourceTree = "<group>"; };
+		D8B284F52AEBB49500A7B5D6 /* CompanyMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyMapper.swift; sourceTree = "<group>"; };
+		D8B284F72AEBB4BF00A7B5D6 /* CompanyRepositoriable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRepositoriable.swift; sourceTree = "<group>"; };
+		D8B284F92AEBB60E00A7B5D6 /* CompanyRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRequestModel.swift; sourceTree = "<group>"; };
+		D8B284FB2AEBB62700A7B5D6 /* CompanyResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyResponseModel.swift; sourceTree = "<group>"; };
 		D8B61CFF2AEA34E900F88764 /* TrackCompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCompanyViewModel.swift; sourceTree = "<group>"; };
 		D8B660FC2A60D3A80049B8D9 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		D8B660FD2A60D3A80049B8D9 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
@@ -485,6 +497,7 @@
 			isa = PBXGroup;
 			children = (
 				D85D16A12A5E2CFC00D799DD /* LoginResponseModel.swift */,
+				D8B284FB2AEBB62700A7B5D6 /* CompanyResponseModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -494,6 +507,7 @@
 			children = (
 				D85D169F2A5E2CEF00D799DD /* LoginRequestModel.swift */,
 				D89C2DFB2A7B943E00457EB9 /* SignUpRequestModel.swift */,
+				D8B284F92AEBB60E00A7B5D6 /* CompanyRequestModel.swift */,
 			);
 			path = RequestModel;
 			sourceTree = "<group>";
@@ -503,6 +517,7 @@
 			children = (
 				D85D169D2A5E2CDA00D799DD /* LoginRepositoriable.swift */,
 				D89C2DFF2A7B9B8800457EB9 /* SignUpRepositoriable.swift */,
+				D8B284F72AEBB4BF00A7B5D6 /* CompanyRepositoriable.swift */,
 			);
 			path = Repositoriable;
 			sourceTree = "<group>";
@@ -512,6 +527,7 @@
 			children = (
 				D85D169B2A5E2CC800D799DD /* LoginMapper.swift */,
 				D89C2E012A7B9BE200457EB9 /* SignUpMapper.swift */,
+				D8B284F52AEBB49500A7B5D6 /* CompanyMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -521,6 +537,7 @@
 			children = (
 				D85D16992A5E2CB600D799DD /* Entity.swift */,
 				D8B8B9332A7CDE35008F1807 /* SignUpEntity.swift */,
+				D8B284F32AEBB3A100A7B5D6 /* CompanyEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -581,6 +598,7 @@
 			children = (
 				D85D16B42A5E2E9300D799DD /* RemoteLoginMapper.swift */,
 				D8B8B9372A7CE34F008F1807 /* RemoteSignUpMapper.swift */,
+				D8B284F12AEBB1CC00A7B5D6 /* RemoteCompanyMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -815,6 +833,7 @@
 				D8D483232A5F807300B474E4 /* Errors.swift in Sources */,
 				D85D16A82A5E2D3D00D799DD /* LoginUseCaseable.swift in Sources */,
 				D8CF211A2A78D36600A93912 /* TabBarHomeCoordinator.swift in Sources */,
+				D8B284FC2AEBB62700A7B5D6 /* CompanyResponseModel.swift in Sources */,
 				AD93E6E62ACBFA370010BD03 /* InsightDeliveryHeaderView.swift in Sources */,
 				D8B8B9302A7CD86A008F1807 /* Error+Extension.swift in Sources */,
 				D8D31E552A7A34AD0095D4F0 /* RemoteCompanyItem.swift in Sources */,
@@ -847,6 +866,7 @@
 				D85D169E2A5E2CDA00D799DD /* LoginRepositoriable.swift in Sources */,
 				D891ED1D2AE8EA1C002B1C7D /* RegisterTrackViewController.swift in Sources */,
 				D8CF21102A78B97900A93912 /* LoginCoordinator.swift in Sources */,
+				D8B284F42AEBB3A100A7B5D6 /* CompanyEntity.swift in Sources */,
 				D8D31E5F2A7A483E0095D4F0 /* InputTextField.swift in Sources */,
 				D85D169A2A5E2CB600D799DD /* Entity.swift in Sources */,
 				D81082B52A67676500FBCD9C /* UIView+Extension.swift in Sources */,
@@ -858,18 +878,22 @@
 				D851F9F32AE764E60013C8B2 /* ListHeaderView.swift in Sources */,
 				D85D16A02A5E2CEF00D799DD /* LoginRequestModel.swift in Sources */,
 				ADF7A8EC2A7652E60028D260 /* ColorManager.swift in Sources */,
+				D8B284F62AEBB49500A7B5D6 /* CompanyMapper.swift in Sources */,
 				D8B6610F2A60D7130049B8D9 /* AppContainer.swift in Sources */,
 				ADF7A8E72A764ADA0028D260 /* UIFont+Extension.swift in Sources */,
 				AD93E6E42ACBFA2B0010BD03 /* CurrentDeliveryHeaderView.swift in Sources */,
 				D81082B32A67650A00FBCD9C /* UIStackView+Extension.swift in Sources */,
+				D8B284FA2AEBB60E00A7B5D6 /* CompanyRequestModel.swift in Sources */,
 				AD93E6E82ACBFA450010BD03 /* CurrentDeliveryCell.swift in Sources */,
 				D81E35972AE65AF20025BBCF /* InsightDeliverySubCell.swift in Sources */,
+				D8B284F82AEBB4BF00A7B5D6 /* CompanyRepositoriable.swift in Sources */,
 				D89C2E002A7B9B8800457EB9 /* SignUpRepositoriable.swift in Sources */,
 				D8B661272A614AC70049B8D9 /* ViewControllerTemplate.swift in Sources */,
 				D81E35952AE65AD40025BBCF /* InsightDeliveryMainCell.swift in Sources */,
 				D8CF21032A788DDD00A93912 /* BaseViewModel.swift in Sources */,
 				D8CF210E2A78B93400A93912 /* LoginViewController.swift in Sources */,
 				D85D16B92A5E2EE700D799DD /* CompleteButton.swift in Sources */,
+				D8B284F22AEBB1CC00A7B5D6 /* RemoteCompanyMapper.swift in Sources */,
 				D89C2E022A7B9BE200457EB9 /* SignUpMapper.swift in Sources */,
 				D8CF21292A78E63A00A93912 /* SignUpViewModel.swift in Sources */,
 				D891ED282AE91D5D002B1C7D /* CompanyLogoCell.swift in Sources */,

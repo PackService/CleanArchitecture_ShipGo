@@ -15,12 +15,12 @@ struct AppContainer {
     static let shared: Container = {
         let container = Container()
         
-        // MARK: -register는 등록
+        // MARK: -ViewModel Register
         container.register(LoginViewModel.self) { r in LoginViewModel() }
         container.register(SignUpViewModel.self) { r in SignUpViewModel() }
         container.register(HomeMainViewModel.self) { r in HomeMainViewModel() }
         
-        // MARK: -resolve는 사용
+        // MARK: -ViewController Register
         container.register(LoginViewController.self) { r in
             let vc = LoginViewController()
             vc.viewModel = r.resolve(LoginViewModel.self)
