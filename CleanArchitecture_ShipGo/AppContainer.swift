@@ -21,13 +21,13 @@ struct AppContainer {
         
         // MARK: -resolve는 사용
         container.register(LoginViewController.self) { r in
-            let vc = LoginViewController
+            let vc = LoginViewController()
             vc.viewModel = r.resolve(LoginViewModel.self)
             return vc
         }
         
         container.register(SignUpViewController.self) { r in
-            let vc = SignUpViewController
+            let vc = SignUpViewController()
             vc.viewModel = r.resolve(SignUpViewModel.self)
             return vc
         }

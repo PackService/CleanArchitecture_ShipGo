@@ -18,7 +18,7 @@ class LoginCoordinator: Coordinator {
     }
 
     func start() {
-        let vc = LoginViewController()
+        let vc = AppContainer.shared.resolve(LoginViewController.self)! // MARK: -이런식으로..?
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

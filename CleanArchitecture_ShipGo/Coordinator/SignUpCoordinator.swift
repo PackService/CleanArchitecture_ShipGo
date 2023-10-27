@@ -18,7 +18,7 @@ class SignUpCoordinator: Coordinator {
     }
 
     func start() {
-        let vc = SignUpViewController()
+        let vc = AppContainer.shared.resolve(SignUpViewController.self)!
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

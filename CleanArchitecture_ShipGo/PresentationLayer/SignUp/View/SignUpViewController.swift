@@ -15,7 +15,7 @@ final class SignUpViewController: UIViewController {
     
     weak var coordinator: SignUpCoordinator?
     private var cancelBag = Set<AnyCancellable>()
-    var viewModel: SignUpViewModel = SignUpViewModel()
+    var viewModel: SignUpViewModel!
     
     private lazy var containerView = UIView()
     
