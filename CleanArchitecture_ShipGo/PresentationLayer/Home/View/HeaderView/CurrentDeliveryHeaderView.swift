@@ -12,6 +12,7 @@ import Then
 final class CurrentDeliveryHeaderView: UICollectionReusableView {
     static let reuseIdentifier = "CurrentDeliveryHeaderView"
     static let supplementaryViewOfKind = "CurrentDeliveryHeaderViewKind"
+    var viewModel: HomeMainViewModel!
 
     private lazy var containerView = UIView().then({
         $0.backgroundColor = ColorManager.background
@@ -25,6 +26,7 @@ final class CurrentDeliveryHeaderView: UICollectionReusableView {
     private lazy var addButton = UIButton().then({
         $0.setImage(UIImage(systemName: "circle.fill"), for: .normal)
         $0.tintColor = UIColor(red: 60/255, green: 64/255, blue: 82/255, alpha: 1)
+        $0.addTarget(self, action: #selector(registerTrackNumberTapped(_:)), for: .touchUpInside)
     })
     
     override init(frame: CGRect) {
@@ -59,7 +61,7 @@ extension CurrentDeliveryHeaderView {
         }
     }
     
-//    @objc func registerTrackNumberTapped(_ button: UIButton) { // 탭 바 화면으로 이동하는 것, 해당 로직 로그인 성공 시 되도록 수정
-//        let vc = RegisterTrackViewController()
-//    }
+    @objc func registerTrackNumberTapped(_ button: UIButton) {
+        viewModel.sendShowRegister(state: true)
+    }
 }

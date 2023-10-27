@@ -18,13 +18,13 @@ class TabBarHomeCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = HomeMainViewController()
+        let vc = AppContainer.shared.resolve(HomeMainViewController.self)! 
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
     
     func registerTrackNumber() {
-        let vc = RegisterTrackViewController()
+        let vc = AppContainer.shared.resolve(RegisterTrackViewController.self)!
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

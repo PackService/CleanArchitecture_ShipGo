@@ -18,6 +18,7 @@ struct AppContainer {
         // MARK: -register는 등록
         container.register(LoginViewModel.self) { r in LoginViewModel() }
         container.register(SignUpViewModel.self) { r in SignUpViewModel() }
+        container.register(HomeMainViewModel.self) { r in HomeMainViewModel() }
         
         // MARK: -resolve는 사용
         container.register(LoginViewController.self) { r in
@@ -29,6 +30,18 @@ struct AppContainer {
         container.register(SignUpViewController.self) { r in
             let vc = SignUpViewController()
             vc.viewModel = r.resolve(SignUpViewModel.self)
+            return vc
+        }
+        
+        container.register(HomeMainViewController.self) { r in
+            let vc = HomeMainViewController()
+            vc.viewModel = r.resolve(HomeMainViewModel.self)
+            return vc
+        }
+        
+        container.register(RegisterTrackViewController.self) { r in
+            let vc = RegisterTrackViewController()
+            vc.viewModel = r.resolve(HomeMainViewModel.self)
             return vc
         }
         

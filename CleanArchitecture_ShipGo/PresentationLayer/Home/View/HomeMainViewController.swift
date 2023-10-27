@@ -19,6 +19,7 @@ enum Section: Int {
 class HomeMainViewController: UIViewController {
     
     weak var coordinator: TabBarHomeCoordinator?
+    private var cancelBag = Set<AnyCancellable>()
     
     var itemModel1: [Int] = [1]
     var itemModel2: [Int] = [4]
@@ -30,18 +31,9 @@ class HomeMainViewController: UIViewController {
     private typealias FooterRegistration = UICollectionView.SupplementaryRegistration<CurrentDeliveryFooterView>
     
     private var dataSource: DataSource!
-    private var cancelBag = Set<AnyCancellable>()
     private var snapshot = Snapshot()
-//    private var viewModel: AccountMainViewModel!
-    
-//    public init(viewModel: HomeMainViewModel) {
-//        self.viewModel = viewModel
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    var viewModel: HomeMainViewModel!
+//    var viewModel: HomeMainViewModel = AppContainer.shared._resolve(name: <#T##String?#>, invoker: <#T##((Arguments) -> Any) -> Any#>)
 
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout()).then {
         let layout = Self.getLayout()
@@ -73,7 +65,17 @@ class HomeMainViewController: UIViewController {
         makeConstraints()
         setUpCollectionView()
         fetchSnapShot()
-//        bind()
+        bind()
+    }
+    
+    func bind() {
+        viewModel.showRegisterPublisher()
+            .sink { state in
+                if state == true {
+                    self.coordinator?.registerTrackNumber()
+                }
+            }
+            .store(in: &cancelBag)
     }
     
     func fetchSnapShot() {// MARK: - 여기부터 다시 시작
@@ -202,6 +204,9 @@ extension HomeMainViewController {
                     guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CurrentDeliveryHeaderView.reuseIdentifier, for: indexPath) as? CurrentDeliveryHeaderView else {
                         fatalError("Could not dequeue sectionHeader: \(CurrentDeliveryHeaderView.reuseIdentifier)")
                     }
+                    if sectionHeader.viewModel == nil {
+                        sectionHeader.viewModel = self?.viewModel
+                    }
                     return sectionHeader
                 } else if kind == CurrentDeliveryFooterView.supplementaryViewOfKind {
                     guard let sectionFooter = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CurrentDeliveryFooterView.reuseIdentifier, for: indexPath) as? CurrentDeliveryFooterView else {
@@ -237,7 +242,7 @@ extension HomeMainViewController {
         }
     }
     
-    @objc func RegisterTrackNumberButtonTapped(){ // MARK: - 이거하려면 viewmodel있어야함
-        coordinator?.registerTrackNumber()
-    }
+//    @objc func RegisterTrackNumberButtonTapped(){ // MARK: - 이거하려면 viewmodel있어야함
+//        coordinator?.registerTrackNumber()
+//    }
 }

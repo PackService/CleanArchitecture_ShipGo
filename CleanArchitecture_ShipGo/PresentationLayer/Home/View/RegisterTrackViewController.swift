@@ -13,7 +13,7 @@ import Combine
 class RegisterTrackViewController: UIViewController {
     weak var coordinator: Coordinator? // MARK: - 그냥 Coordinator도 되나..?
     private var cancelBag = Set<AnyCancellable>()
-//    var viewModel: LoginViewModel = LoginViewModel()
+    var viewModel: HomeMainViewModel!
     
     private lazy var containerView = UIView().then({
         $0.backgroundColor = ColorManager.background
@@ -35,6 +35,7 @@ class RegisterTrackViewController: UIViewController {
     
     private lazy var registerButton = CompleteButton().then({
         $0.setTitle("운송장 등록", for: .normal)
+        $0.addTarget(self, action: #selector(registerButtonTapped(_:)), for: .touchUpInside)
     })
     
     override func viewDidLoad() {
@@ -82,4 +83,7 @@ class RegisterTrackViewController: UIViewController {
         }
     }
     
+    @objc func registerButtonTapped(_ button: UIButton) {
+        viewModel.sendShowRegister(state: false)
+    }
 }
