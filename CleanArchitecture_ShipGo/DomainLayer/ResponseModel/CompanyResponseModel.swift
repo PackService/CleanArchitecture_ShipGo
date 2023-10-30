@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+struct CompanyResponseModel {
+    let id: String
+    let international: String
+    let name: String
+    
+    init() {
+        self.id = ""
+        self.international = ""
+        self.name = ""
+    }
+    
+    init(id: String, international: String, name: String) {
+        self.id = id
+        self.international = international
+        self.name = name
+    }
+}
