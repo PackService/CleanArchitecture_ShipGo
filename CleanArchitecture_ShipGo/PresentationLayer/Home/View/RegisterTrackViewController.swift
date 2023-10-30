@@ -26,11 +26,15 @@ class RegisterTrackViewController: UIViewController {
     
     private lazy var trackCompanyTextField = InputTextField().then({
         $0.placeholder = "택배사"
-        $0.activeLeftItemView()
     })
     
     private lazy var logoView = UIView().then({ // MARK: - cell로 할지 뭘로 할지 고민좀
         $0.backgroundColor = .blue
+    })
+    
+    private lazy var trackCompanySelectButton = UIButton().then({
+        $0.setImage(UIImage(systemName: "circle.fill"), for: .normal)
+        $0.addTarget(self, action: #selector(trackCompanyButtonTapped(_:)), for: .touchUpInside)
     })
     
     private lazy var registerButton = CompleteButton().then({
@@ -50,6 +54,7 @@ class RegisterTrackViewController: UIViewController {
         view.addSubview(containerView)
         containerView.addSubViews([trackNumberTextField,
                                    trackCompanyTextField,
+                                   trackCompanySelectButton,
                                    logoView,
                                    registerButton])
     }
@@ -70,11 +75,14 @@ class RegisterTrackViewController: UIViewController {
             constraints.leading.trailing.equalToSuperview()
             constraints.height.equalTo(moderateScale(number: 62))
         }
+        trackCompanySelectButton.snp.makeConstraints { constraints in
+            constraints.centerY.equalTo(trackCompanyTextField.snp.centerY)
+            constraints.trailing.equalTo(trackNumberTextField.snp.trailing).offset(moderateScale(number: -16))
+        }
         logoView.snp.makeConstraints { constraints in
             constraints.top.equalTo(trackCompanyTextField.snp.bottom).offset(moderateScale(number: 16))
             constraints.leading.trailing.equalToSuperview()
             constraints.height.equalTo(moderateScale(number: 70))
-            // 70
         }
         registerButton.snp.makeConstraints { constraints in
             constraints.bottom.equalToSuperview().offset(verticalScale(number: -47))
@@ -86,5 +94,9 @@ class RegisterTrackViewController: UIViewController {
     @objc func registerButtonTapped(_ button: UIButton) {
         viewModel.sendShowRegister(state: false)
         coordinator?.start() // MARK: - 메모리 누수 발생하니까 바꾸자
+    }
+    
+    @objc func trackCompanyButtonTapped(_ button: UIButton) {
+        coordinator?.selectTrackCompany()
     }
 }

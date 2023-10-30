@@ -29,5 +29,10 @@ class TabBarHomeCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
+    func selectTrackCompany() {
+        let vc = AppContainer.shared.resolve(SelectTrackCompanyViewController.self)!
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
     
 }

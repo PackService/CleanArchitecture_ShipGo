@@ -10,7 +10,6 @@ import UIKit
 enum CurrentPasswordInputStatus {
     case valid
     case invalid
-    case activeLeftItem
 }
 
 class InputTextField: UITextField {
@@ -39,17 +38,17 @@ class InputTextField: UITextField {
         autocapitalizationType = .none
     }
     
-    func activeLeftItemView() {
-        currentInputStatus = .activeLeftItem
-        self.isUserInteractionEnabled = false
-        textColor = .black
-        rightViewMode = .always
-        rightButton = UIButton()
-        rightButton.contentMode = .scaleAspectFit
-        rightButton.setImage(UIImage(named: "circle.fill"), for: .normal)
-        let rightPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: moderateScale(number: 20), height: self.frame.height))
-        rightView = rightPaddingView
-    }
+//    func activeRightItemView() {
+//        currentInputStatus = .activeLeftItem
+//        self.isUserInteractionEnabled = false
+//        textColor = .black
+//        rightViewMode = .always
+//        rightButton = UIButton()
+//        rightButton.contentMode = .scaleAspectFit
+//        rightButton.setImage(UIImage(named: "circle.fill"), for: .normal)
+//        let rightPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: moderateScale(number: 20), height: self.frame.height))
+//        rightView = rightPaddingView
+//    }
     
     func setupValidStatus() {
         textColor = .black
@@ -87,5 +86,9 @@ extension InputTextField: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.layer.borderWidth = 0.0
         self.layer.borderColor = .none
+    }
+    
+    @objc func rightViewTapped(_ button: UIButton) {
+        print("클릭됨")
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CompanyResponseModel {
+struct CompanyResponseModel: Hashable {
     let id: String
     let international: String
     let name: String

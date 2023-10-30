@@ -45,6 +45,11 @@ struct AppContainer {
             return vc
         }
         
+        container.register(SelectTrackCompanyViewController.self) { r in
+            let vc = SelectTrackCompanyViewController()
+            return vc
+        }
+        
         return container
     }()
 }
