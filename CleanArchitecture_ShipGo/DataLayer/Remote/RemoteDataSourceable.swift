@@ -11,6 +11,6 @@ import Combine
 protocol RemoteDataSourceable {
     func signUp(email: String, password: String) -> AnyPublisher<Result<Void, Error>, Never>
     func login(email: String, password: String) -> AnyPublisher<Result<Void, Error>, Never>
-    func getRecommendCompany(invoice: String) -> AnyPublisher<Result<Void, Error>, Never>
+    func getRecommendComapny(invoice: String) -> AnyPublisher<Result<[CompanyEntity.Company], Error>, Never>
 //    func 
 }

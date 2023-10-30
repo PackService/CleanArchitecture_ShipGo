@@ -11,6 +11,8 @@ import Alamofire
 import FirebaseAuth
 
 class RemoteDataSourceImpl: RemoteDataSourceable {
+    private let jsonDecoder = JSONDecoder()
+    private let remoteCompanyMapper = RemoteCompanyMapper()
     
     func signUp(email: String, password: String) -> AnyPublisher<Result<Void, Error>, Never> {
         Future<Result<Void, Error>, Never> { [weak self] promise in
@@ -63,26 +65,24 @@ class RemoteDataSourceImpl: RemoteDataSourceable {
 //            }
 //        }.eraseToAnyPublisher()
 //    }
-//    
-    func getRecommendCompany(invoice: String) -> AnyPublisher<Void, Error> {
-        Future<Void, Error> { [weak self] promise in
+    //
+    func getRecommendComapny(invoice: String) -> AnyPublisher<Result<[CompanyEntity.Company], Error>, Never> {
+        Future<Result<[CompanyEntity.Company], Error>, Never> { [weak self] promise in
             guard let selfRef = self else { return }
             let stringURL = "recommend?t_invoice=\(invoice)&t_key\(Bundle.main.object(forInfoDictionaryKey: "DELIVERY_API_KEY") as? String)"
             NetworkWrapper.shared.getBasicTask(stringURL: stringURL) { [weak self] result in
                 switch result {
-                case .success(let success):
-                    if let data = try? selfRef.jsonDecoder.decode() {
-                        promise(.success())
+                case .success(let responseData):
+                    if let data = try? selfRef.jsonDecoder.decode(RemoteCompanyItem.self, from: responseData) {
+                        promise(.success(.success(selfRef.remoteCompanyMapper.remoteItemToEntity(remoteItem: data))))
                     }
-                    // MARK: - 타입 미스매치 에러처리
-//                    promise(.failure(HTTP))
-                case .failure(let failure):
-                    promise(.failure(error))
-                    LogError(error.localizedDescription)
+                    // MARK: - 타입 미스매치 에러처리 필요
+                case .failure(let error):
+                    promise(.success(.failure(error)))
                 }
             }
-        }
-    }.eraseToAnyPublisher()
+        }.eraseToAnyPublisher()
+    }
 }
     
 //    func getDeliveryCompany() -> AnyPublisher<Result<CompanyEntity, Error>, Never> { // MARK: -http 분리, key 값 안전하게 보관할 방법 생각

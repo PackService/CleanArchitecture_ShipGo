@@ -70,6 +70,8 @@
 		D8B284F82AEBB4BF00A7B5D6 /* CompanyRepositoriable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B284F72AEBB4BF00A7B5D6 /* CompanyRepositoriable.swift */; };
 		D8B284FA2AEBB60E00A7B5D6 /* CompanyRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B284F92AEBB60E00A7B5D6 /* CompanyRequestModel.swift */; };
 		D8B284FC2AEBB62700A7B5D6 /* CompanyResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B284FB2AEBB62700A7B5D6 /* CompanyResponseModel.swift */; };
+		D8B284FE2AEBB83D00A7B5D6 /* CompanyUseCaseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B284FD2AEBB83D00A7B5D6 /* CompanyUseCaseable.swift */; };
+		D8B285002AEBBB9200A7B5D6 /* CompanyUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B284FF2AEBBB9200A7B5D6 /* CompanyUseCaseImpl.swift */; };
 		D8B61D002AEA34E900F88764 /* TrackCompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B61CFF2AEA34E900F88764 /* TrackCompanyViewModel.swift */; };
 		D8B661052A60D3A80049B8D9 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8B660FC2A60D3A80049B8D9 /* Pretendard-SemiBold.otf */; };
 		D8B661062A60D3A80049B8D9 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8B660FD2A60D3A80049B8D9 /* Pretendard-ExtraLight.otf */; };
@@ -116,6 +118,7 @@
 		D8D483212A5F7FE300B474E4 /* ScreenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483202A5F7FE300B474E4 /* ScreenUtil.swift */; };
 		D8D483232A5F807300B474E4 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483222A5F807300B474E4 /* Errors.swift */; };
 		D8D483252A5F80B600B474E4 /* NetworkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */; };
+		D8D702582AEF43EA00197318 /* CompanyRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D702572AEF43EA00197318 /* CompanyRepositoryImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -188,6 +191,8 @@
 		D8B284F72AEBB4BF00A7B5D6 /* CompanyRepositoriable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRepositoriable.swift; sourceTree = "<group>"; };
 		D8B284F92AEBB60E00A7B5D6 /* CompanyRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRequestModel.swift; sourceTree = "<group>"; };
 		D8B284FB2AEBB62700A7B5D6 /* CompanyResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyResponseModel.swift; sourceTree = "<group>"; };
+		D8B284FD2AEBB83D00A7B5D6 /* CompanyUseCaseable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyUseCaseable.swift; sourceTree = "<group>"; };
+		D8B284FF2AEBBB9200A7B5D6 /* CompanyUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyUseCaseImpl.swift; sourceTree = "<group>"; };
 		D8B61CFF2AEA34E900F88764 /* TrackCompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCompanyViewModel.swift; sourceTree = "<group>"; };
 		D8B660FC2A60D3A80049B8D9 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		D8B660FD2A60D3A80049B8D9 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
@@ -234,6 +239,7 @@
 		D8D483202A5F7FE300B474E4 /* ScreenUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtil.swift; sourceTree = "<group>"; };
 		D8D483222A5F807300B474E4 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		D8D483242A5F80B600B474E4 /* NetworkWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWrapper.swift; sourceTree = "<group>"; };
+		D8D702572AEF43EA00197318 /* CompanyRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRepositoryImpl.swift; sourceTree = "<group>"; };
 		D8DF58802ACE4E3E00EE977A /* ApiSetting.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ApiSetting.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -547,6 +553,7 @@
 			children = (
 				D85D16A52A5E2D2A00D799DD /* LoginUseCaseImpl.swift */,
 				D89C2DFD2A7B94C100457EB9 /* SignUpUsecaseImpl.swift */,
+				D8B284FF2AEBBB9200A7B5D6 /* CompanyUseCaseImpl.swift */,
 			);
 			path = UseCaseImpl;
 			sourceTree = "<group>";
@@ -556,6 +563,7 @@
 			children = (
 				D85D16A72A5E2D3D00D799DD /* LoginUseCaseable.swift */,
 				D89C2DF92A7B93B000457EB9 /* SignUpUseCaseable.swift */,
+				D8B284FD2AEBB83D00A7B5D6 /* CompanyUseCaseable.swift */,
 			);
 			path = UseCaseable;
 			sourceTree = "<group>";
@@ -576,6 +584,7 @@
 			children = (
 				D85D16B62A5E2EAE00D799DD /* LoginRepositoryImpl.swift */,
 				D8B8B9352A7CDF1F008F1807 /* SignUpRpositoryImpl.swift */,
+				D8D702572AEF43EA00197318 /* CompanyRepositoryImpl.swift */,
 			);
 			path = RepositoryImpl;
 			sourceTree = "<group>";
@@ -825,6 +834,7 @@
 			files = (
 				D8CF21142A78CD7A00A93912 /* TabBarItemType.swift in Sources */,
 				D85D16B12A5E2E3600D799DD /* RemoteDataSourceable.swift in Sources */,
+				D8B284FE2AEBB83D00A7B5D6 /* CompanyUseCaseable.swift in Sources */,
 				D85D16A22A5E2CFC00D799DD /* LoginResponseModel.swift in Sources */,
 				D8B661142A60F72E0049B8D9 /* AppCoordinator.swift in Sources */,
 				D8B8B9342A7CDE35008F1807 /* SignUpEntity.swift in Sources */,
@@ -880,6 +890,7 @@
 				ADF7A8EC2A7652E60028D260 /* ColorManager.swift in Sources */,
 				D8B284F62AEBB49500A7B5D6 /* CompanyMapper.swift in Sources */,
 				D8B6610F2A60D7130049B8D9 /* AppContainer.swift in Sources */,
+				D8D702582AEF43EA00197318 /* CompanyRepositoryImpl.swift in Sources */,
 				ADF7A8E72A764ADA0028D260 /* UIFont+Extension.swift in Sources */,
 				AD93E6E42ACBFA2B0010BD03 /* CurrentDeliveryHeaderView.swift in Sources */,
 				D81082B32A67650A00FBCD9C /* UIStackView+Extension.swift in Sources */,
@@ -899,6 +910,7 @@
 				D891ED282AE91D5D002B1C7D /* CompanyLogoCell.swift in Sources */,
 				D85D16B52A5E2E9300D799DD /* RemoteLoginMapper.swift in Sources */,
 				D800BAB32A5CEA5F001F19A3 /* AppDelegate.swift in Sources */,
+				D8B285002AEBBB9200A7B5D6 /* CompanyUseCaseImpl.swift in Sources */,
 				D800BAB52A5CEA5F001F19A3 /* SceneDelegate.swift in Sources */,
 				D8B661122A60D91B0049B8D9 /* Coordinator.swift in Sources */,
 				D8CF21162A78CF5800A93912 /* MainTabBarCoordinator.swift in Sources */,
