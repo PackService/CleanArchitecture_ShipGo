@@ -9,12 +9,16 @@ import Foundation
 import Combine
 
 class CompanyRepositoryImpl: CompanyRepositoriable {
+    
     private var cancelBag = Set<AnyCancellable>()
     private let remoteDataSource: RemoteDataSourceable = RemoteDataSourceImpl() as! RemoteDataSourceable
     
-    func getRecommendComapny(invoice: String) -> AnyPublisher<Result<[CompanyEntity.Company], Error>, Never> { // MARK: -이거 기준으로 하기
+    func getRecommendCompany(invoice: String) -> AnyPublisher<Result<[CompanyEntity.Company], Error>, Never> {
         remoteDataSource.getRecommendCompany(invoice: invoice)
     }
     
-    func getAllComapny() -> AnyPublisher<Result<Com
+
+    func getAllCompany()  -> AnyPublisher<Result<[CompanyEntity.Company], Error>, Never> {
+        remoteDataSource.getAllCompany()
+    }
 }

@@ -23,7 +23,7 @@ final class CompanyUseCaseImpl: CompanyUseCaseable {
 //        repository.getRecommendComapny(invoice: invoice)
 //    }
     
-    func getAllComapny() -> AnyPublisher<CompanyResponseModel, Never> {
+    func getAllCompany() -> AnyPublisher<CompanyResponseModel, Never> {
         repository.getAllCompany()
     }
     

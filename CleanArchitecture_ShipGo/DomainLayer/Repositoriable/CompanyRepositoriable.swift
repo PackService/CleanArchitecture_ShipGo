@@ -9,5 +9,6 @@ import Foundation
 import Combine
 
 protocol CompanyRepositoriable {
-    func getRecommendComapny(invoice: String) -> AnyPublisher<Result<[CompanyEntity.Company], Error>, Never>
+    func getRecommendCompany(invoice: String) -> AnyPublisher<Result<[CompanyEntity.Company], Error>, Never>
+    func getAllCompany() -> AnyPublisher<Result<[CompanyEntity.Company], Error>, Never>
 }

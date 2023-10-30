@@ -66,10 +66,28 @@ class RemoteDataSourceImpl: RemoteDataSourceable {
 //        }.eraseToAnyPublisher()
 //    }
     //
-    func getRecommendComapny(invoice: String) -> AnyPublisher<Result<[CompanyEntity.Company], Error>, Never> {
+    func getRecommendCompany(invoice: String) -> AnyPublisher<Result<[CompanyEntity.Company], Error>, Never> {
         Future<Result<[CompanyEntity.Company], Error>, Never> { [weak self] promise in
             guard let selfRef = self else { return }
             let stringURL = "recommend?t_invoice=\(invoice)&t_key\(Bundle.main.object(forInfoDictionaryKey: "DELIVERY_API_KEY") as? String)"
+            NetworkWrapper.shared.getBasicTask(stringURL: stringURL) { [weak self] result in
+                switch result {
+                case .success(let responseData):
+                    if let data = try? selfRef.jsonDecoder.decode(RemoteCompanyItem.self, from: responseData) {
+                        promise(.success(.success(selfRef.remoteCompanyMapper.remoteItemToEntity(remoteItem: data))))
+                    }
+                    // MARK: - 타입 미스매치 에러처리 필요
+                case .failure(let error):
+                    promise(.success(.failure(error)))
+                }
+            }
+        }.eraseToAnyPublisher()
+    }
+    
+    func getAllCompany() -> AnyPublisher<Result<[CompanyEntity.Company], Error>, Never> {
+        Future<Result<[CompanyEntity.Company], Error>, Never> { [weak self] promise in
+            guard let selfRef = self else { return }
+            let stringURL = "companylist?t_key\(Bundle.main.object(forInfoDictionaryKey: "DELIVERY_API_KEY") as? String)"
             NetworkWrapper.shared.getBasicTask(stringURL: stringURL) { [weak self] result in
                 switch result {
                 case .success(let responseData):
