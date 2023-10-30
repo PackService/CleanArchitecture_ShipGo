@@ -45,27 +45,6 @@ class RemoteDataSourceImpl: RemoteDataSourceable {
         .eraseToAnyPublisher()
     }
     
-//    func getPrices(interval: String, pairId: Int, to: String) -> AnyPublisher<[CoinDetailEntity.Price], Error> {
-//        Future<[CoinDetailEntity.Price], Error> { [weak self] promise in
-//            guard let selfRef = self else { return }
-//            let stringURL = to == "" ? "/market/v1/chart/candles/\(interval)/\(pairId)?&limit=20" : "/market/v1/chart/candles/\(interval)/\(pairId)?to=\(to)&limit=20"
-//            NetworkWrapper.shared.getBasicTask(stringURL: stringURL) { result in
-//                switch result {
-//                case .success(let responseData):
-//                    if let data = try? selfRef.jsonDecoder.decode([RemoteCoinDetailtem.Price].self, from: responseData) {
-//                        promise(.success((selfRef.remoteCoinDetailMapper.remoteItemsToRemoteItem(remoteItem: data))))
-//                        //                        LogDebug(data)
-//                    }
-//                    promise(.failure(HTTPError.typeMismatchError))
-//                    
-//                case .failure(let error):
-//                    promise(.failure(error))
-//                    LogError(error.localizedDescription)
-//                }
-//            }
-//        }.eraseToAnyPublisher()
-//    }
-    //
     func getRecommendCompany(invoice: String) -> AnyPublisher<Result<[CompanyEntity.Company], Error>, Never> {
         Future<Result<[CompanyEntity.Company], Error>, Never> { [weak self] promise in
             guard let selfRef = self else { return }
@@ -87,7 +66,7 @@ class RemoteDataSourceImpl: RemoteDataSourceable {
     func getAllCompany() -> AnyPublisher<Result<[CompanyEntity.Company], Error>, Never> {
         Future<Result<[CompanyEntity.Company], Error>, Never> { [weak self] promise in
             guard let selfRef = self else { return }
-            let stringURL = "companylist?t_key\(Bundle.main.object(forInfoDictionaryKey: "DELIVERY_API_KEY") as? String)"
+            let stringURL = "companylist?t_key=\(Bundle.main.object(forInfoDictionaryKey: "DELIVERY_API_KEY") as! String)"
             NetworkWrapper.shared.getBasicTask(stringURL: stringURL) { [weak self] result in
                 switch result {
                 case .success(let responseData):
@@ -96,6 +75,7 @@ class RemoteDataSourceImpl: RemoteDataSourceable {
                     }
                     // MARK: - 타입 미스매치 에러처리 필요
                 case .failure(let error):
+                    print(error)
                     promise(.success(.failure(error)))
                 }
             }
@@ -103,33 +83,3 @@ class RemoteDataSourceImpl: RemoteDataSourceable {
     }
 }
     
-//    func getDeliveryCompany() -> AnyPublisher<Result<CompanyEntity, Error>, Never> { // MARK: -http 분리, key 값 안전하게 보관할 방법 생각
-//        Future<Result<CompanyEntity, Error>, Never> { [weak self] promise in
-//            guard let selfRef = self else { return }
-//            NetworkWrapper.shared.getBasicTask(stringURL: "https://info.sweettracker.co.kr/api/v1/companylist?t_key=R3piwpbvEXgOCxQFddJEgw") { [weak self] result in
-//                switch result {
-//                case .success(let jsonResponse):
-//                    if let data = try? selfRef.jsonDecoder.decode(RemoteCompanyItem.self, from: jsonResponse) {
-//                        promise(.success(.success(selfRef.remoteTransactionMapper.remoteItemsToEntityTransactions(remoteItem: data))))
-//                    }
-//
-//                case .failure(let error):
-//                    promise(.success(.failure(error)))
-//                }
-//            }
-//        }
-//    }
-//}
-
-
-//func getCompanies() {
-//    guard let url = URL(string: "https://info.sweettracker.co.kr/api/v1/companylist?t_key=R3piwpbvEXgOCxQFddJEgw") else { return }
-//
-//    companySubscription = NetworkingManager.download(url: url)
-//        .decode(type: CompanyModel.self, decoder: JSONDecoder())
-//        .receive(on: DispatchQueue.main)
-//        .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnedCompanies) in
-//            self?.allCompanies = returnedCompanies
-//            self?.companySubscription?.cancel()
-//        })
-//}

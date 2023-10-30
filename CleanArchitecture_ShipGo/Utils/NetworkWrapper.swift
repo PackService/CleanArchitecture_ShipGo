@@ -60,6 +60,8 @@ struct NetworkWrapper {
                     completion(.failure(HTTPError.networkFailureError))
                 }
             case .failure(let error):
+                print(error)
+                print("\(apiDomain)\(stringURL)")
                 if let responseData = response.data, let json = try? jsonDecoder.decode(NetworkError.self, from: responseData) {
                     completion(.failure(NetworkError(statusCode: json.statusCode, message: json.message)))
                 } else {

@@ -20,7 +20,11 @@ final class TrackCompanyViewModel: BaseViewModel {
     }
     
     private func bind() {
-        
+        useCase.getAllCompany()
+            .sink { value in
+                print(value)
+            }
+            .store(in: &cancelBag)
     }
 }
 

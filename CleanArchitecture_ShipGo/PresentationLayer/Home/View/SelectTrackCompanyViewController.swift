@@ -17,7 +17,7 @@ enum TrackCompanySection: Int {
 // MARK: - CompanyModel쓰면 될듯
 class SelectTrackCompanyViewController: UIViewController {
     weak var coordinator: Coordinator?
-    
+    var viewModel: TrackCompanyViewModel!
     var itemModel: [Int] = [5,6,7,8,9,10]
     
     private typealias DataSource = UICollectionViewDiffableDataSource<TrackCompanySection, Int>

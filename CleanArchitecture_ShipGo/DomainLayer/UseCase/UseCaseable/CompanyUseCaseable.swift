@@ -10,5 +10,6 @@ import Combine
 
 protocol CompanyUseCaseable {
 //    func getRecommendComapny(invoice: String) -> AnyPublisher<Result<CompanyEntity.company, Error>, Never>
+    func getAllCompany() -> AnyPublisher<[CompanyResponseModel], Never> 
     func getErrorSubject() -> AnyPublisher<Error, Never>
 }

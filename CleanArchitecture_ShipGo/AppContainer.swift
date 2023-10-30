@@ -19,6 +19,7 @@ struct AppContainer {
         container.register(LoginViewModel.self) { r in LoginViewModel() }
         container.register(SignUpViewModel.self) { r in SignUpViewModel() }
         container.register(HomeMainViewModel.self) { r in HomeMainViewModel() }
+        container.register(TrackCompanyViewModel.self) { r in TrackCompanyViewModel() }
         
         // MARK: -ViewController Register
         container.register(LoginViewController.self) { r in
@@ -47,6 +48,7 @@ struct AppContainer {
         
         container.register(SelectTrackCompanyViewController.self) { r in
             let vc = SelectTrackCompanyViewController()
+            vc.viewModel = r.resolve(TrackCompanyViewModel.self)
             return vc
         }
         
