@@ -55,7 +55,7 @@ class RemoteDataSourceImpl: RemoteDataSourceable {
                     if let data = try? selfRef.jsonDecoder.decode(RemoteCompanyItem.self, from: responseData) {
                         promise(.success(.success(selfRef.remoteCompanyMapper.remoteItemToEntity(remoteItem: data))))
                     }
-                    // MARK: - 타입 미스매치 에러처리 필요
+                    print("recommend 타입 미스매치")
                 case .failure(let error):
                     promise(.success(.failure(error)))
                 }
